@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import configureStore from './store/store'
-// import Root from './components/root';
+import configureStore from './store/store'
+import Root from './components/root';
 // import App from './components/App';
 
 import { signup, login, logout } from './util/session_api_util';
@@ -13,26 +13,28 @@ import { signup, login, logout } from './util/session_api_util';
 document.addEventListener("DOMContentLoaded", () => {
 
 
-  let initialState = {};
-  //  let user = window.currentUser;
+  let preloadedState = {};
 
-  // if (window.currentUser === undefined) {
-  //   initialState = {};
-  // } else {
-  //   initialState = {
+   let user = window.currentUser;
 
-  //     entities: { users: { [window.currentUser.id]: window.currentUser }
-  //     },
-  //     errors: { session: [] },
-  //     session: { currentUser: window.currentUser.id }
-  //   };
+  if (window.currentUser === undefined) {
+    preloadedState = {};
+  } else {
+    preloadedState = {
 
-  // }
+      entities: { users: { [window.currentUser.id]: window.currentUser }
+      },
+      errors: { session: [] },
+      session: { currentUser: window.currentUser.id }
+    };
 
+  }
+
+  // ---------- TESTING START ------------
 
   // window.createBench = createBench;
   // window.fetchAllBenches = fetchAllBenches;
-    // window.fetchBenchesThunk = fetchBenchesThunk;
+  // window.fetchBenchesThunk = fetchBenchesThunk;
 
   window.login = login;
   window.logout = logout;
@@ -41,14 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.loginThunk = loginThunk;
   // window.logoutThunk = logoutThunk;
 
+  // ---------- TESTING END ------------
 
-  // const store = configureStore(initialState);
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  const store = configureStore(preloadedState);
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
 
   const root = document.getElementById("root");
-  ReactDOM.render(<h2 className="react-message"> The Mighty React is here..! </h2>, root);
+  ReactDOM.render(<Root store={store}/> , root);
  
 });
 
