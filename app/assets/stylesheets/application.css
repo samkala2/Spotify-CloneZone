@@ -157,3 +157,182 @@ h1.greetingyes{
         text-align: center;
         padding-top: 250px;
     }
+
+
+    
+
+    /* LOGIN PAGE!!!!!!!!!!!!!!!!!!!!! */
+
+    .demologin-div{
+          /* padding-bottom: 10px; */
+
+      }
+
+    .btn-demo{
+    color: #fff;
+    background-color: #3b5998;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    /* padding: 16px 48px 18px; */
+    padding: 16px 80px 18px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    display: block;
+    width: 240px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Circular,Helvetica,Arial,sans-serif;
+    }
+
+
+
+
+       div.header-login {
+        padding-bottom: 23px;
+        background:  white;
+        color: black;
+        width: 100%;
+        height: 80px;
+        border-bottom: solid 1px #222326;
+        top: 0;
+        position: fixed;
+    }
+
+    .demologin-div{
+      padding-left: 550px;
+      padding-top: 110px;
+    }
+
+    
+     .header-logo-login{
+        position: fixed;
+        /* padding-left: 200px; */
+        top: 30px;
+        color: black;
+        font-style: normal;
+        font-weight: bold;
+        font-stretch: normal;
+        font-size: 39px;
+        font-weight: 550;
+        font-family: fantasy, Helvetica, Arial, sans-serif;
+    }
+
+
+    img#logo-login-header {
+        position: relative;
+        width: 90px;
+        top: 13px;
+        padding-left: 650px;
+    }
+
+    .to-continue-login{
+      padding-left: 100px;
+      font-weight: bold;
+    }
+
+    .login-form-actual{
+      padding-top: 20px;
+    }
+
+    .divider-line{
+      border-top: 1px gray solid;
+      margin-top: 7px;
+      width: 140px;
+      height: 10px;
+      
+    }
+
+    div.divider{
+      display: flex;
+      padding-left: 23px;
+    }
+
+    .or-divider-title{
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+
+    .login-form-actual{
+      padding-left: 550px;
+    }
+
+     .login-input , .login-password{
+        display: block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222326;
+    width: 390px;
+    margin-bottom: 5px;
+    height: 30px;
+    /* padding-bottom: 20px; */
+      }
+
+      .session-submit{
+        margin-left: 40px
+      }
+
+      .session-submit:hover{
+        background-color: rgb(35, 223, 100);
+
+    }
+    .session-submit {padding-bottom: 60px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 500px;
+         padding: 16px 48px 18px;
+         transition-duration: .3s;
+        background-color: #1DB954;
+        border-width: 0;
+        letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: normal;   
+     display: inline-block;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    }
+
+    .signup-link{
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 0px 18px;
+    padding-left: 120px;
+    padding-right: 120px;
+    border-width: 0;
+    letter-spacing: 2px;
+    color: gray;
+    /* width: 260px; */
+    text-transform: uppercase;
+    text-decoration: none;
+    /* background-color: bisque; */
+    border: 2px solid gray;
+    }
+
+    .signup-footer{
+      padding-left: 540px
+    }
+
+    .form-divider{
+      border-top: 1px gray solid;
+      margin-top: 50px;
+      width: 400px;
+      height: 10px;
+    }
+    
+    .dont-have-account{
+      padding-left: 120px;
+    }

@@ -9,7 +9,7 @@ import { loginThunk } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.session,
   formType: 'login',
-  navLink: <Link to="/signup">sign up instead</Link>
+  navLink: <Link to="/signup">sign up</Link>
 
 });
 
