@@ -5,7 +5,7 @@ import Root from './components/root';
 // import App from './components/App';
 
 import { signup, login, logout } from './util/session_api_util';
-// import { signupThunk, loginThunk, logoutThunk } from './actions/session_actions'
+import { signupThunk, loginThunk, logoutThunk } from './actions/session_actions'
 
 // import { createBench, fetchAllBenches } from './util/benches_api_utils'
 // import { fetchBenchesThunk } from './actions/bench_action';
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.signup = signup;
   // window.signupThunk = signupThunk;
-  // window.loginThunk = loginThunk;
+  window.loginThunk = loginThunk;
   // window.logoutThunk = logoutThunk;
 
   // ---------- TESTING END ------------
