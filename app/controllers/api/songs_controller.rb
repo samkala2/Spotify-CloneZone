@@ -6,7 +6,7 @@ class Api::SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find_by(title: params[:title]) 
+    @song = Song.find_by(title: params[:title]) || Song.find(params[:id])
     render :show
     # http://localhost:3000/api/songs/*?title=Anita TO TEST need *?
   end

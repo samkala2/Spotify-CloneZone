@@ -84,3 +84,32 @@
 
   album11 = Album.create(name: 'Lemonade', artist_id: 6)
   album12 = Album.create(name: 'The Lion King: The Gift', artist_id: 6)
+
+
+
+  playlist1 = Playlist.create(name: 'Workout Music', user_id: 2)
+  playlist2 = Playlist.create(name: 'Favorite Music', user_id: 1)
+  playlist3 = Playlist.create(name: 'My number 1 playlist', user_id: 4)
+  playlist4 = Playlist.create(name: 'My Morning playlist', user_id: 4)
+  playlist5 = Playlist.create(name: 'My Evening playlist', user_id: 1)
+  playlist6 = Playlist.create(name: 'Relaxing songs', user_id: 3)
+  
+
+
+  playlistsong1 = Playlistsong.create(playlist_id: 1, song_id: 2, ord: 1)
+  playlistsong2 = Playlistsong.create(playlist_id: 1, song_id: 4, ord: 2)
+  playlistsong3 = Playlistsong.create(playlist_id: 1, song_id: 5, ord: 3)
+  playlistsong4 = Playlistsong.create(playlist_id: 1, song_id: 3, ord: 4)
+  playlistsong5 = Playlistsong.create(playlist_id: 1, song_id: 6, ord: 5)
+  playlistsong6 = Playlistsong.create(playlist_id: 1, song_id: 7, ord: 6)
+
+
+  playlistsong7 = Playlistsong.create(playlist_id: 2, song_id: 1, ord: 1)
+  playlistsong8 = Playlistsong.create(playlist_id: 2, song_id: 4, ord: 2)
+  playlistsong9 = Playlistsong.create(playlist_id: 2, song_id: 11, ord: 3)
+  playlistsong10 = Playlistsong.create(playlist_id: 2, song_id: 14, ord: 4)
+  playlistsong11 = Playlistsong.create(playlist_id: 2, song_id: 9, ord: 5)
+
+
+
+  
