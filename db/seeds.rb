@@ -36,6 +36,12 @@
 
 
 
+  follow1 = Follow.create(user_id: 2, artist_id: 4)
+  follow2 = Follow.create(user_id: 1, artist_id: 2)
+  follow3 = Follow.create(user_id: 1, artist_id: 3)
+  follow4 = Follow.create(user_id: 3, artist_id: 5)
+  follow5 = Follow.create(user_id: 3, artist_id: 7)
+
   album1 = Album.create(name: 'The Marshall Mathers LP', artist_id: 1)
   album2 = Album.create(name: 'Revival', artist_id: 1)
 
@@ -110,6 +116,23 @@
   playlistsong10 = Playlistsong.create(playlist_id: 2, song_id: 14, ord: 4)
   playlistsong11 = Playlistsong.create(playlist_id: 2, song_id: 9, ord: 5)
 
+  playlistsong12 = Playlistsong.create(playlist_id: 3, song_id: 10, ord: 1)
+  playlistsong13 = Playlistsong.create(playlist_id: 3, song_id: 14, ord: 2)
+  playlistsong14 = Playlistsong.create(playlist_id: 3, song_id: 17, ord: 3)
 
 
-  
+  playlistsong15 = Playlistsong.create(playlist_id: 4, song_id: 15, ord: 1)
+  playlistsong16 = Playlistsong.create(playlist_id: 4, song_id: 5, ord: 2)
+  playlistsong17 = Playlistsong.create(playlist_id: 4, song_id: 20, ord: 3)
+
+
+  playlistsong18 = Playlistsong.create(playlist_id: 5, song_id: 16, ord: 1)
+  playlistsong19 = Playlistsong.create(playlist_id: 5, song_id: 17, ord: 2)
+  playlistsong20 = Playlistsong.create(playlist_id: 5, song_id: 4, ord: 3)
+
+  playlistsong21 = Playlistsong.create(playlist_id: 6, song_id: 14, ord: 1)
+  playlistsong22 = Playlistsong.create(playlist_id: 6, song_id: 19, ord: 2)
+  playlistsong23 = Playlistsong.create(playlist_id: 6, song_id: 3, ord: 3)
+
+
+

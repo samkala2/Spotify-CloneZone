@@ -75,7 +75,7 @@ class Greeting extends React.Component {
           <p className="looking-formusic">Looking for music?</p>
           <p className="pickup-whereleft">Pick up your recently played right where you left off.</p>
 
-          <Link className="launch-button" to="/">LAUNCH WEB PLAYER</Link>
+          <Link className="launch-button" to="/weblauncher">LAUNCH WEB PLAYER</Link>
         
         </div>
 
