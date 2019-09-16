@@ -61,7 +61,7 @@ class LoginSessionForm extends React.Component {
         
         <div className="header-login"> 
           <Link to="/" className="header-logoo">
-            <img id='logo-login-header' src='https://png2.cleanpng.com/sh/f6213f3ba38e90aa299c5998bf0e12db/L0KzQYm3VcEyN5Z0j5H0aYP2gLBuTfRme5x5hAI2d3HvfMHokPVzNZR0heJAdHX1PbrqjB50NZ10f9G2bXBme8b3TcVibmY6SaQBMUjoQYS3Tsg0PGQ5S6g8MUW1RoG5VsU0PGI1Sas3cH7q/kisspng-desktop-wallpaper-computer-icons-logo-mockup-5af5512618e130.8343436315260265341019.png' />
+            <img id='logo-login-header' src='https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1' />
             <span className="header-logo-login" > Kalify  </span>  </Link>
         </div>
           

@@ -1,0 +1,173 @@
+  /* WebLauncher  PAGeee */
+
+        .side-bar{
+        background-color: black;
+        color: #b3b3b3;
+        width: 240px;
+        height: 752px;
+        font-size: 17px;
+        line-height: 20px;
+        letter-spacing: .015em;
+        font-weight: var(--glue-font-weight-normal);
+        text-transform: none;
+        font-weight: 550;
+        font-family: fantasy, Helvetica, Arial, sans-serif;  
+    }
+
+    #bar-link ul{
+    margin: 0;
+    padding: 10;
+    }
+
+    #bar-link{
+            height: 200px;
+        }
+
+  .home-link:hover #iconhome, .library-link:hover, .search-link:hover, .home-link:hover a, .library-link:hover a, .search-link:hover a{
+          color: white;
+      }
+
+  .home-link{
+      margin-right: 70px;
+    }
+
+  .iconlink{
+      color: gray;
+      font-size: 15px
+    }
+
+
+  #iconhome{
+      font-size: 30px;
+      padding-right: 20px;
+    }
+
+.playlist-items{
+    overflow:scroll;
+    height: 200px;
+    scrollbar-color: red;
+   }
+
+   .playlist-item{
+     color: white;
+     text-decoration: none;
+     margin-top: 20px;
+   }
+
+   .playlist ul, .sidebar-footer li{
+     list-style-type: none;
+   }
+
+   .sidebar-footer li{ 
+    padding-left: 30px;
+    }
+
+    .side-bar #header-logo, div #home-link a {
+        color: white;
+      
+    }
+
+
+    .sidebar-footer a {
+        text-decoration: none;
+        color:white;
+    }
+
+    .middle-home {
+    overflow:scroll;
+    width: 100% 
+}
+
+.middle-home::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+        /* background: blue; */
+        /* color: blue; */
+    }
+
+.middle-home::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+  .middle-home{
+        /* background-color: darkolivegreen; */
+        height: 722px;
+        width: 1100px;
+        background-image: url(angryimg-3.png);
+        color: rgb(129, 129, 129);
+    }
+
+
+   .upper-links {
+        display: flex;
+        justify-content: space-around;
+        font-size: 13px;
+        width: 770px;
+        padding-left: 150px;
+        padding-top: 30px;
+        font-weight: bold;
+    }
+
+    .upper-links span:hover {
+        color: white; }
+
+        .flex-box{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main-weblauncher{
+      background-image: url("https://www.ceros.com/originals/wp-content/uploads/sites/4/2017/05/Is-the-Gradient-Making-a-Comeback.jpg")
+    }
+
+    .for-who{
+    font-size: 50px;
+    color: white;
+    font-weight: white;
+    padding-top: 50px;
+    padding-left: 25px;
+}
+
+    .mix-icons img {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        top: 13px;
+        padding-left: 15px;
+    }
+
+    .mix-icons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+    width: 100%
+
+}
+
+.mix-icon {
+    width: 140px;
+    padding-right: 15px;
+    padding-left: 10px;
+    /* display: wrap; */
+    overflow-wrap: normal
+}
+
+.mix-title {
+    color: white;
+    padding-left: 50px;
+}
+
+.mix-artists{
+  color: white;
+  padding-left: 50px;
+}
+
+
+    .launcher-footer{
+    justify-content: space-between;
+    height: 90px;
+    padding: 0 16px;
+    background-color: rgb(38, 40, 40);
+    /* position: fixed; */
+
+    }
