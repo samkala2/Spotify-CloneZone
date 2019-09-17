@@ -1,15 +1,21 @@
 class Api::ArtistsController < ApplicationController
 
-  def index
-    @artists = Artist.all
+   def index
+    query = ('%' + params[:name].downcase + '%')
+    # debugger
+    @artists = Artist.where("lower(name) like '#{query}' ") #look up % interpolating
     render :index
-  end
+    end
 
-  def show
-    @artist = Artist.find_by(name: params[:name]) || Artist.find(params[:id])
-    render :show
-    # http://localhost:3000/api/artists/*?title=Anita TO TEST need *?
-  end
+
+    # Artist.where("name LIKE '%E%'")
+
+    
+  # def show
+  #   @artist = Artist.find_by(name: params[:name]) || Artist.find(params[:id])
+  #   render :show
+  #   # http://localhost:3000/api/artists/*?title=Anita TO TEST need *?
+  # end
 
   def artist_params
     params.require(:artist).permit(:name)

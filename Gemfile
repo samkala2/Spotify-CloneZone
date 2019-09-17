@@ -44,6 +44,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'byebug'
 end
 
 group :development do

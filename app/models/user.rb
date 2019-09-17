@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :playlists
 
   def self.find_by_credentials(username='', password)
-    user = User.find_by(username: username) ||  User.find_by(email: username)
+    user = User.find_by(username: username) ||  User.find_by(email: email)
     return nil unless user
     user.is_password?(password) ? user : nil
   end

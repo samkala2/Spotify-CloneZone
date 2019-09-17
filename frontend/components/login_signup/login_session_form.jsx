@@ -44,9 +44,9 @@ class LoginSessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <p key={`error-${i}`}>
             {error}
-          </li>
+          </p>
         ))}
       </ul>
     );
@@ -81,6 +81,10 @@ class LoginSessionForm extends React.Component {
             <br />
           </div>
            
+          <div className="ErrorLogin">
+             {this.renderErrors()} 
+          </div> 
+
           <div className="form-inputnsubmit">  
            
                 <br/>

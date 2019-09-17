@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.renderErrors
 
   }
 
@@ -44,9 +45,9 @@ class SignupForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <p key={`error-${i}`}>
             {error}
-          </li>
+          </p>
         ))}
       </ul>
     );
@@ -69,7 +70,7 @@ class SignupForm extends React.Component {
           <a onClick={this.handleDemo} className="btn btn-demo"> DEMO LOGIN</a>
         </div>
 
-
+       
         <form className="login-form-actual" onSubmit={this.handleSubmit}>
 
 
@@ -86,7 +87,11 @@ class SignupForm extends React.Component {
 
 
            <br />
+              <div className="ErrorLogin"> 
+                {this.renderErrors()}
+              </div> 
 
+              
           <label>
             <input type="text"
               className="signup-input"

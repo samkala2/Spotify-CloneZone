@@ -1,8 +1,10 @@
 class Api::PlaylistsController < ApplicationController
 
 
-  def index
-    @playlists = Playlist.all
+   def index
+    query = ('%' + params[:name].downcase + '%')
+    # debugger
+    @playlists = Playlist.where("lower(name) like '#{query}' ") 
     render :index
   end
 
