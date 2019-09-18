@@ -25,6 +25,9 @@ class User < ApplicationRecord
 
   has_many :playlists
 
+  has_one_attached :picture
+
+
   def self.find_by_credentials(username='', password)
     user = User.find_by(username: username) ||  User.find_by(email: email)
     return nil unless user

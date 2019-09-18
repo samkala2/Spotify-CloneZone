@@ -16,4 +16,6 @@ class Artist < ApplicationRecord
   has_many :follows
 
   has_many :songs
+
+  has_one_attached :picture
 end

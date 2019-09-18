@@ -82,8 +82,18 @@ class Artists extends React.Component {
             <p> Artist Results: </p>
 
               <ul> 
-              {this.props.artists.map(artist =>  
-                <li> {artist.name} </li>  )}
+              {
+                this.props.artists.map(artist =>  
+                  <li>   
+                  <img className="artist-photo" src={artist.photoUrl} /> 
+                
+                  {artist.name} 
+                   
+                    
+                </li>  
+                    
+                  
+                )}
 
               </ul>
 
@@ -105,7 +115,10 @@ class Artists extends React.Component {
 
               <ul>  
               {this.props.songs.map(song => 
-                <li> {song.title} </li> )}
+                <li> 
+                  <audio src={song.songUrl} controls/> 
+                  {song.title} 
+                </li> )}
               </ul>
               </div>
              

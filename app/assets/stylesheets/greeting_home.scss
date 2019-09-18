@@ -50,15 +50,18 @@
         font-family:   Arial, sans-serif; }
 
     .footer-to-weblaunch{
-    padding-left: 540px;
+    padding-left: 50px;
     padding-top: 250px;
     height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   
   }
 
     .looking-formusic{
-      margin-right: 2px;
-      padding-bottom:1px;
+      margin-right: 20px;
+      padding-bottom: 1px;
       font-weight: bold;
       font-family: Helvetica,Arial,sans-serif;
       font-size: 50px;
@@ -89,6 +92,7 @@
     .launch-button:hover{
       color: white;
       background-color: gray;
+      border: black 2px solid;
     }
     .pickup-whereleft{
       padding-left: 0px;

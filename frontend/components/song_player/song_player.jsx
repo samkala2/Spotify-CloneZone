@@ -7,6 +7,14 @@ class SongPlayer extends React.Component {
     return (
   
         <div className="launcher-footer">
+          <div className="buttons-player">    
+              <i class="icon ion-md-rewind"></i>
+
+              <i className="icon ion-md-play"></i>
+
+              <i class="icon ion-md-fastforward"></i>
+
+          </div>
 
         </div>       
     )
@@ -14,3 +22,4 @@ class SongPlayer extends React.Component {
 }
 
 export default SongPlayer;
+

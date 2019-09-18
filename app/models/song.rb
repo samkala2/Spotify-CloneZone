@@ -21,4 +21,6 @@ class Song < ApplicationRecord
 
   has_many :playlistsongs
 
+  has_one_attached :mp3song
+
 end

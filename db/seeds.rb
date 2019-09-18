@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
+  User.destroy_all
+  Artist.destroy_all
+  Album.destroy_all 
+  Song.destroy_all
+  Playlist.destroy_all
+  Follow.destroy_all
+  Playlistsong.destroy_all
+
+
 
   user1 = User.create( username: 'sam11', email: 'samh@gmail', password: '111333')
   user2 = User.create( username: 'sam121', email: 'sam2h@gmail', password: '111333')
@@ -28,6 +39,7 @@
 
   artist6 = Artist.create(name: 'Beyonce')
   artist7 = Artist.create(name: '2 Chainz')
+
   artist8 = Artist.create(name: 'Lil Wayne')
   artist9 = Artist.create(name: 'Frank Sinatra')
   artist10 = Artist.create(name: 'Ella Fitzgerald')
@@ -44,6 +56,8 @@
 
   album1 = Album.create(name: 'The Marshall Mathers LP', artist_id: 1)
   album2 = Album.create(name: 'Revival', artist_id: 1)
+
+
 
     song1 = Song.create(title: 'Stan (feat. Dido)', artist_id: 1, album_id: 1, length: 330)
     song2 = Song.create(title: 'The Real Slim Shady', artist_id: 1, album_id: 1, length: 330)
@@ -136,3 +150,53 @@
 
 
 
+#  Attaching Photos to each artist 
+
+  Artist.all.each do |artist|
+    
+    id = artist.id 
+
+    photofile = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{id}.jpg")
+
+    artist.picture.attach(
+      io: photofile,
+      filename: "#{id}.jpg"
+    )
+    end
+
+
+    Song.all.each do |song|
+    
+      id = song.id 
+
+      filesong = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{id}.mp3")
+
+      song.mp3song.attach(
+        io: filesong,
+        filename: "#{id}.jpg"
+       )
+    end
+
+
+
+
+  #  eminem = Artist.first
+
+  #   id = eminem.id 
+  #   photofile = open("https://craftifybucket.s3.us-east-2.amazonaws.com/1.jpg")
+        
+  #   eminem.picture.attach(
+  #     io: photofile,
+  #     filename: "1.jpg"
+  #   )
+
+
+
+  #   sia = Artist.second
+    
+  #   photofile2 = open("https://craftifybucket.s3.us-east-2.amazonaws.com/2.jpg")
+        
+  #   sia.picture.attach(
+  #     io: photofile2,
+  #     filename: "2.jpg"
+  #   )

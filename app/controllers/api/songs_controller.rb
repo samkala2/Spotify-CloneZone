@@ -17,4 +17,6 @@ class Api::SongsController < ApplicationController
     params.require(:song).permit(:title)
   end
 
+  
+
 end
