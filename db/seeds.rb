@@ -92,7 +92,7 @@ ActiveRecord::Base.transaction do
   album6 = Album.create!(name: 'Blkswn', artist_id: artist3.id)
 
   song16 = Song.create!(title: 'KLINK', artist_id: artist3.id, album_id: album5.id, length: 330)
-  song17 = Song.create!(title: 'TEQUILA MOCKINGBIRD', artist_id: 3, album_id: album5.id, length: 330)
+  song17 = Song.create!(title: 'TEQUILA MOCKINGBIRD', artist_id: artist3.id, album_id: album5.id, length: 330)
   song18 = Song.create!(title: 'MERLOT', artist_id: artist3.id, album_id: album5.id, length: 330)
 
   song19 = Song.create!(title: 'Maraca', artist_id: artist3.id, album_id: album6.id, length: 330)
