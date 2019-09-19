@@ -10,17 +10,18 @@ class WebLauncher extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      songs: {},
-      albums: {},
-      playlists: {},
-      artists: {}
-    }
   }
 
 
+  // componentDidMount() {
+  //   this.props.receiveCurrentSong(1, "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3", "Eminem", "Stan")
+  // }
+
 
   render(){
+    // debugger;
+    if (!this.props) return (<div> Loading </div>)
+
     return(
       <div className="main-weblauncher">
         <div className="flex-box">  
@@ -35,6 +36,7 @@ class WebLauncher extends React.Component {
             <Route path="/weblauncher/search" component={SearchContainer} />
 
             <Route path="/weblauncher/home" component={WebLauncherHome}/>
+            {/* <Route path="/weblauncher/home" component={SongPlayer} /> */}
            
             {/* <SearchContainer /> */}
 
@@ -42,7 +44,9 @@ class WebLauncher extends React.Component {
 
         </div> 
 
-            <SongPlayer />
+        <div className="song-player-foot">
+          <SongPlayer songArtist={this.props.currentlyPlaying.artist} songTitle={this.props.currentlyPlaying.title} songUrl={this.props.currentlyPlaying.songUrl} />
+        </div>
 
       </div>
     )

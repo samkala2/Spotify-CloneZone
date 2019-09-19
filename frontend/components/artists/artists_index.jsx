@@ -1,12 +1,49 @@
 import React from 'react';
-
+import SongPlayer from '../../components/song_player/song_player';
 
 class Artists extends React.Component {
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
-    this.state = {name: ""};
+    this.state = { 
+      name: "",
+      songUrl: "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3",
+      songTitle: "Stan",
+      songArtist: "Eminem",
 
+      filters: {TopResults: true,
+      ArtistsResults: false,
+      SongsResults: false,
+      AlbumsResults: false,
+      PlaylistsResults: false
+      }
+    };
+
+    this.toggleResults = this.toggleResults.bind(this)
+    // this.componentDidMount();
+  }
+
+  // componentDidMount() {
+  //   this.props.receiveCurrentSong(1, "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3", "Eminem", "Stan")
+  // }
+
+
+  toggleResults(filter) {
+    const resetedFilters = {
+      TopResults: false,
+      ArtistsResults: false,
+      SongsResults: false,
+      AlbumsResults: false,
+      PlaylistsResults: false
+    }
+    return () => {
+      this.setState({filters: resetedFilters}, () => {
+        this.setState({filters: {
+          ...this.state.filters,
+          [filter]: true
+        }})
+      })
+    }
   }
 
   update(field) {
@@ -14,6 +51,21 @@ class Artists extends React.Component {
       [field]: e.currentTarget.value
     })
   }
+
+  playSongios(song) {
+    // document.getElementsByClassName(`${song.id}`)[0].play();
+    this.setState({
+      songUrl: song.songUrl,
+      songTitle: song.title,
+      songArtist: song.artist
+    });
+   let songGet= document.getElementsByClassName('audio-footer')[0];
+    songGet.autoplay = true;
+    songGet.play();
+
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title)
+  }
+
 
   handleSearch(e) {
     e.preventDefault()
@@ -30,6 +82,14 @@ class Artists extends React.Component {
 
 
   render() {
+    const {
+      TopResults,
+      ArtistsResults,
+      SongsResults,
+      AlbumsResults,
+      PlaylistsResults
+    } = this.state.filters
+
     // debugger;
     if (!this.props.artists) {
       return (<div> Loading... 
@@ -73,71 +133,115 @@ class Artists extends React.Component {
                   </label>
 
                   {/* <input type="submit" value="Search"/> */}
-
           </form>
 
+
+          <div className="result-links-container">
+            {
+              Object.keys(this.state.filters).map(filter =>
+                <span className="result-links" onClick={this.toggleResults(filter)}> {filter} </span>
+              )
+            }
+          </div>
+
+
           <div className="search-results">   
+            
+            {
+              TopResults && <div className="songs-result">
 
-            <div className="artists-result">  
-            <p> Artist Results: </p>
-
-              <ul> 
-              {
-                this.props.artists.map(artist =>  
-                  <li>   
-                  <img className="artist-photo" src={artist.photoUrl} /> 
-                
-                  {artist.name} 
-                   
-                    
-                </li>  
-                    
-                  
-                )}
-
-              </ul>
-
-            </div>
-
-         
-            <div className="albums-result">  
-              <p> Albums Results: </p>
-
-                <ul> 
-              {this.props.albums.map(album => 
-                <li> {album.name} </li> )}
+                <ul>
+                  {this.props.songs.map(song =>
+                    <li >
+                      <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
+                      {song.title}
+                    </li>)}
                 </ul>
 
-            </div>
 
-            <div className="songs-result">
-              <p> Songs Results: </p>
-
-              <ul>  
-              {this.props.songs.map(song => 
-                <li> 
-                  <audio src={song.songUrl} controls/> 
-                  {song.title} 
-                </li> )}
-              </ul>
               </div>
-             
+            }
+
+            {
+              ArtistsResults && <div className="artists-result">
+                <p> Artist Results: </p>
+                <p> </p>
+
+                <ul>
+                  {
+                    this.props.artists.map(artist =>
+                      <li>
+                        <img className="artist-photo" src={artist.photoUrl} />
+
+                        {artist.name}
 
 
-            <div className="playlists-result">
-              <p> Playlist Results: </p>
+                      </li>
 
-              <ul> 
-              {this.props.playlists.map(playlist =>
-                <li> {playlist.name} </li>)}
-              </ul>
 
-            </div>
+                    )}
 
-          </div>
+                </ul>
+
+              </div>
+            }
+ 
+            {
+              AlbumsResults && <div className="albums-result">
+                <p> Albums Results: </p>
+
+                <ul>
+                  {this.props.albums.map(album =>
+                    <li> {album.name} </li>)}
+                </ul>
+
+              </div>
+            }
+         
+            {
+              SongsResults && <div className="songs-result">
+                <p> Songs Results: </p>
+
+                <ul>
+                  {this.props.songs.map(song =>
+                    <li >
+                      <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
+
+
+                      {/* <audio src={song.songUrl} className={song.id} controls/>  */}
+                      {song.title}
+                    </li>)}
+
+                </ul>
+
+
+              </div>
+            }
+
+            {
+              PlaylistsResults &&
+              <div className="playlists-result">
+                <p> Playlist Results: </p>
+
+                <ul>
+                  {this.props.playlists.map(playlist =>
+                    <li> {playlist.name} </li>)}
+                </ul>
+
+              </div>
+            }
+              
+
+
+
+         </div>
 
       </div>
 
+
+          {/* <div>
+              <SongPlayer songArtist={this.state.songArtist} songTitle={this.state.songTitle}  songUrl={this.state.songUrl}/>  
+          </div> */}
     </div> )}
 
   }

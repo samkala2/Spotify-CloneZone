@@ -1,17 +1,20 @@
   /* WebLauncher  PAGeee */
-
-        .side-bar{
-        background-color: black;
-        color: #b3b3b3;
-        width: 240px;
-        height: 752px;
-        font-size: 17px;
-        line-height: 20px;
-        letter-spacing: .015em;
-        font-weight: var(--glue-font-weight-normal);
-        text-transform: none;
-        font-weight: 550;
-        font-family: fantasy, Helvetica, Arial, sans-serif;  
+  .search-results{
+      display: flex;
+      flex-direction: row;   
+  }
+    .side-bar{
+    background-color: black;
+    color: #b3b3b3;
+    width: 240px;
+    height: 752px;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-normal);
+    text-transform: none;
+    font-weight: 550;
+    font-family: fantasy, Helvetica, Arial, sans-serif;  
     }
 
     #bar-link ul{
@@ -21,6 +24,7 @@
 
     #bar-link{
             height: 200px;
+            padding-top: 30px;
         }
 
   .home-link:hover #iconhome, .library-link:hover, .search-link:hover, .home-link:hover a, .library-link:hover a, .search-link:hover a{
@@ -33,19 +37,54 @@
 
   .iconlink{
       color: gray;
-      font-size: 15px
+      font-size: 12px;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-left: 7px;
+      margin-bottom: 10px;
+    //   margin-right: 2px;
     }
 
 
+    .result-links{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 200px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 10px;
+        padding: 5px 10px;
+    }
+
+    .result-links:hover{
+        color: white;
+    }
+
+    .result-links-container{
+        padding-left: 120px;
+    }
+
+.sidebar-logoword{
+  position: fixed;
+  left: 70px;
+  top: 27px;
+
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 27px;
+  font-weight: 250;
+  font-family: Arial;
+}
+
   #iconhome{
-      font-size: 30px;
-      padding-right: 20px;
+      font-size: 25px;
     }
 
 .playlist-items{
-    overflow:scroll;
+    // overflow:scroll;
     height: 200px;
-    scrollbar-color: red;
+    // scrollbar-color: red;
    }
 
    .playlist-item{
@@ -56,6 +95,11 @@
 
    .playlist ul, .sidebar-footer li{
      list-style-type: none;
+   }
+
+   .playlist p{
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: 10px;
    }
 
    .sidebar-footer li{ 

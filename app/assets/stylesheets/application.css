@@ -18,8 +18,44 @@
 
  /* <link rel='icon' href='https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1'> */
  
+
+ .song-player-foot{
+    width: 1340px;
+ }
+
+
+
+ .progress-bar{
+   width: 600px;
+   border: gray;
+   height: 10px;
+   /* border-radius: 20px; */
+   /* color: blue; */
+ }
  
- .ion-md-play, .ion-md-fastforward, .ion-md-rewind {
+ .progress-bar:hover {
+   cursor: pointer;
+ }
+
+
+
+ .audio-footer{
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #006773;
+  -webkit-box-shadow:  2px 2px 4px 0px #006773;
+  box-shadow: 2px 2px 4px 0px #006773;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:222px 222px 10px 7px ;
+  /* background-color: red; */
+  display: none;
+
+ }
+ 
+ .ion-md-play, .ion-md-fastforward, .ion-md-rewind, .ion-md-pause {
     color: white;
     padding-right: 30px;
     font-weight: bold;
@@ -35,10 +71,16 @@
 
   .launcher-footer{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    height: 150px
   }
   .buttons-player {
     padding-top: 28px;
+    
+  }
+
+  .button-icons{
+    padding-left: 200px;
   }
 
 
@@ -66,24 +108,12 @@
 
 img#sidebar-logo {
   position: relative;
-  width: 40px;
-  top: 13px;
-  padding-left: 42px;  
+  width: 33px;
+  top: 17px;
+  padding-left: 35px;  
 }
 
-.sidebar-logoword{
-  position: fixed;
-  left: 90px;
-  top: 27px;
 
-  color: white;
-  font-style: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  font-size: 25px;
-  font-weight: 550;
-  font-family: Arial;
-}
 
 
 .search-input{

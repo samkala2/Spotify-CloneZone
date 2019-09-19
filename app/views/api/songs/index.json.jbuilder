@@ -6,5 +6,6 @@
     else
       json.songUrl ""
     end
+    json.artist song.artist.name
   end
 end

@@ -11,9 +11,9 @@ class SideBar extends React.Component {
 
       <div className="side-bar">
         <div className="logo">
-          <Link className="link-home" to="/">
+          <Link className="link-home" to="/weblauncher/search">
             <img id='sidebar-logo' src="https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1" />
-            <a className="sidebar-logoword" href=""> Kalify </a>
+            <section className="sidebar-logoword" href=""> Kalify </section>
           </Link>
         </div>
 
@@ -44,27 +44,13 @@ class SideBar extends React.Component {
         <div className="playlist">
           <div className="playlist-content">
             <p>PLAYLISTS</p>
-            <button className="create-playlist">
+            <section className="create-playlist">
               <span> + </span>
               <span className="create-but-text">Create Playlist</span>
-            </button>
+            </section>
 
             <ul className="playlist-items">
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-              <li> <Link to="/weblauncher" className="playlist-item">classic</Link> </li>
-
-
+        
 
             </ul>
           </div>
