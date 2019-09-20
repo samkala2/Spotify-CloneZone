@@ -11,7 +11,7 @@ import { AuthRoute } from '../util/route_util';
 
 import WebLauncher from '../components/web_launcher/web_launcher';
 const App = () => (
-  <div>
+  <div className='app-div'>
     {/* <h1>Message from App Component that is placed in Root Component</h1> */}
  
     <Route exact path="/" component={GreetingContainer} />

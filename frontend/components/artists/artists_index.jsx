@@ -63,7 +63,7 @@ class Artists extends React.Component {
     songGet.autoplay = true;
     songGet.play();
 
-    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title)
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
   }
 
 
@@ -102,7 +102,7 @@ class Artists extends React.Component {
 
               <label>
                 <input type="text"
-                  placeholder="Start Typing..."
+                  placeholder="   Start Typing..."
                   className="search-input"
                   onChange={this.update('name')}
                   value={this.state.name} />
@@ -117,6 +117,7 @@ class Artists extends React.Component {
       </div>)
 
     } else {
+      // debugger;
     return (
     <div className="search-bar">
 
@@ -127,7 +128,7 @@ class Artists extends React.Component {
                   <label>  
                     <input type="text" 
                          className="search-input"
-                          placeholder="Start Typing..."
+                          placeholder="    Start Typing..."
                           onChange = {this.update('name')} 
                           value = {this.state.name}/>
                   </label>
@@ -150,11 +151,28 @@ class Artists extends React.Component {
             {
               TopResults && <div className="songs-result">
 
+                {
+                  (this.props.songs.length > 0) && <div>
+                    <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
+                    <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                  </div>
+
+                }
+
+
                 <ul>
                   {this.props.songs.map(song =>
                     <li >
                       <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
-                      {song.title}
+                      
+                      <span className="song-info"> 
+                        <span className="song-title">  {song.title} 
+                        </span> 
+
+                        <span className="song-artist">  {song.artist}
+                        </span> 
+                      </span>
+
                     </li>)}
                 </ul>
 
@@ -164,7 +182,7 @@ class Artists extends React.Component {
 
             {
               ArtistsResults && <div className="artists-result">
-                <p> Artist Results: </p>
+                {/* <p> Artist Results: </p> */}
                 <p> </p>
 
                 <ul>
@@ -173,7 +191,7 @@ class Artists extends React.Component {
                       <li>
                         <img className="artist-photo" src={artist.photoUrl} />
 
-                        {artist.name}
+                        <span className="artist-name">  {artist.name}  </span>
 
 
                       </li>
@@ -188,7 +206,7 @@ class Artists extends React.Component {
  
             {
               AlbumsResults && <div className="albums-result">
-                <p> Albums Results: </p>
+                {/* <p> Albums Results: </p> */}
 
                 <ul>
                   {this.props.albums.map(album =>
@@ -200,48 +218,43 @@ class Artists extends React.Component {
          
             {
               SongsResults && <div className="songs-result">
-                <p> Songs Results: </p>
+                
+                {/* <p> Songs Results: </p> */}
+
+                {
+                  (this.props.songs.length > 0) && <div>    
+                     <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
+                    <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                  </div> 
+
+                }
 
                 <ul>
+
                   {this.props.songs.map(song =>
                     <li >
                       <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
-
-
-                      {/* <audio src={song.songUrl} className={song.id} controls/>  */}
-                      {song.title}
+                      <span className="song-info">
+                        <span className="song-title">  {song.title} </span>
+                        <span className="song-artist">  {song.artist} </span>
+                      </span>
                     </li>)}
-
                 </ul>
-
-
               </div>
             }
 
             {
               PlaylistsResults &&
               <div className="playlists-result">
-                <p> Playlist Results: </p>
-
+                {/* <p> Playlist Results: </p> */}
                 <ul>
                   {this.props.playlists.map(playlist =>
                     <li> {playlist.name} </li>)}
                 </ul>
-
               </div>
             }
-              
-
-
-
          </div>
-
       </div>
-
-
-          {/* <div>
-              <SongPlayer songArtist={this.state.songArtist} songTitle={this.state.songTitle}  songUrl={this.state.songUrl}/>  
-          </div> */}
     </div> )}
 
   }

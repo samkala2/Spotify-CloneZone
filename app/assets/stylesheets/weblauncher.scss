@@ -2,12 +2,89 @@
   .search-results{
       display: flex;
       flex-direction: row;   
+      background-color: black;
   }
+
+  .search-results ul{
+      list-style-type: none;
+  }
+
+  .artists-result ul{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    //   align-items: center
+  }
+
+  .artists-result li{
+      display: flex;
+      flex-direction: column;
+      padding-right: 30px;
+     
+  }
+
+  .songs-result li{
+      display: flex;
+      flex-direction: row;
+  }
+
+   .songs-result li .song-title,  .song-artist, .songs-result li i{
+       font-size: 15px;
+       font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+       color: rgb(220, 217, 217);
+   }
+
+   .main-artist-song{
+       font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+       color: rgb(220, 217, 217);
+       padding-left: 65px;
+   }
+
+   .song-artist{
+    font-size: 12px;
+    padding: 4px 0px;
+   }
+
+   .songs-result li i{
+    padding-right: 5px;
+    font-size: 10px;
+   }
+
+   .songs-result li i:hover{
+       cursor: pointer;
+       font-size: 20px;
+   }
+
+   .songs-result  .song-info{
+       display:flex;
+       flex-direction: column;
+   }
+
+   .song-artist{
+       color: gray;
+   }
+ .artists-result li img{
+     border-radius: 90px;
+     width: 200px;
+     height: 200px;
+   }
+
+   .artist-name{
+       padding-top: 10px;
+       padding-left: 60px;
+      font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    // font-weight: var(--glue-font-weight-bold);
+    font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+       color: rgb(220, 217, 217);
+   }
+   
     .side-bar{
     background-color: black;
     color: #b3b3b3;
-    width: 240px;
-    height: 752px;
+    width: 20%;
+    height: 100%;
     font-size: 17px;
     line-height: 20px;
     letter-spacing: .015em;
@@ -45,6 +122,13 @@
     //   margin-right: 2px;
     }
 
+    .create-but-text{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .songs-result{
+        display: flex;
+    }
 
     .result-links{
         font-size: 14px;
@@ -119,7 +203,7 @@
 
     .middle-home {
     overflow:scroll;
-    width: 100% 
+    width: 80% 
 }
 
 .middle-home::-webkit-scrollbar {
@@ -135,9 +219,9 @@
 
   .middle-home{
         /* background-color: darkolivegreen; */
-        height: 752px;
-        width: 1100px;
-        background-image: url(angryimg-3.png);
+        height: 100%;
+        width: 100%;
+        // background-image: url(angryimg-3.png);
         color: rgb(129, 129, 129);
     }
 
@@ -161,7 +245,9 @@
     }
 
     .main-weblauncher{
-      background-image: url("https://www.ceros.com/originals/wp-content/uploads/sites/4/2017/05/Is-the-Gradient-Making-a-Comeback.jpg")
+      background-image: url("https://www.ceros.com/originals/wp-content/uploads/sites/4/2017/05/Is-the-Gradient-Making-a-Comeback.jpg");
+      height: 100vh;
+      width: 100vw;
     }
 
     .for-who{
@@ -214,4 +300,11 @@
     background-color: rgb(38, 40, 40);
     /* position: fixed; */
 
+    }
+
+
+    .song-image-foot{
+        width: 80px;
+        height: 80px;
+        padding-right: 2px;
     }

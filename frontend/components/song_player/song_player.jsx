@@ -45,9 +45,19 @@ class SongPlayer extends React.Component {
     return (
   
         <div className="launcher-footer">
-          <div className="buttons-player"> 
+          
+            <img className="song-image-foot" src={this.props.songImageUrl} />
+
+        <section className="artist-info">
           <span> {this.props.songTitle} </span>
-          <span> - {this.props.songArtist}</span>
+          <span> - {this.props.songArtist} </span>
+        </section>
+
+
+          <div className="buttons-player"> 
+
+
+
 
               <div className="button-icons">  
 
@@ -57,10 +67,10 @@ class SongPlayer extends React.Component {
 
                 <i onClick={this.playSong} className="icon ion-md-play"> 
              
-              <audio id="audio-foot" 
-              onTimeUpdate={this.initProgressBar} 
-              className="audio-footer" 
-              src={this.props.songUrl} controls/> 
+                  <audio id="audio-foot" 
+                  onTimeUpdate={this.initProgressBar} 
+                  className="audio-footer" 
+                  src={this.props.songUrl} controls/> 
                 </i>  
 
                 <i onClick={this.pauseSong} class="icon ion-md-pause"></i>
@@ -71,6 +81,8 @@ class SongPlayer extends React.Component {
               
             
               </div>
+
+
           <br />
           <progress id="progress-b" className="progress-bar"> </progress>
           </div>

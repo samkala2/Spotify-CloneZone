@@ -23,4 +23,5 @@ class Song < ApplicationRecord
 
   has_one_attached :mp3song
 
+  has_one_attached :songimage
 end

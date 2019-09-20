@@ -43,11 +43,11 @@ class SideBar extends React.Component {
 
         <div className="playlist">
           <div className="playlist-content">
-            <p>PLAYLISTS</p>
+            {/* <p>PLAYLISTS</p>
             <section className="create-playlist">
               <span> + </span>
               <span className="create-but-text">Create Playlist</span>
-            </section>
+            </section> */}
 
             <ul className="playlist-items">
         
@@ -58,7 +58,7 @@ class SideBar extends React.Component {
 
 
         <div className="sidebar-footer">
-          <li> <Link to="/weblauncher"> Install App</Link> </li>
+          {/* <li> <Link to="/weblauncher"> Install App</Link> </li> */}
 
         </div>
 

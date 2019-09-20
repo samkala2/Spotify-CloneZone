@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-  receiveCurrentSong: (songId, songUrl, artist, title) => dispatch(receiveCurrentSong(songId, songUrl, artist, title))
+  receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WebLauncher);

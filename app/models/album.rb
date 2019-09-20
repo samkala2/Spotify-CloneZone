@@ -16,4 +16,6 @@ class Album < ApplicationRecord
 
   has_many :songs
 
+  has_one_attached :album_image
+
 end

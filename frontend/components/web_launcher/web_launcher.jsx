@@ -45,7 +45,8 @@ class WebLauncher extends React.Component {
         </div> 
 
         <div className="song-player-foot">
-          <SongPlayer songArtist={this.props.currentlyPlaying.artist} songTitle={this.props.currentlyPlaying.title} songUrl={this.props.currentlyPlaying.songUrl} />
+          <SongPlayer songArtist={this.props.currentlyPlaying.artist} songTitle={this.props.currentlyPlaying.title} songUrl={this.props.currentlyPlaying.songUrl} 
+          songImageUrl={this.props.currentlyPlaying.songImageUrl} />
         </div>
 
       </div>

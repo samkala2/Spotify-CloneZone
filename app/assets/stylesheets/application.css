@@ -18,9 +18,24 @@
 
  /* <link rel='icon' href='https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1'> */
  
+html, 
+body {
+    height: 100%;
+}
+
+ .app-div{
+   width: 100vw;
+   height: 100vh;
+ }
+
+ .flex-box{
+   width: 100%;
+   height: 88%
+ }
 
  .song-player-foot{
-    width: 1340px;
+    width: 100%;
+    height: 12%;
  }
 
 
@@ -29,9 +44,14 @@
    width: 600px;
    border: gray;
    height: 10px;
+   margin-left: 300px;
    /* border-radius: 20px; */
    /* color: blue; */
  }
+
+ .button-icons{
+    padding-left: 520px;
+  }
  
  .progress-bar:hover {
    cursor: pointer;
@@ -55,7 +75,7 @@
 
  }
  
- .ion-md-play, .ion-md-fastforward, .ion-md-rewind, .ion-md-pause {
+  .button-icons i{
     color: white;
     padding-right: 30px;
     font-weight: bold;
@@ -64,24 +84,27 @@
     
   }
 
-  .ion-md-play:hover, .ion-md-fastforward:hover, .ion-md-rewind:hover {
+  .main-image-song{
+    width:200px;
+    height: 250px;
+  }
+
+  .buttons-player .ion-md-play:hover, .buttons-player .ion-md-fastforward:hover, .buttons-player .ion-md-rewind:hover {
     font-size: 33px;
   }
 
 
   .launcher-footer{
     display: flex;
-    justify-content: center;
-    height: 150px
+    justify-content: left;
+    height: 100%;
   }
   .buttons-player {
-    padding-top: 28px;
+    padding-top: 12px;
     
   }
 
-  .button-icons{
-    padding-left: 200px;
-  }
+  
 
 
   /* ---- */
@@ -117,18 +140,19 @@ img#sidebar-logo {
 
 
 .search-input{
-  font-size: 36px;
-    line-height: 44px;
+  font-size: 30px;
+    line-height: 70px;
     letter-spacing: -.005em;
     text-transform: none;
     caret-color: #1db954;
-    /* -webkit-box-sizing: border-box; */
     box-sizing: border-box;
     width: 1000px;
     background-color: transparent;
     border: none;
+    font-family: sans-serif;
+    font-weight: bold;
     color: white ;
-    
+    background-color: rgb(53, 53, 53);
 }
 
 .playlists-result, .songs-result, .albums-result, .artists-result{
@@ -136,6 +160,19 @@ img#sidebar-logo {
 }
 
 
-.playlists-result ul, .songs-result ul, .albums-result ul, .artists-result ul{
-  font-weight: bold;
+.playlists-result ul, .albums-result ul, .artists-result ul{
+  /* font-weight: bold; */
+   font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+       color: rgb(220, 217, 217);
+}
+
+.artist-info {
+  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+
+  color: rgb(220, 217, 217);
+  width: 200px;
+  margin: 0px;
+  font-size: 12px;
+  display: inline-block;
+  padding-top: 52px;
 }
