@@ -45,8 +45,8 @@ body {
    border: gray;
    height: 10px;
    margin-left: 300px;
-   /* border-radius: 20px; */
-   /* color: blue; */
+   border-radius: 20px;
+   background-color: blue;
  }
 
  .button-icons{
@@ -132,7 +132,7 @@ body {
 img#sidebar-logo {
   position: relative;
   width: 33px;
-  top: 17px;
+  top: 32px;
   padding-left: 35px;  
 }
 
@@ -174,5 +174,25 @@ img#sidebar-logo {
   margin: 0px;
   font-size: 12px;
   display: inline-block;
-  padding-top: 52px;
+  padding-top: 70px;
+}
+
+.all-songs-results{
+  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+
+  color: rgb(65, 65, 65);
+
+}
+
+.all-songs-results li{
+    list-style-type: none;
+}
+
+.all-songs-results i:hover{
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.upper-links span:hover{
+  cursor: pointer;
 }

@@ -5,3 +5,11 @@ export const searchSongs = (title) => (
     error: (err) => console.log(err)
   })
 );
+
+export const getAllSongs = () => (
+  $.ajax({
+    method: 'GET',
+    url: "api/songs/all",
+    error: (err) => console.log(err)
+  })
+);

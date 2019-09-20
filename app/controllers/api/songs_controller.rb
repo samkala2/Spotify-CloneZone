@@ -7,11 +7,11 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
-  def show
-    @song = Song.find_by(title: params[:title]) || Song.find(params[:id])
+  def getall
+    @all_songs = Song.all
     render :show
-    # http://localhost:3000/api/songs/*?title=Anita TO TEST need *?
   end
+  
 
   def song_params
     params.require(:song).permit(:title)

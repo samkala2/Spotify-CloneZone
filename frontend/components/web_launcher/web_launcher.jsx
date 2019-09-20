@@ -5,6 +5,7 @@ import SearchContainer from '../artists/artists_container'
 import SideBar from '../sidebar_launcher/sidebar_launcher';
 import SongPlayer from '../song_player/song_player';
 import WebLauncherHome from './web_launcher_midhome';
+import WebLauncherHomeContainer from './web_laucher_homecontainer';
 
 class WebLauncher extends React.Component {
 
@@ -35,7 +36,7 @@ class WebLauncher extends React.Component {
             
             <Route path="/weblauncher/search" component={SearchContainer} />
 
-            <Route path="/weblauncher/home" component={WebLauncherHome}/>
+            <Route path="/weblauncher/home" component={WebLauncherHomeContainer}/>
             {/* <Route path="/weblauncher/home" component={SongPlayer} /> */}
            
             {/* <SearchContainer /> */}

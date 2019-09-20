@@ -138,11 +138,15 @@ class Artists extends React.Component {
 
 
           <div className="result-links-container">
-            {
-              Object.keys(this.state.filters).map(filter =>
-                <span className="result-links" onClick={this.toggleResults(filter)}> {filter} </span>
-              )
-            }
+
+            <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
+
+
+            <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
+
+           
+            <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
+
           </div>
 
 
