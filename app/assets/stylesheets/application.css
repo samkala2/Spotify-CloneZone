@@ -28,16 +28,14 @@ body {
    height: 100vh;
  }
 
- .flex-box{
+ .flex-box-featured-andsidebar{
    width: 100%;
-   height: 88%
+   height: 88%;
+   display: flex;
+   flex-direction: row;
  }
-
- .song-player-foot{
-    width: 100%;
-    height: 12%;
- }
-
+ 
+ 
 
 
  .progress-bar{
@@ -89,19 +87,17 @@ body {
     height: 250px;
   }
 
-  .buttons-player .ion-md-play:hover, .buttons-player .ion-md-fastforward:hover, .buttons-player .ion-md-rewind:hover {
+  /* .buttons-player .ion-md-play:hover, .buttons-player .ion-md-fastforward:hover, .buttons-player .ion-md-rewind:hover {
     font-size: 33px;
-  }
+  } */
 
 
-  .launcher-footer{
-    display: flex;
-    justify-content: left;
-    height: 100%;
-  }
+ 
   .buttons-player {
     padding-top: 12px;
-    
+    max-width: 100%;
+    background-color: rgb(38, 40, 40);
+    padding-left: 10%;
   }
 
   
@@ -168,13 +164,14 @@ img#sidebar-logo {
 
 .artist-info {
   font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-
+  background-color: rgb(38, 40, 40);
   color: rgb(220, 217, 217);
   width: 200px;
   margin: 0px;
   font-size: 12px;
   display: inline-block;
   padding-top: 70px;
+  /* background-color: inherit; */
 }
 
 .all-songs-results{

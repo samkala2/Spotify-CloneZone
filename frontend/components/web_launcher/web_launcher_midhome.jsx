@@ -75,7 +75,7 @@ class WebLauncherHome extends React.Component {
 
 
         <div className="for-who">
-          Made For Joel
+          Made For You
         </div>
 
 

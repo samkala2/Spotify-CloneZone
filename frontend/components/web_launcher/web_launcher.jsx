@@ -25,7 +25,7 @@ class WebLauncher extends React.Component {
 
     return(
       <div className="main-weblauncher">
-        <div className="flex-box">  
+        <div className="flex-box-featured-andsidebar">  
           <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
 
 

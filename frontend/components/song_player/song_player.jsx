@@ -13,7 +13,17 @@ class SongPlayer extends React.Component {
 
   playSong(e) {
     e.preventDefault();
+    let playbutton = document.getElementById("play-button");
+    // debugger;
+    if (playbutton.classList[1] === "ion-md-play") {   
     document.getElementsByClassName('audio-footer')[0].play();
+    playbutton.classList.add('ion-md-pause');
+    playbutton.classList.remove('ion-md-play'); 
+    } else if (playbutton.classList[1] === "ion-md-pause") {
+    document.getElementsByClassName('audio-footer')[0].pause();
+    playbutton.classList.add('ion-md-play');
+    playbutton.classList.remove('ion-md-pause'); 
+    }
   }
 
   pauseSong(e) {
@@ -44,7 +54,7 @@ class SongPlayer extends React.Component {
   render () {
     return (
   
-        <div className="launcher-footer">
+        <div className="song-player-controls">
           
             <img className="song-image-foot" src={this.props.songImageUrl} />
 
@@ -65,7 +75,7 @@ class SongPlayer extends React.Component {
 
                 <i class="icon ion-md-rewind"></i>
 
-                <i onClick={this.playSong} className="icon ion-md-play"> 
+                <i onClick={this.playSong} id="play-button" className="icon ion-md-play"> 
              
                   <audio id="audio-foot" 
                   onTimeUpdate={this.initProgressBar} 
@@ -73,7 +83,7 @@ class SongPlayer extends React.Component {
                   src={this.props.songUrl} controls/> 
                 </i>  
 
-                <i onClick={this.pauseSong} class="icon ion-md-pause"></i>
+                {/* <i onClick={this.pauseSong} class="icon ion-md-pause"></i> */}
             
             
                 <i class="icon ion-md-fastforward"></i>
