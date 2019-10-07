@@ -22,13 +22,15 @@ class SideBar extends React.Component {
           <ul>
             <p className="home-link">
 
-              <i id="iconhome" className="icon ion-md-home"></i>
+              <img className="home-button" src="https://craftifybucket.s3.us-east-2.amazonaws.com/home.png"/> 
               <Link to="/weblauncher/home"  className="iconlink" > Home </Link>
 
             </p>
 
             <p className="search-link">
+
               <i id="iconhome" className="icon ion-md-search"></i>
+              
               <Link to="/weblauncher/search"  className="iconlink"> Search </Link>
             </p>
 

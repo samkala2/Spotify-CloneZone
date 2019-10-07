@@ -13,16 +13,14 @@ class SongPlayer extends React.Component {
 
   playSong(e) {
     e.preventDefault();
-    let playbutton = document.getElementById("play-button");
+    let playbutton = document.getElementsByClassName("play-button")[0];
     // debugger;
-    if (playbutton.classList[1] === "ion-md-play") {   
+    if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {   
     document.getElementsByClassName('audio-footer')[0].play();
-    playbutton.classList.add('ion-md-pause');
-    playbutton.classList.remove('ion-md-play'); 
-    } else if (playbutton.classList[1] === "ion-md-pause") {
+    playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png"
+    } else if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
     document.getElementsByClassName('audio-footer')[0].pause();
-    playbutton.classList.add('ion-md-play');
-    playbutton.classList.remove('ion-md-pause'); 
+    playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
     }
   }
 
@@ -73,21 +71,16 @@ class SongPlayer extends React.Component {
 
              
 
-                <i class="icon ion-md-rewind"></i>
+                <img className="previous-button" src="https://craftifybucket.s3.us-east-2.amazonaws.com/previous_white.png"/> 
 
-                <i onClick={this.playSong} id="play-button" className="icon ion-md-play"> 
+                <img onClick={this.playSong} className="play-button" src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"/> 
              
                   <audio id="audio-foot" 
                   onTimeUpdate={this.initProgressBar} 
                   className="audio-footer" 
                   src={this.props.songUrl} controls/> 
-                </i>  
-
-                {/* <i onClick={this.pauseSong} class="icon ion-md-pause"></i> */}
-            
-            
-                <i class="icon ion-md-fastforward"></i>
-
+                
+                <img className="next-button" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
               
             
               </div>

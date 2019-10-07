@@ -102,7 +102,7 @@ class Artists extends React.Component {
 
               <label>
                 <input type="text"
-                  placeholder="   Start Typing..."
+                  placeholder=".                                                  Start Typing..."
                   className="search-input"
                   onChange={this.update('name')}
                   value={this.state.name} />
@@ -128,7 +128,7 @@ class Artists extends React.Component {
                   <label>  
                     <input type="text" 
                          className="search-input"
-                          placeholder="    Start Typing..."
+                          placeholder="                                       Start Typing..."
                           onChange = {this.update('name')} 
                           value = {this.state.name}/>
                   </label>

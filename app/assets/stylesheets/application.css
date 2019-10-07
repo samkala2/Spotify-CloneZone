@@ -42,14 +42,12 @@ body {
    width: 600px;
    border: gray;
    height: 10px;
-   margin-left: 300px;
+   /* margin-left: 300px; */
    border-radius: 20px;
    background-color: blue;
  }
 
- .button-icons{
-    padding-left: 520px;
-  }
+
  
  .progress-bar:hover {
    cursor: pointer;
@@ -73,11 +71,11 @@ body {
 
  }
  
-  .button-icons i{
-    color: white;
-    padding-right: 30px;
-    font-weight: bold;
-    font-size: 30px;
+  .button-icons {
+    /* color: white; */
+    padding-left: 38%;
+    /* font-weight: bold; */
+    /* font-size: 30px; */
     
     
   }
@@ -97,7 +95,7 @@ body {
     padding-top: 12px;
     max-width: 100%;
     background-color: rgb(38, 40, 40);
-    padding-left: 10%;
+    padding-right: 15%;
   }
 
   
@@ -142,7 +140,7 @@ img#sidebar-logo {
     text-transform: none;
     caret-color: #1db954;
     box-sizing: border-box;
-    width: 1000px;
+    width: 100%;
     background-color: transparent;
     border: none;
     font-family: sans-serif;
@@ -171,6 +169,7 @@ img#sidebar-logo {
   font-size: 12px;
   display: inline-block;
   padding-top: 70px;
+  padding-right: 22%;
   /* background-color: inherit; */
 }
 
