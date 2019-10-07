@@ -21,20 +21,17 @@ class Greeting extends React.Component {
     if (this.props.currentUser === undefined) {
     
       return (
-        <div className='all-main-page-notloggedin'>
-
-           {/* <img id='background-img' src="https://images.pexels.com/photos/2457317/pexels-photo-2457317.png?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" /> */}
-        
+        <div className='all-main-page-notloggedin'>        
 
           <div  className="middle-header col-1" id="top-header"> 
 
             <div className="logo-only">  
               <img id='logo' src='https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1' />
-              <section className="header-logo"> Kalify </section> 
+              <section className="header-logo-word"> Craftify </section> 
             </div> 
 
-              <Link className="btnlogin" to="/signup">Sign Up </Link>
-              <Link className="btnsignup" to="/login">Log In </Link>
+              <Link className="btnsignup" to="/signup">Sign Up </Link>
+              <Link className="btnlogin" to="/login">Log In </Link>
             
           </div>
 

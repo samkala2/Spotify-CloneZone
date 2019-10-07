@@ -2,7 +2,6 @@ class Api::ArtistsController < ApplicationController
 
   def index
     query = ('%' + params[:name].downcase + '%')
-    # debugger
     @artists = Artist.where("lower(name) like '#{query}' ") #look up % interpolating
     render :index
   end

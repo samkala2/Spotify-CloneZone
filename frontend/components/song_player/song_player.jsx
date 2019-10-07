@@ -14,7 +14,7 @@ class SongPlayer extends React.Component {
   playSong(e) {
     e.preventDefault();
     let playbutton = document.getElementsByClassName("play-button")[0];
-    // debugger;
+    
     if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {   
     document.getElementsByClassName('audio-footer')[0].play();
     playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png"

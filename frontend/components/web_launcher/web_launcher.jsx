@@ -20,7 +20,7 @@ class WebLauncher extends React.Component {
 
 
   render(){
-    // debugger;
+   
     if (!this.props) return (<div> Loading </div>)
 
     return(

@@ -8,7 +8,7 @@ import {fetchPlaylistsThunk} from '../../actions/playlists_actions';
 import {receiveCurrentSong} from '../../actions/currently_playing_actions';
 
 const mapStateToProps = state => {
-  // debugger
+  
   return {
   artists: Object.values(state.entities.artists) ,
   albums: Object.values(state.entities.albums),

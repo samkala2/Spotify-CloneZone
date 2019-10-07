@@ -69,7 +69,7 @@ class Artists extends React.Component {
 
   handleSearch(e) {
     e.preventDefault()
-    // debugger
+    
     this.props.search(this.state.name)
 
     this.props.searchAlbum(this.state.name)
@@ -90,7 +90,7 @@ class Artists extends React.Component {
       PlaylistsResults
     } = this.state.filters
 
-    // debugger;
+   
     if (!this.props.artists) {
       return (<div> Loading... 
 
@@ -117,7 +117,6 @@ class Artists extends React.Component {
       </div>)
 
     } else {
-      // debugger;
     return (
     <div className="search-bar">
 

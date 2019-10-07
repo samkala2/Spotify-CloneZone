@@ -2,7 +2,7 @@ class Api::AlbumsController < ApplicationController
 
   def index
     query = ('%' + params[:name].downcase + '%')
-    # debugger
+    
     @albums = Album.where("lower(name) like '#{query}' ") 
     render :index
   end
