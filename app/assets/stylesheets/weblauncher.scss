@@ -479,15 +479,21 @@
     .overlay:after {
         position: absolute;
         content:"";
+        // transition: all .3 ease-in-out;
         top:0;
         left:0;
         width:100%;
         height:100%;
         opacity:0;
+        
       }
 
     .overlay:hover:after  {
         opacity: .7;
+    }
+
+    .gray:after, .gray {
+        transition: all .3 ease-in-out;
     }
 
     .gray:after {

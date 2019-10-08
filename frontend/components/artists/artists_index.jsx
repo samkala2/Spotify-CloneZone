@@ -148,158 +148,148 @@ class Artists extends React.Component {
 
       <div className="searchform-container">
 
-          <form onSubmit={this.handleSearch} className="search-form">
+        <form onSubmit={this.handleSearch} className="search-form">
 
-                  <label>  
-                    <input type="text" 
-                         className="search-input"
-                          placeholder="  Start Typing..."
-                          onChange = {this.update('name')} 
-                          value = {this.state.name}/>
-                  </label>
+                <label>  
+                  <input type="text" 
+                        className="search-input"
+                        placeholder="  Start Typing..."
+                        onChange = {this.update('name')} 
+                        value = {this.state.name}/>
+                </label>
 
-               
-          </form>
+              
+        </form>
 
-          <div id="results-container" class="display-results"> 
-            <div className="result-links-container ">
+        <div id="results-container" class="display-results"> 
+          <div className="result-links-container ">
 
-              <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
-              <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
-              <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
+            <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
+            <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
+            <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
+
+          </div>
+        </div>
+
+        <div className="search-results">   
+          
+          {
+            TopResults && <div className="TopResultsCont">
+            <div className="songs-result">
+
+              {
+                (this.props.songs.length > 0) && <div>
+                  <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
+                  <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                </div>
+              }
+
+              <ul>
+                {this.props.songs.map(song =>
+
+                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                  <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+                  
+                  <img  className="small-image-song" src={song.songImageUrl} />
+                    <div className="song-info"> 
+                      <span className="song-title">  {song.title}   </span> 
+                      <span className="song-artist">  {song.artist} </span> 
+                    </div> 
+
+                  </li>)}
+              </ul>
+              </div>
+
+              <div className="artists-result">
+                <ul>
+                {
+                  this.props.artists.map(artist =>
+                    <li>
+                      <img className="artist-photo" src={artist.photoUrl} />
+                      <span className="artist-name">  {artist.name}  </span>
+                    </li>
+                )}
+
+                </ul>
+              </div>
 
             </div>
-          </div>
-
-          <div className="search-results">   
             
-            {
-              TopResults && <div className="TopResultsCont">
-              
-              
-              <div className="songs-result">
+          }
 
+          {
+            ArtistsResults && <div className="artists-result">
+              {/* <p> Artist Results: </p> */}
+              <p> </p>
+
+              <ul>
                 {
-                  (this.props.songs.length > 0) && <div>
+                  this.props.artists.map(artist =>
+                    <li>
+                      <img className="artist-photo" src={artist.photoUrl} />
+                      <span className="artist-name">  {artist.name}  </span>
+                    </li>
+
+
+                  )}
+
+              </ul>
+
+            </div>
+          }
+
+          {
+            AlbumsResults && <div className="albums-result">
+              {/* <p> Albums Results: </p> */}
+
+              <ul>
+                {this.props.albums.map(album =>
+                  <li> {album.name} </li>)}
+              </ul>
+
+            </div>
+          }
+        
+          {
+            SongsResults && <div className="TopResultsCont">
+            
+            <div className="songs-result">
+              
+              {
+                (this.props.songs.length > 0) && <div>    
                     <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
-                    <p className="main-artist-song"> {this.props.songs[0].artist} </p>
-                  </div>
-                }
+                  <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                </div> 
 
-                <ul>
-                  {this.props.songs.map(song =>
+              }
 
-                    <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+              <ul>
+                {this.props.songs.map(song =>
+                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                     
                     <img  className="small-image-song" src={song.songImageUrl} />
-                   
-                   
-                      <div className="song-info"> 
-                        <span className="song-title">  {song.title} 
-                        </span> 
+                    <span className="song-info">
+                      <span className="song-title">  {song.title} </span>
+                      <span className="song-artist">  {song.artist} </span>
+                    </span>
+                  </li>)}
+              </ul>
+            </div>
+            </div>
+          }
 
-                        <span className="song-artist">  {song.artist}
-                        </span> 
-                      </div> 
-
-                    </li>)}
-                </ul>
-                </div>
-
-                <div className="artists-result">
-                 <ul>
-                  {
-                    this.props.artists.map(artist =>
-                      <li>
-                        <img className="artist-photo" src={artist.photoUrl} />
-                        <span className="artist-name">  {artist.name}  </span>
-                      </li>
-
-
-                    )}
-
-                  </ul>
-                </div>
-
-              </div>
-             
-            }
-
-            {
-              ArtistsResults && <div className="artists-result">
-                {/* <p> Artist Results: </p> */}
-                <p> </p>
-
-                <ul>
-                  {
-                    this.props.artists.map(artist =>
-                      <li>
-                        <img className="artist-photo" src={artist.photoUrl} />
-
-                        <span className="artist-name">  {artist.name}  </span>
-
-
-                      </li>
-
-
-                    )}
-
-                </ul>
-
-              </div>
-            }
- 
-            {
-              AlbumsResults && <div className="albums-result">
-                {/* <p> Albums Results: </p> */}
-
-                <ul>
-                  {this.props.albums.map(album =>
-                    <li> {album.name} </li>)}
-                </ul>
-
-              </div>
-            }
-         
-            {
-              SongsResults && <div className="songs-result">
-                
-                {/* <p> Songs Results: </p> */}
-
-                {
-                  (this.props.songs.length > 0) && <div>    
-                     <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
-                    <p className="main-artist-song"> {this.props.songs[0].artist} </p>
-                  </div> 
-
-                }
-
-                <ul>
-
-                  {this.props.songs.map(song =>
-                    <li >
-                      <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
-                      <span className="song-info">
-                        <span className="song-title">  {song.title} </span>
-                        <span className="song-artist">  {song.artist} </span>
-                      </span>
-                    </li>)}
-                </ul>
-              </div>
-            }
-
-            {
-              PlaylistsResults &&
-              <div className="playlists-result">
-                {/* <p> Playlist Results: </p> */}
-                <ul>
-                  {this.props.playlists.map(playlist =>
-                    <li> {playlist.name} </li>)}
-                </ul>
-              </div>
-            }
-         </div>
+          {
+            PlaylistsResults &&
+            <div className="playlists-result">
+              {/* <p> Playlist Results: </p> */}
+              <ul>
+                {this.props.playlists.map(playlist =>
+                  <li> {playlist.name} </li>)}
+              </ul>
+            </div>
+          }
+        </div>
 
       </div>
     </div> )}
