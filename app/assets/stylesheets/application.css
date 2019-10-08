@@ -77,8 +77,10 @@ body {
     padding-left: 38%;
     /* font-weight: bold; */
     /* font-size: 30px; */
-    
-    
+  }
+
+  .progress-cont{
+    display: flex;
   }
 
   .main-image-song{
