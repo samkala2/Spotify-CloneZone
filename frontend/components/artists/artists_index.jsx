@@ -69,11 +69,15 @@ class Artists extends React.Component {
   }
 
   SetStateHoveredSong(song){
-    this.setState({
-      hoveredSongID: song.id
-    })
+    let playButton = document.getElementById(song.id.toString())
     // debugger;
-    // let EachSongRes = document.getElementsByClassName(`each-song-res ${}`)[0]
+    playButton.classList.remove("display-n")
+  }
+  
+  HoverOutSong(song){
+    let playButton = document.getElementById(song.id.toString())
+    // debugger;
+    playButton.classList.add("display-n")
   }
 
 
@@ -174,12 +178,13 @@ class Artists extends React.Component {
 
                 <ul>
                   {this.props.songs.map(song =>
-                    <li onMouseEnter={this.SetStateHoveredSong} id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+
+                    <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                    <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                     
-                    <img className="small-image-song" src={song.songImageUrl} />
-                    {/* <div id=""></div> */}
-                      <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
-                      
+                    <img  className="small-image-song" src={song.songImageUrl} />
+                   
+                   
                       <div className="song-info"> 
                         <span className="song-title">  {song.title} 
                         </span> 

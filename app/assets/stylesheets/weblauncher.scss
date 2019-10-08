@@ -62,13 +62,25 @@
    }
 
    .songs-result li i{
-    padding-right: 5px;
-    font-size: 10px;
+    padding: 8px;
+    padding-top: 11px;
+    padding-left: 20px;
+    font-size: 20px;
+   }
+
+   .ion-md-play{
+    z-index: 11;
+    // padding-left: 200px;
+    position: fixed;
+  }
+
+   .display-n{
+       display: none;
    }
 
    .songs-result li i:hover{
        cursor: pointer;
-       font-size: 20px;
+    //    font-size: 20px;
    }
 
    .songs-result  .song-info{
@@ -474,7 +486,7 @@
       }
 
     .overlay:hover:after  {
-        opacity: .5;
+        opacity: .7;
     }
 
     .gray:after {
