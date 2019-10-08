@@ -182,6 +182,19 @@ class Artists extends React.Component {
                     </li>)}
                 </ul>
 
+                 <ul>
+                  {
+                    this.props.artists.map(artist =>
+                      <li>
+                        <img className="artist-photo" src={artist.photoUrl} />
+                        <span className="artist-name">  {artist.name}  </span>
+                      </li>
+
+
+                    )}
+
+                </ul>
+
 
               </div>
             }
@@ -200,19 +213,6 @@ class Artists extends React.Component {
                         <span className="artist-name">  {artist.name}  </span>
 
 
-                      </li>
-
-
-                    )}
-
-                </ul>
-
-                <ul>
-                  {
-                    this.props.artists.map(artist =>
-                      <li>
-                        <img className="artist-photo" src={artist.photoUrl} />
-                        <span className="artist-name">  {artist.name}  </span>
                       </li>
 
 
