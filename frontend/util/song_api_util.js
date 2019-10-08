@@ -4,6 +4,7 @@ export const searchSongs = (title) => (
     url: `api/songs?title=${title}`,
     error: (err) => console.log(err)
   })
+  
 );
 
 export const getAllSongs = () => (
