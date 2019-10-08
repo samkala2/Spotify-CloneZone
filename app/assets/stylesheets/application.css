@@ -134,13 +134,14 @@ img#sidebar-logo {
 
 
 .search-input{
-  font-size: 30px;
-    line-height: 70px;
+    font-size: 40px;
+    line-height: 90px;
     letter-spacing: -.005em;
     text-transform: none;
     caret-color: #1db954;
     box-sizing: border-box;
     width: 100%;
+    padding-left: 20%;
     background-color: transparent;
     border: none;
     font-family: sans-serif;
@@ -156,8 +157,8 @@ img#sidebar-logo {
 
 .playlists-result ul, .albums-result ul, .artists-result ul{
   /* font-weight: bold; */
-   font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-       color: rgb(220, 217, 217);
+  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  color: rgb(220, 217, 217);
 }
 
 .artist-info {
