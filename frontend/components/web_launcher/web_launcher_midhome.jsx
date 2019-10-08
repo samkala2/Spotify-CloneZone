@@ -66,17 +66,16 @@ class WebLauncherHome extends React.Component {
 
   render() {
     return(
-      <div>  
+      <div className="mid-home-cont">  
         <div className="upper-links">
           <span onClick={this.handleSongs} > SONGS </span>
           <span> ALBUMS </span>
           <span> ARTISTS </span>
         </div>
 
-
-        <div className="for-who">
+        {/* <div className="for-who">
           Made For You
-        </div>
+        </div> */}
 
 
          <div className="all-songs-results">

@@ -136,7 +136,7 @@ class SongPlayer extends React.Component {
   
         <div className="song-player-controls">
           
-            <img className="song-image-foot" src={this.props.songImageUrl} />
+        <img className="song-image-foot" src={this.props.songImageUrl}/>
 
         <section className="artist-info">
           <span> {this.props.songTitle} </span>

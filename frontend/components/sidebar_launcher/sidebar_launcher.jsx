@@ -23,7 +23,7 @@ class SideBar extends React.Component {
             <p className="home-link">
 
               <img className="home-button" src="https://craftifybucket.s3.us-east-2.amazonaws.com/home.png"/> 
-              <Link to="/weblauncher/home"  className="iconlink" > Home </Link>
+              <Link to="/weblauncher/home"  className="iconlink home-word" > Home </Link>
 
             </p>
 

@@ -28,14 +28,7 @@ body {
    height: 100vh;
  }
 
- .flex-box-featured-andsidebar{
-   width: 100%;
-   height: 88%;
-   display: flex;
-   flex-direction: row;
- }
- 
- 
+
 
 
  .progress-bar{
@@ -117,11 +110,15 @@ body {
    height: 100px;
  }
  .search-bar {
-   width: 100%;
-   height: 100%;
-   background-color: black;
-   border: 2px solid black;
-   z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  background-color: black;
+  border: 2px solid black;
+  z-index: 2;
+  position: fixed;
+  padding-left: 228px;
  }
 
 
