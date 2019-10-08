@@ -10,8 +10,7 @@ class Api::SongsController < ApplicationController
 
   def index
     query = ('%' + params[:title].downcase + '%')
-   
-    @songs = Song.where("lower(title) like '#{query}'") || Song.artist.name.includes(query)
+    @songs = Song.where("lower(title) like '#{query}' ") + Song.joins(:artist).where("lower(artists.name) like '#{query}' ")
     render :index
   end
 
