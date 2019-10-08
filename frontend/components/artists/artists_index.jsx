@@ -77,7 +77,9 @@ class Artists extends React.Component {
     this.props.searchSongs(this.state.name)
 
     this.props.searchPlaylists(this.state.name)
-
+    // debugger;
+    let searchResults = document.getElementById("results-container")
+    searchResults.classList.remove("display-results")
   }
 
 
@@ -135,17 +137,18 @@ class Artists extends React.Component {
                   {/* <input type="submit" value="Search"/> */}
           </form>
 
+          <div id="results-container" class="display-results"> 
+            <div className="result-links-container ">
 
-          <div className="result-links-container">
-
-            <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
+              <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
 
 
-            <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
+              <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
 
-           
-            <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
+              
+              <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
 
+            </div>
           </div>
 
 
