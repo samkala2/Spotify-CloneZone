@@ -71,7 +71,7 @@
    .ion-md-play{
     z-index: 11;
     // padding-left: 200px;
-    position: fixed;
+    position: absolute;
   }
 
    .display-n{
@@ -469,6 +469,7 @@
 
     .songs-result li, .songs-result ul{
         width: 100%;
+        position: relative
     }
     
     .overlay {
