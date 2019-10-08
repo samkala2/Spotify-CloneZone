@@ -41,10 +41,11 @@ body {
  .progress-bar{
    width: 600px;
    border: gray;
-   height: 10px;
+   height: 6px;
    /* margin-left: 300px; */
    border-radius: 20px;
    background-color: blue;
+   margin-bottom: 30px;
  }
 
 
@@ -95,7 +96,7 @@ body {
     padding-top: 12px;
     max-width: 100%;
     background-color: rgb(38, 40, 40);
-    padding-right: 15%;
+    padding-right: 30%;
   }
 
   
