@@ -65,7 +65,17 @@ class Artists extends React.Component {
     songGet.autoplay = true;
     songGet.play();
 
+    let playbutton = document.getElementsByClassName("play-button")[0];
+
+    if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {   
+    playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png"
+    } else if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
+    document.getElementsByClassName('audio-footer')[0].pause();
+    playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
+    }
+
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+ 
   }
 
   SetStateHoveredSong(song){
