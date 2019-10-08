@@ -12,11 +12,15 @@
       height: 100%;
       max-width: 80%;
       max-height: 100%;
-      overflow: scroll;
+    //   overflow: scroll;
   }
 
   .search-results ul{
       list-style-type: none;
+  }
+
+  .searchform-container{
+      overflow: scroll;
   }
 
   .artists-result ul{
