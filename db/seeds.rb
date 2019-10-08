@@ -58,17 +58,17 @@ ActiveRecord::Base.transaction do
   follow4 = Follow.create!(user_id: user3.id, artist_id: artist5.id)
   follow5 = Follow.create!(user_id: user3.id, artist_id: artist7.id)
 
-  album1 = Album.create!(name: 'The Marshall Mathers LP', artist_id: artist1.id)
-  album2 = Album.create!(name: 'Revival', artist_id: artist1.id)
+  albumm1 = Album.create!(name: 'The Marshall Mathers LP', artist_id: artist1.id)
+  albumm2 = Album.create!(name: 'Revival', artist_id: artist1.id)
 
 
-  album1.album_image.attach(
+  albumm1.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/1song.jpg"),
       filename: "1song.jpg"
-    )
+  )
 
 
-  album2.album_image.attach(
+  albumm2.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/2song.jpg"),
       filename: "2song.jpg"
     )
