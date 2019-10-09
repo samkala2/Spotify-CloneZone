@@ -19,10 +19,16 @@ class Api::SongsController < ApplicationController
     @all_songs = Song.all
     render :show
   end
+
+  def songs_for_artist
+    query = params[:artist_id]
+    @songs = Song.joins(:artist).where("artists.id = '#{query}' ")
+    render :specific
+  end
   
 
   def song_params
-    params.require(:song).permit(:title)
+    params.require(:song).permit(:title, :artist_id)
   end
 
   

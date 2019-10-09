@@ -195,7 +195,6 @@ class Artists extends React.Component {
                       <span className="song-title">  {song.title}   </span> 
                       <span className="song-artist">  {song.artist} </span> 
                     </div> 
-
                   </li>)}
               </ul>
               </div>
