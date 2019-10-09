@@ -42,6 +42,12 @@ class WebLauncherHome extends React.Component {
   }
 
 
+  SetStateHoveredSong(song){
+    let playButton = document.getElementById(song.id.toString())
+    // debugger;
+    playButton.classList.remove("display-n")
+  }
+
   playSongios(song) {
 
     this.setState({
@@ -73,20 +79,15 @@ class WebLauncherHome extends React.Component {
           <span> ARTISTS </span>
         </div>
 
-        {/* <div className="for-who">
-          Made For You
-        </div> */}
-
-
          <div className="all-songs-results">
-           {/* Hiiii check them */}
             {
               (this.props.songs.length > 0) && <div> 
 
               <ul>
                 {this.props.songs.map(song =>
-                  <li >
-                    <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play"></i>
+                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                    <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+                    <img  className="small-image-song" src={song.songImageUrl} />
 
                     <span className="song-info">
                       <span className="song-title">  {song.title}
