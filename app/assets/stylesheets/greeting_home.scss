@@ -79,17 +79,17 @@ padding-left: 120px;
 padding-right: 120px;
 border-width: 0;
 letter-spacing: 2px;
-color: gray;
+color: rgb(102, 102, 102);
 text-transform: uppercase;
 text-decoration: none;
-border: 2px solid gray;
+border: 1px solid gray;
 font-weight: bold;
 }
 
 .launch-button:hover{
   color: white;
-  background-color: gray;
-  border: black 2px solid;
+  background-color: rgb(102, 102, 102);
+  border: rgb(56, 56, 56) 1px solid;
 }
 .pickup-whereleft{
   padding-left: 0px;
@@ -168,8 +168,8 @@ position: fixed;
 
     .footer-to-weblaunch{
       padding-left: 50px;
-      padding-top: 350px;
-      height: 400px;
+      padding-top: 400px;
+      height: 250px;
       display: flex;
       align-items: center;
       flex-direction: column;
