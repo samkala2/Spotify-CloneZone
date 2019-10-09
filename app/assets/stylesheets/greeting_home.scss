@@ -84,12 +84,13 @@ text-transform: uppercase;
 text-decoration: none;
 border: 1px solid gray;
 font-weight: bold;
+transition: 0.7s;
 }
 
 .launch-button:hover{
   color: white;
-  background-color: rgb(102, 102, 102);
-  border: rgb(56, 56, 56) 1px solid;
+  background-color: rgb(122, 122, 122);
+  border: rgb(83, 82, 82) 1px solid;
 }
 .pickup-whereleft{
   padding-left: 0px;
