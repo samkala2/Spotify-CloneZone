@@ -22,7 +22,7 @@
 
 .trial-button{
   cursor: pointer;
-
+  font-family: 'Rubik', sans-serif;
 }
 
 
@@ -46,8 +46,7 @@ img#logo {
   font-stretch: normal;
   font-size: 25px;
   font-weight: 550;
-  font-family:   Arial, sans-serif; 
-}
+  font-family: 'Rubik', sans-serif; }
 
 .header-logo-word:hover{
   color: rgb(35, 223, 100);
@@ -60,13 +59,12 @@ img#logo {
   margin-right: 20px;
   padding-bottom: 1px;
   font-weight: bold;
-  font-family: Helvetica,Arial,sans-serif;
   font-size: 50px;
   margin: 25px;
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 
@@ -96,7 +94,7 @@ transition: 0.7s;
   padding-left: 0px;
   padding-bottom: 10px;
   font-weight: bold;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 18px;
 }
 
@@ -108,7 +106,7 @@ div.middle-header a, div.middle-header .logout-button{
     position: fixed;
     display: block;
     text-decoration: none;
-    font-family: Circular, Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 div.middle-header .logout-button:hover{
@@ -187,8 +185,7 @@ position: fixed;
 
      .welcome-content h4 {
         color: white;
-        /* top: 40px; */
-        /* padding-bottom: 100px; */
+        font-family: 'Rubik', sans-serif;
     }
     .welcome-content a:hover{
         background-color: rgb(35, 223, 100);

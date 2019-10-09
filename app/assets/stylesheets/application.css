@@ -35,7 +35,6 @@ body {
    width: 600px;
    border: gray;
    height: 6px;
-   /* margin-left: 300px; */
    border-radius: 20px;
    background-color: blue;
    margin-bottom: 30px;
@@ -60,16 +59,13 @@ body {
   -moz-border-radius:7px 7px 7px 7px ;
   -webkit-border-radius:7px 7px 7px 7px ;
   border-radius:222px 222px 10px 7px ;
-  /* background-color: red; */
   display: none;
 
  }
  
   .button-icons {
-    /* color: white; */
     padding-left: 38%;
-    /* font-weight: bold; */
-    /* font-size: 30px; */
+   
   }
 
   .progress-cont{
@@ -87,10 +83,6 @@ body {
   }
   
 
-  
-
-
- 
   .buttons-player {
     padding-top: 12px;
     max-width: 100%;
@@ -113,6 +105,8 @@ body {
    width: 100px;
    height: 100px;
  }
+
+
  .search-bar {
   width: 100%;
   height: 87%;
@@ -149,25 +143,27 @@ img#sidebar-logo {
     padding-left: 20%;
     background-color: transparent;
     border: none;
-    font-family: sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: bold;
     color: white ;
     background-color: rgb(53, 53, 53);
 }
 
-.playlists-result, .songs-result, .albums-result, .artists-result{
+.playlists-result, .songs-result, .albums-result, .artists-result {
   color: white;
 }
 
 
 .playlists-result ul, .albums-result ul, .artists-result ul{
   /* font-weight: bold; */
-  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  /* arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; */
   color: rgb(220, 217, 217);
 }
 
 .artist-info {
-  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  /* arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; */
   background-color: rgb(38, 40, 40);
   color: rgb(220, 217, 217);
   width: 200px;
@@ -180,9 +176,8 @@ img#sidebar-logo {
 }
 
 .all-songs-results{
-  font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-family: 'Rubik', sans-serif;
   color: rgb(220, 217, 217);
-
 }
 
 .all-songs-results li{
