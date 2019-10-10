@@ -523,12 +523,13 @@
 
     #each-song-result{
         width: 33.3%;
-        height: 30%;
+        height: 10%;
     }
 
     .each-song-result-cont{
         display: flex;
         flex-wrap: wrap;
+        height: 40%;
     }
     .song-info{
        margin-left: 14px;
