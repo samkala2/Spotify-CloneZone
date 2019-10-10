@@ -75,6 +75,8 @@ body {
   .main-image-song{
     width:200px;
     height: 250px;
+    margin-top: 7%;
+    box-shadow: 2px 2px #483333;
   }
 
   .small-image-song{

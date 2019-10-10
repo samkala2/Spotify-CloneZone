@@ -69,12 +69,10 @@ ActiveRecord::Base.transaction do
       filename: "1song.jpg"
   )
 
-
   album2.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/2song.jpg"),
       filename: "2song.jpg"
   )
-
 
   song1 = Song.create!(title: 'Stan (feat. Dido)', artist_id: artist1.id, album_id: album1.id, length: 330)
   song2 = Song.create!(title: 'The Real Slim Shady', artist_id: artist1.id, album_id: album1.id, length: 330)
@@ -297,46 +295,46 @@ ActiveRecord::Base.transaction do
 
 
 
-song24 = Song.create!(title: 'Desperado', artist_id: artist4.id, album_id: album7.id, length: 330)
-song25 = Song.create!(title: 'Love On The Brain', artist_id: artist4.id, album_id: album7.id, length: 330)
-song26 = Song.create!(title: 'Needed Me', artist_id: artist4.id, album_id: album7.id, length: 330)
+  song24 = Song.create!(title: 'Desperado', artist_id: artist4.id, album_id: album7.id, length: 330)
+  song25 = Song.create!(title: 'Love On The Brain', artist_id: artist4.id, album_id: album7.id, length: 330)
+  song26 = Song.create!(title: 'Needed Me', artist_id: artist4.id, album_id: album7.id, length: 330)
 
 
-song27 = Song.create!(title: 'Diamonds', artist_id: artist4.id, album_id: album8.id, length: 330)
-song28 = Song.create!(title: 'Pour It Up', artist_id: artist4.id, album_id: album8.id, length: 330)
-song29 = Song.create!(title: 'Right Now', artist_id: artist4.id, album_id: album8.id, length: 330)
+  song27 = Song.create!(title: 'Diamonds', artist_id: artist4.id, album_id: album8.id, length: 330)
+  song28 = Song.create!(title: 'Pour It Up', artist_id: artist4.id, album_id: album8.id, length: 330)
+  song29 = Song.create!(title: 'Right Now', artist_id: artist4.id, album_id: album8.id, length: 330)
 
 
-song24.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
-filename: "anti.jpg"
-)
+  song24.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+  filename: "anti.jpg"
+  )
 
-song25.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
-filename: "anti.jpg"
-)
+  song25.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+  filename: "anti.jpg"
+  )
 
-song26.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
-filename: "anti.jpg"
-)
+  song26.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+  filename: "anti.jpg"
+  )
 
 
-song27.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
-filename: "8song.jpg"
-)
+  song27.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+  filename: "8song.jpg"
+  )
 
-song28.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
-filename: "8song.jpg"
-)
+  song28.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+  filename: "8song.jpg"
+  )
 
-song29.songimage.attach(
-io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
-filename: "8song.jpg"
-)
+  song29.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+  filename: "8song.jpg"
+  )
 
 
 
@@ -642,36 +640,36 @@ filename: "8song.jpg"
 
 
 
-#  Attaching Photos to each artist 
+  #  Attaching Photos to each artist 
 
-  j = 0
-  Artist.all.each do |artist|
-    
-    id = j + 1 
+    j = 0
+    Artist.all.each do |artist|
+      
+      id = j + 1 
 
-    photofile = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{id}.jpg")
+      photofile = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{id}.jpg")
 
-    artist.picture.attach(
-      io: photofile,
-      filename: "#{id}.jpg"
-    )
+      artist.picture.attach(
+        io: photofile,
+        filename: "#{id}.jpg"
+      )
 
-    j += 1
-  end
+      j += 1
+    end
 
   
-  
+    #mp3 songs
     i = 0
 
     Song.all.each do |song|
         
-      id = i + 1
+      idd = i + 1
 
-      filesong = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{id}.mp3")
+      filesong = open("https://craftifybucket.s3.us-east-2.amazonaws.com/#{idd}.mp3")
 
       song.mp3song.attach(
         io: filesong,
-        filename: "#{id}.jpg"
+        filename: "#{idd}.mp3"
       )
 
       i += 1

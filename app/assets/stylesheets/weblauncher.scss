@@ -165,6 +165,7 @@
 
     .result-links:hover{
         color: white;
+        cursor: pointer;
     }
 
     .result-links-container span{
@@ -519,3 +520,17 @@
     //     opacity: .8;
     //     z-index: 8;
     //   }
+
+    #each-song-result{
+        width: 33.3%;
+        height: 30%;
+    }
+
+    .each-song-result-cont{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .song-info{
+       margin-left: 14px;
+       margin-top: 10px; 
+    }

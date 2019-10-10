@@ -22,6 +22,7 @@ class Artists extends React.Component {
 
     this.toggleResults = this.toggleResults.bind(this)
     this.SetStateHoveredSong = this.SetStateHoveredSong.bind(this);
+    // this.returnFirstFiveSongs = this.returnFirstFiveSongs.bind(this);
     // this.componentDidMount();
   }
 
@@ -90,6 +91,30 @@ class Artists extends React.Component {
     playButton.classList.add("display-n")
   }
 
+  // returnFirstFiveSongs(){
+  //   let returnedArr = [];
+  //   let ind = 0;
+  //   // debugger
+  //   if (this.props.songs.length > 0) { 
+  //   while (ind < 5){
+  //     let song = this.props.songs[ind];
+  //     returnedArr.push(
+  //       <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+  //                 <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+                  
+  //                 <img  className="small-image-song" src={song.songImageUrl} />
+  //                   <div className="song-info"> 
+  //                     <span className="song-title">  {song.title}   </span> 
+  //                     <span className="song-artist">  {song.artist} </span> 
+  //                   </div> 
+  //                 </li>
+  //     )
+  //     ind += 1
+  //   }
+  // }
+    
+  //   return returnedArr;
+  // }
 
   handleSearch(e) {
     e.preventDefault()
@@ -172,7 +197,7 @@ class Artists extends React.Component {
         </div>
 
         <div className="search-results">   
-          
+          {/* TOP RESULTS */}
           {
             TopResults && <div className="TopResultsCont">
             <div className="songs-result">
@@ -184,10 +209,11 @@ class Artists extends React.Component {
                 </div>
               }
 
-              <ul>
+              <ul className="each-song-result-cont">
+              {/* { this.returnFirstFiveSongs().map(song => (song))} */}
                 {this.props.songs.map(song =>
 
-                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                   <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                   
                   <img  className="small-image-song" src={song.songImageUrl} />
@@ -197,6 +223,7 @@ class Artists extends React.Component {
                     </div> 
                   </li>)}
               </ul>
+              
               </div>
 
               <div className="artists-result">
@@ -218,9 +245,7 @@ class Artists extends React.Component {
 
           {
             ArtistsResults && <div className="artists-result">
-              {/* <p> Artist Results: </p> */}
-              <p> </p>
-
+              
               <ul>
                 {
                   this.props.artists.map(artist =>
@@ -228,8 +253,6 @@ class Artists extends React.Component {
                       <img className="artist-photo" src={artist.photoUrl} />
                       <span className="artist-name">  {artist.name}  </span>
                     </li>
-
-
                   )}
 
               </ul>
@@ -262,9 +285,9 @@ class Artists extends React.Component {
 
               }
 
-              <ul>
+              <ul className="each-song-result-cont">
                 {this.props.songs.map(song =>
-                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                     
                     <img  className="small-image-song" src={song.songImageUrl} />
