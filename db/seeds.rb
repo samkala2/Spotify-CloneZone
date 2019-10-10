@@ -31,8 +31,6 @@ ActiveRecord::Base.transaction do
 
 
 
-
-
   artist1 = Artist.create!(name: 'Eminem')
   artist2 = Artist.create!(name: 'Sia')
 
@@ -45,10 +43,13 @@ ActiveRecord::Base.transaction do
   artist7 = Artist.create!(name: '2 Chainz')
 
   artist8 = Artist.create!(name: 'Lil Wayne')
+
+
   artist9 = Artist.create!(name: 'Frank Sinatra')
   artist10 = Artist.create!(name: 'Ella Fitzgerald')
   artist11 = Artist.create!(name: 'Ray Charles')
   artist12 = Artist.create!(name: 'Dusty Springfield')
+  artist13 = Artist.create!(name: 'SiR')
 
 
 
@@ -58,25 +59,24 @@ ActiveRecord::Base.transaction do
   follow4 = Follow.create!(user_id: user3.id, artist_id: artist5.id)
   follow5 = Follow.create!(user_id: user3.id, artist_id: artist7.id)
 
-  albumm1 = Album.create!(name: 'The Marshall Mathers LP', artist_id: artist1.id)
-  albumm2 = Album.create!(name: 'Revival', artist_id: artist1.id)
+
+  album1 = Album.create!(name: 'The Marshall Mathers LP', artist_id: artist1.id)
+  album2 = Album.create!(name: 'Revival', artist_id: artist1.id)
 
 
-  albumm1.album_image.attach(
+  album1.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/1song.jpg"),
       filename: "1song.jpg"
   )
 
 
-  albumm2.album_image.attach(
+  album2.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/2song.jpg"),
       filename: "2song.jpg"
-    )
+  )
 
 
   song1 = Song.create!(title: 'Stan (feat. Dido)', artist_id: artist1.id, album_id: album1.id, length: 330)
-  # song1.picture.attach(io: ) 
-
   song2 = Song.create!(title: 'The Real Slim Shady', artist_id: artist1.id, album_id: album1.id, length: 330)
   song3 = Song.create!(title: 'Who Knew', artist_id: artist1.id, album_id: album1.id, length: 330)
 
@@ -85,7 +85,7 @@ ActiveRecord::Base.transaction do
   song6 = Song.create!(title: 'River', artist_id: artist1.id, album_id: album2.id, length: 330)
   song7 = Song.create!(title: 'Untouchable', artist_id: artist1.id, album_id: album2.id, length: 330)
 
-
+  # SIA
   album3 = Album.create!(name: 'This Is Acting', artist_id: artist2.id)
   album4 = Album.create!(name: 'We Are Born', artist_id: artist2.id)
 
@@ -227,6 +227,7 @@ ActiveRecord::Base.transaction do
   song20 = Song.create!(title: 'blkswn', artist_id: artist3.id, album_id: album6.id, length: 330)
   song21 = Song.create!(title: 'Long Run', artist_id: artist3.id, album_id: album6.id, length: 330)
   song22 = Song.create!(title: 'Anita', artist_id: artist3.id, album_id: album6.id, length: 330)
+  song23 = Song.create!(title: 'Reverend', artist_id: artist3.id, album_id: album6.id, length: 330)
 
 
 
@@ -267,17 +268,25 @@ ActiveRecord::Base.transaction do
       filename: "6song.jpg"
     )
 
+    song23.songimage.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/6song.jpg"),
+      filename: "6song.jpg"
+    )
 
 
 
 
-  album7 = Album.create!(name: 'Loud', artist_id: artist4.id)
+
+
+    # RIHANNA ################ artist 4
+
+  album7 = Album.create!(name: 'Anti', artist_id: artist4.id)
   album8 = Album.create!(name: 'Unapologetic', artist_id: artist4.id)
 
 
   album7.album_image.attach(
       io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/7song.jpg"),
-      filename: "7song.jpg"
+      filename: "anti.jpg"
   )
 
 
@@ -286,6 +295,52 @@ ActiveRecord::Base.transaction do
       filename: "8song.jpg"
   )
 
+
+
+song24 = Song.create!(title: 'Desperado', artist_id: artist4.id, album_id: album7.id, length: 330)
+song25 = Song.create!(title: 'Love On The Brain', artist_id: artist4.id, album_id: album7.id, length: 330)
+song26 = Song.create!(title: 'Needed Me', artist_id: artist4.id, album_id: album7.id, length: 330)
+
+
+song27 = Song.create!(title: 'Diamonds', artist_id: artist4.id, album_id: album8.id, length: 330)
+song28 = Song.create!(title: 'Pour It Up', artist_id: artist4.id, album_id: album8.id, length: 330)
+song29 = Song.create!(title: 'Right Now', artist_id: artist4.id, album_id: album8.id, length: 330)
+
+
+song24.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+filename: "anti.jpg"
+)
+
+song25.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+filename: "anti.jpg"
+)
+
+song26.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/anti.jpg"),
+filename: "anti.jpg"
+)
+
+
+song27.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+filename: "8song.jpg"
+)
+
+song28.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+filename: "8song.jpg"
+)
+
+song29.songimage.attach(
+io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/8song.jpg"),
+filename: "8song.jpg"
+)
+
+
+
+  # JANIS  artist 5
   album9 = Album.create!(name: 'Pearl', artist_id: artist5.id)
   album10 = Album.create!(name: 'In Concert', artist_id: artist5.id)
 
@@ -301,8 +356,41 @@ ActiveRecord::Base.transaction do
   )
 
 
+  song30 = Song.create!(title: 'Cry Baby', artist_id: artist5.id, album_id: album9.id, length: 330)
+  song31 = Song.create!(title: 'Me & Bobby McGee', artist_id: artist5.id, album_id: album9.id, length: 330)
+
+  song32 = Song.create!(title: 'Half Moon', artist_id: artist5.id, album_id: album10.id, length: 330)
+  song33 = Song.create!(title: 'Kozmic Blues', artist_id: artist5.id, album_id: album10.id, length: 330)
+
+
+
+
+
+  song30.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/9song.jpg"),
+  filename: "9song.jpg"
+  )
+
+  song31.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/9song.jpg"),
+  filename: "9song.jpg"
+  )
+
+  song32.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/10song.jpg"),
+  filename: "10song.jpg"
+  )
+
+  song33.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/10song.jpg"),
+  filename: "10song.jpg"
+  )
+
+
+
+
+  # Beyonce  artist 6
   album11 = Album.create!(name: 'Lemonade', artist_id: artist6.id)
-  album12 = Album.create!(name: 'The Lion King: The Gift', artist_id: artist6.id)
 
 
   album11.album_image.attach(
@@ -310,11 +398,204 @@ ActiveRecord::Base.transaction do
       filename: "11song.jpg"
   )
 
+  song34 = Song.create!(title: 'Sorry', artist_id: artist6.id, album_id: album11.id, length: 330)
+  song35 = Song.create!(title: 'Freedom', artist_id: artist6.id, album_id: album11.id, length: 330)
+  song36 = Song.create!(title: "Don't hurt yourself", artist_id: artist6.id, album_id: album11.id, length: 330)
+
+
+
+  song34.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/11song.jpg"),
+  filename: "11song.jpg"
+  )
+
+  song35.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/11song.jpg"),
+  filename: "11song.jpg"
+  )
+
+  song36.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/11song.jpg"),
+  filename: "11song.jpg"
+  )
+
+
+
+  # 2 Chainz  artist 7
+  album12 = Album.create!(name: 'Rap or Go to the League', artist_id: artist7.id)
 
   album12.album_image.attach(
-      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/12song.jpg"),
-      filename: "12song.jpg"
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/rapor.jpg"),
+      filename: "rapor.jpg"
   )
+
+  song37 = Song.create!(title: "2 Dollar Bill ft. Lil Wayne", artist_id: artist7.id, album_id: album12.id, length: 330)
+  song38 = Song.create!(title: "Money In The Way", artist_id: artist7.id, album_id: album12.id, length: 330)
+  song39 = Song.create!(title: "Rule The World ft. Ariana Grande", artist_id: artist7.id, album_id: album12.id, length: 330)
+
+
+  song37.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/rapor.jpg"),
+  filename: "rapor.jpg"
+  )
+
+  song38.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/rapor.jpg"),
+  filename: "rapor.jpg"
+  )
+
+  song39.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/rapor.jpg"),
+  filename: "rapor.jpg"
+  )
+
+
+  # Lil wayne artist 8
+  album13 = Album.create!(name: 'Tha Carter V', artist_id: artist8.id)
+
+  album13.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/carter.jpg"),
+      filename: "carter.jpg"
+  )
+
+  song40 = Song.create!(title: "Don’t Cry ft. XXXTENTACION", artist_id: artist8.id, album_id: album13.id, length: 330)
+  song41 = Song.create!(title: "Open Letter", artist_id: artist8.id, album_id: album13.id, length: 330)
+  song42 = Song.create!(title: "Mona Lisa", artist_id: artist8.id, album_id: album13.id, length: 330)
+
+  song40.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/carter.jpg"),
+  filename: "carter.jpg"
+  )
+
+  song41.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/carter.jpg"),
+  filename: "carter.jpg"
+  )
+
+  song42.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/carter.jpg"),
+  filename: "carter.jpg"
+  )
+
+
+
+# Frank Sinatra artist 9
+
+  album14 = Album.create!(name: "That's Life", artist_id: artist9.id)
+
+  album14.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/frank.jpg"),
+      filename: "frank.jpg"
+  )
+
+  song43 = Song.create!(title: "That's Life", artist_id: artist9.id, album_id: album14.id, length: 330)
+  song44 = Song.create!(title: "Somewhere, My Love", artist_id: artist9.id, album_id: album14.id, length: 330)
+
+
+  song43.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/frank.jpg"),
+  filename: "frank.jpg"
+  )
+
+  song44.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/frank.jpg"),
+  filename: "frank.jpg"
+  )
+
+
+  # Ella Fitz artist 10
+  album15 = Album.create!(name: "Porgy and Bess", artist_id: artist10.id)
+
+  album15.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/porgy.jpg"),
+      filename: "porgy.jpg"
+  )
+
+  song45 = Song.create!(title: "Summertime", artist_id: artist10.id, album_id: album15.id, length: 330)
+  song46 = Song.create!(title: "Buzzard Song", artist_id: artist10.id, album_id: album15.id, length: 330)
+
+
+  song45.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/porgy.jpg"),
+  filename: "porgy.jpg"
+  )
+
+  song46.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/porgy.jpg"),
+  filename: "porgy.jpg"
+  )
+
+
+  # Ray Charles artist 11
+  album16 = Album.create!(name: "Hallelujah I Love Her So!", artist_id: artist11.id)
+
+  album16.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/charles.jpg"),
+      filename: "charles.jpg"
+  )
+
+  song47 = Song.create!(title: "Aint That Love", artist_id: artist11.id, album_id: album16.id, length: 330)
+  song48 = Song.create!(title: "I Got A Woman", artist_id: artist11.id, album_id: album16.id, length: 330)
+
+
+  song47.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/charles.jpg"),
+  filename: "charles.jpg"
+  )
+
+  song48.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/charles.jpg"),
+  filename: "charles.jpg"
+  )
+
+
+
+
+  # Dusty Springfield artist 12
+  album17 = Album.create!(name: "Where Am I Going?", artist_id: artist12.id)
+
+  album17.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/dusty.jpg"),
+      filename: "dusty.jpg"
+  )
+
+  song49 = Song.create!(title: "If You Go Away", artist_id: artist12.id, album_id: album17.id, length: 330)
+  song50 = Song.create!(title: "Time After Time", artist_id: artist12.id, album_id: album17.id, length: 330)
+
+
+  song49.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/dusty.jpg"),
+  filename: "dusty.jpg"
+  )
+
+  song50.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/dusty.jpg"),
+  filename: "dusty.jpg"
+  )
+
+
+  # SiR artist 13
+  album18 = Album.create!(name: "November", artist_id: artist13.id)
+
+  album18.album_image.attach(
+      io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/sir.jpg"),
+      filename: "sir.jpg"
+  )
+
+  song51 = Song.create!(title: "Hair Down ft. Kendrick Lamar", artist_id: artist13.id, album_id: album18.id, length: 330)
+  song52 = Song.create!(title: "Something Foreign ft. ScHoolboy Q", artist_id: artist13.id, album_id: album18.id, length: 330)
+
+
+  song51.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/sir.jpg"),
+  filename: "sir.jpg"
+  )
+
+  song52.songimage.attach(
+  io: open("https://craftifybucket.s3.us-east-2.amazonaws.com/sir.jpg"),
+  filename: "sir.jpg"
+  )
+
 
 
 
@@ -400,7 +681,7 @@ ActiveRecord::Base.transaction do
   
 
   
-  end  
+end  
 
 
 
