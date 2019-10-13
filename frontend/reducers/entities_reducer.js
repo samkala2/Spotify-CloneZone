@@ -4,7 +4,7 @@ import ArtistsReducer from './artists_reducer';
 import AlbumsReducer from  './albums_reducer'
 import SongsReducer from './songs_reducer'
 import PlaylistsReducer from './playlists_reducer'
-
+import SongsForArtistReducer from './song_for_artist_reducer';
 import AllSongsReducer from './all_songs_reducer';
 
 
@@ -16,6 +16,7 @@ export default combineReducers({
   albums: AlbumsReducer,
   songs: SongsReducer,
   playlists: PlaylistsReducer,
-  allsongs: AllSongsReducer
+  allsongs: AllSongsReducer,
+  artistSongs: SongsForArtistReducer
 });
 

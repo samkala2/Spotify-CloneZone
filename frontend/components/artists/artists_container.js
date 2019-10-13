@@ -6,6 +6,7 @@ import {fetchArtistsThunk} from '../../actions/artist_actions';
 import {fetchSongsThunk} from '../../actions/song_actions';
 import {fetchPlaylistsThunk} from '../../actions/playlists_actions';
 import {receiveCurrentSong} from '../../actions/currently_playing_actions';
+import {fetchArtistSongsThunk} from '../../actions/song_actions'
 
 const mapStateToProps = state => {
   
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => ({
   searchAlbum: (name) => dispatch(fetchAlbumsThunk(name)),
   searchSongs: (title) => dispatch(fetchSongsThunk(title)),
   searchPlaylists: (name) => dispatch(fetchPlaylistsThunk(name)),
-  receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl))
+  receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl)),
+  receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Artists);

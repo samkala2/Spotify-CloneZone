@@ -5,7 +5,7 @@ import LoginFormContainer from './login_signup/login_form_container';
 import SignupFormContainer from './login_signup/signup_form_container';
 import SearchContainer from './artists/artists_container';
 import WebLauncherContainer from './web_launcher/web_launcher_container';
-
+import ArtistSongsContainer from "./artists/artist_songs_container"
 
 
 import { AuthRoute } from '../util/route_util';

@@ -1,5 +1,6 @@
 import React from 'react';
 import SongPlayer from '../../components/song_player/song_player';
+import { Link } from 'react-router-dom';
 
 class Artists extends React.Component {
   constructor(props) {
@@ -22,13 +23,9 @@ class Artists extends React.Component {
 
     this.toggleResults = this.toggleResults.bind(this)
     this.SetStateHoveredSong = this.SetStateHoveredSong.bind(this);
-    // this.returnFirstFiveSongs = this.returnFirstFiveSongs.bind(this);
-    // this.componentDidMount();
+    this.goToArtistPage = this.goToArtistPage.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.receiveCurrentSong(1, "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3", "Eminem", "Stan")
-  // }
 
 
   toggleResults(filter) {
@@ -56,7 +53,6 @@ class Artists extends React.Component {
   }
 
   playSongios(song) {
-    // document.getElementsByClassName(`${song.id}`)[0].play();
     this.setState({
       songUrl: song.songUrl,
       songTitle: song.title,
@@ -76,7 +72,6 @@ class Artists extends React.Component {
     }
 
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
- 
   }
 
   SetStateHoveredSong(song){
@@ -89,6 +84,10 @@ class Artists extends React.Component {
     let playButton = document.getElementById(song.id.toString())
     // debugger;
     playButton.classList.add("display-n")
+  }
+
+  goToArtistPage(artistId){
+    this.props.receiveArtistSong(artistId)
   }
 
   // returnFirstFiveSongs(){
@@ -210,7 +209,6 @@ class Artists extends React.Component {
               }
 
               <ul className="each-song-result-cont">
-              {/* { this.returnFirstFiveSongs().map(song => (song))} */}
                 {this.props.songs.map(song =>
 
                   <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
@@ -231,7 +229,10 @@ class Artists extends React.Component {
                 {
                   this.props.artists.map(artist =>
                     <li>
-                      <img className="artist-photo" src={artist.photoUrl} />
+                    <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
+                    <img className="artist-photo" src={artist.photoUrl} />
+                    </Link> 
+                      
                       <span className="artist-name">  {artist.name}  </span>
                     </li>
                 )}

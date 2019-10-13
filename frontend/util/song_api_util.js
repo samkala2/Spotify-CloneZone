@@ -18,7 +18,7 @@ export const getAllSongs = () => (
 export const SongsForArtist = (artistId) => (
   $.ajax({
     method: 'GET',
-    url: `api/songs/artist/artist_id=${artistId}`,
+    url: `api/songs/artist/?artist_id=${artistId}`,
     error: (err) => console.log(err)
   })
 )

@@ -15,6 +15,7 @@
   
   
       json.artist song.artist.name
+      json.artistId song.artist_id
     end
   end
   
