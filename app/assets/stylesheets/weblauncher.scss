@@ -540,12 +540,14 @@
     }
 
     .artistPage{
-        // padding-left: 247px;
+        padding-left: 260px;
+        width: 100%;
     }
 
     .big-image-artist{
-        width: 140%;
-        height: 90%;
+        width: 1000px;
+        height: 250px;
+        position: fixed;
     }
 
     .artist-result{

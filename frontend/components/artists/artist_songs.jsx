@@ -45,7 +45,7 @@ class ArtistSongs extends React.Component{
         document.getElementsByClassName('audio-folengthoter')[0].pause();
         playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
         }
-        receiveArtistSong
+        // receiveArtistSong
         this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
       }
 

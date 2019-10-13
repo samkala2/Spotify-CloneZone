@@ -251,7 +251,9 @@ class Artists extends React.Component {
                 {
                   this.props.artists.map(artist =>
                     <li>
+                    <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
                       <img className="artist-photo" src={artist.photoUrl} />
+                    </Link>
                       <span className="artist-name">  {artist.name}  </span>
                     </li>
                   )}
