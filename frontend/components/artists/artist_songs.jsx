@@ -42,7 +42,7 @@ class ArtistSongs extends React.Component{
         if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {   
         playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png"
         } else if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
-        document.getElementsByClassName('audio-folengthoter')[0].pause();
+        document.getElementsByClassName('audio-footer')[0].pause();
         playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
         }
         // receiveArtistSong
