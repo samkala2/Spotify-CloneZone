@@ -64,7 +64,7 @@ body {
  }
  
   .button-icons {
-    padding-left: 38%;
+    padding-left: 33%;
    
   }
 
@@ -86,7 +86,7 @@ body {
   
 
   .buttons-player {
-    padding-top: 12px;
+    padding-top: 7px;
     max-width: 100%;
     background-color: rgb(38, 40, 40);
     padding-right: 30%;
@@ -172,9 +172,22 @@ img#sidebar-logo {
   margin: 0px;
   font-size: 12px;
   display: inline-block;
-  padding-top: 70px;
-  padding-right: 22%;
+  padding-top: 30px;
+  padding-right: 18.7%;
   /* background-color: inherit; */
+}
+
+#song-title{
+  padding-bottom: 2px;
+  color: white;
+  letter-spacing: .015em;
+  line-height: 20px;
+  font-size: 14px;
+  display: inline;
+  white-space: nowrap;
+  font-weight: 445;
+
+
 }
 
 .all-songs-results{
@@ -191,6 +204,3 @@ img#sidebar-logo {
   cursor: pointer;
 }
 
-.upper-links span:hover{
-  cursor: pointer;
-}

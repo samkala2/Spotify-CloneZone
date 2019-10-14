@@ -44,7 +44,6 @@ class WebLauncherHome extends React.Component {
 
   SetStateHoveredSong(song){
     let playButton = document.getElementById(song.id.toString())
-    // debugger;
     playButton.classList.remove("display-n")
   }
 
@@ -67,6 +66,9 @@ class WebLauncherHome extends React.Component {
   handleSongs(e) {
     e.preventDefault();
     this.props.getAllSongs();  //This updates the outer state
+    let songsbutton = document.getElementsByClassName("songsb")[0];
+    songsbutton.classList.remove("opacity")
+
   }
 
 
@@ -74,16 +76,16 @@ class WebLauncherHome extends React.Component {
     return(
       <div className="mid-home-cont">  
         <div className="upper-links">
-          <span onClick={this.handleSongs} > SONGS </span>
-          <span> ALBUMS </span>
-          <span> ARTISTS </span>
+          <span className="opacity songsb" onClick={this.handleSongs} > SONGS </span>
+          <span className="opacity albumsb" > ALBUMS </span>
+          <span className="opacity artistsb" > ARTISTS </span>
         </div>
 
          <div className="all-songs-results">
             {
               (this.props.songs.length > 0) && <div> 
 
-              <ul>
+              <ul className="all-songs">
                 {this.props.songs.map(song =>
                   <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
