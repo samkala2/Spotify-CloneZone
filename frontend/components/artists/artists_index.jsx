@@ -204,7 +204,7 @@ class Artists extends React.Component {
               {
                 (this.props.songs.length > 0) && <div>
                   <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
-                  <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                  <p className="top-artist-song"> {this.props.songs[0].artist} </p>
                 </div>
               }
 
@@ -283,7 +283,7 @@ class Artists extends React.Component {
               {
                 (this.props.songs.length > 0) && <div>    
                     <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
-                  <p className="main-artist-song"> {this.props.songs[0].artist} </p>
+                  <p className="top-artist-song"> {this.props.songs[0].artist} </p>
                 </div> 
 
               }

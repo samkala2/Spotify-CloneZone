@@ -51,12 +51,23 @@
    }
 
    .main-artist-song{
-    //    font-family: arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
        font-family: 'Rubik', sans-serif;
-       color: rgb(220, 217, 217);
-       padding-left: 65px;
+       color: white;
+       padding-left: 35%;
+       z-index: 15;
+       position: absolute;
+       color: white;
+       font-size: 75px;
+       font-weight: 500;
    }
 
+   .top-artist-song{
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    padding-left: 26%;
+    font-size: 20px;
+    font-weight: 300;
+   }
    .song-artist{
     font-size: 12px;
     padding: 4px 0px;
@@ -370,7 +381,7 @@
 
 
 .song-player-foot{
-    margin-top: 1%;
+    margin-top: 2.2%;
     background-color: rgb(32, 32, 32);
     width: 100%;
     max-width: 100%;
@@ -422,8 +433,8 @@
 .middle-home{
     height: 100%;
     max-height: 100%;
-    max-width: 87%;
-    min-width: 87%;
+    max-width: 100%;
+    min-width: 100%;
     color: rgb(129, 129, 129);
     display: flex;
     justify-content: center;
@@ -433,8 +444,8 @@
 .flex-box-featured-andsidebar{
     width: 100vw;
     max-width: 100vw;
-    height: 87%;
-    max-height: 87%;
+    height: 84%;
+    max-height: 84%;
     display: flex;
     flex-direction: row;
 }
@@ -556,20 +567,35 @@
     }
 
     .artistPage{
-        padding-left: 260px;
+        padding-left: 228px;
         width: 100%;
     }
 
     .big-image-artist{
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    height: 43%;
+    height: 100%;
     width: 100%;
-    background: linear-gradient(transparent -30%, #181818);
+    // background: linear-gradient(transparent -30%, #181818);
+    background-size: cover;
+    background-position: 100% 35%;
+    background-repeat: no-repeat;
     }
+
+    .big-image-artist:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(transparent -30%, #181818); }
     
 
     .artist-result{
@@ -577,7 +603,8 @@
     }
 
     .artist-image-cont{
-        height: 50%;
+        height: 54%;
+        position: relative;
     }
 
     .all-songs{

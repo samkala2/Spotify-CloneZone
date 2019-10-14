@@ -57,9 +57,9 @@ class ArtistSongs extends React.Component{
                
                 
                 {
-                    (this.props.artistSongs.length > 0) && <div className="artist-image-cont" >    
+                    (this.props.artistSongs.length > 0) && <div className="artist-image-cont" >
+                    <p className="main-artist-song"> {this.props.artistSongs[0].artist} </p>    
                         <img className="big-image-artist" src={this.props.artistSongs[0].songImageUrl} />
-                    <p className="main-artist-song"> {this.props.artistSongs[0].artist} </p>
                     </div> 
 
                 }
