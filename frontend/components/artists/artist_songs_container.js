@@ -9,7 +9,7 @@ import {receiveCurrentSong} from '../../actions/currently_playing_actions';
 const mapStateToProps = state => {
     return{
         artistSongs: Object.values(state.entities.artistSongs),
-        artists: Object.values(state.entities.artists)
+        artists: state.entities.artists
     }
 }
 
