@@ -23,4 +23,12 @@ export const SongsForArtist = (artistId) => (
   })
 )
 
+export const GetArtistImage =  (artistId) =>(
+  $.ajax({
+    method: 'GET',
+    url: `api/songs/image/?artist_id=${artistId}`,
+    error: (err) => console.log(err)
+  })
+)
+
 

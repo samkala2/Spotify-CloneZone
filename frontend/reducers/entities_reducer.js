@@ -6,7 +6,7 @@ import SongsReducer from './songs_reducer'
 import PlaylistsReducer from './playlists_reducer'
 import SongsForArtistReducer from './song_for_artist_reducer';
 import AllSongsReducer from './all_songs_reducer';
-
+import ArtistImageReducer from './artist_image';
 
 // import benchesReducer from './benches_reducer';
 
@@ -17,6 +17,7 @@ export default combineReducers({
   songs: SongsReducer,
   playlists: PlaylistsReducer,
   allsongs: AllSongsReducer,
-  artistSongs: SongsForArtistReducer
+  artistSongs: SongsForArtistReducer,
+  artistImage: ArtistImageReducer
 });
 

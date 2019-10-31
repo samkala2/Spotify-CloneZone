@@ -8,6 +8,7 @@ class Api::ArtistsController < ApplicationController
 
 
   
+  
 
     # Artist.where("name LIKE '%E%'")
 

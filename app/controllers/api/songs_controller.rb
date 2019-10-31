@@ -25,6 +25,13 @@ class Api::SongsController < ApplicationController
     @songs = Song.joins(:artist).where("artists.id = '#{query}' ")
     render :specific
   end
+
+  def get_artist_image
+    query = params[:artist_id]
+    @artist1 = Artist.find(query)
+    render :artist_image
+  end
+
   
 
   def song_params

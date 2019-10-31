@@ -14,11 +14,6 @@ class WebLauncher extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   this.props.receiveCurrentSong(1, "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3", "Eminem", "Stan")
-  // }
-
-
   render(){
    
     if (!this.props) return (<div> Loading </div>)
@@ -37,9 +32,6 @@ class WebLauncher extends React.Component {
             <Route path="/weblauncher/search" component={SearchContainer} />
 
             <Route path="/weblauncher/home" component={WebLauncherHomeContainer}/>
-            {/* <Route path="/weblauncher/home" component={SongPlayer} /> */}
-           
-            {/* <SearchContainer /> */}
 
             <Route path ="/weblauncher/:artistId/songs" component={ArtistSongsContainer}/>
 
