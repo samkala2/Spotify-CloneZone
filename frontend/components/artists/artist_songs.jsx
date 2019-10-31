@@ -18,7 +18,7 @@ class ArtistSongs extends React.Component{
         // debugger;
         let artistId = this.props.match.params.artistId;
         this.props.receiveArtistSong(artistId)
-        this.props.getArtistImage(artistId);
+        .then( () => this.props.getArtistImage(artistId));
     }
     
 
