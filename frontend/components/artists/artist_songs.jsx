@@ -67,16 +67,16 @@ class ArtistSongs extends React.Component{
 
                 }
 
-                <ul className="each-song-result">
+                <ul className="each-song-result    ">
                     {this.props.artistSongs.map(song =>
                     <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                         <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                         
                         <img  className="small-image-song" src={song.songImageUrl} />
-                        <span className="song-info">
+                        <div className="song-info">
                         <span className="song-title">  {song.title} </span>
                         <span className="song-artist">  {song.artist} </span>
-                        </span>
+                        </div>
                     </li>)}
                 </ul>
                
