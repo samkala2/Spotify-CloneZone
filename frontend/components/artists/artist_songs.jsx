@@ -75,7 +75,7 @@ class ArtistSongs extends React.Component{
                         <img  className="small-image-song" src={song.songImageUrl} />
                         <div className="song-info">
                         <span className="song-title">  {song.title} </span>
-                        <span className="song-artist">  {song.artist} </span>
+                        {/* <span className="song-artist">  {song.artist} </span> */}
                         </div>
                     </li>)}
                 </ul>

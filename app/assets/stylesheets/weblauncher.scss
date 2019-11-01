@@ -64,16 +64,18 @@
    }
 
    .each-song-result{
-    padding-left: 518px;
+    padding-left: 514px;
+    padding-top: 80px;
     margin-top: 0;
     flex-wrap: wrap;
+    width: 65%;
    }
 
    .each-song-result li{ 
     position: relative;
     display: flex;
     flex-direction: row;
-    // margin-top: 10px;
+    border-bottom: 1px solid rgb(122, 122, 122);
    }
 
    .each-song-result li:hover{ 
@@ -572,7 +574,7 @@
 
     #each-song-result{
         width: 100%;
-        height: 10%;
+        height: 51px;
     }
 
     .each-song-result-cont{
