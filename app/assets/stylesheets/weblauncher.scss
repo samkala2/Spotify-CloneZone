@@ -44,14 +44,14 @@
       margin-top: 10px;
   }
 
-   .songs-result li .song-title,  .song-artist, .songs-result li i{
+    .song-title,  .song-artist, .songs-result li i{
        font-size: 15px;
        font-family: 'Rubik', sans-serif;
        color: rgb(220, 217, 217);
    }
 
    .main-artist-song{
-    margin-left: 99px;
+    margin-left: 120px;
     margin-top: 500px;
        font-family: 'Rubik', sans-serif;
     //    color: white;
@@ -65,7 +65,7 @@
 
    .each-song-result{
     padding-left: 518px;
-    // display: flex;
+    margin-top: 0;
     flex-wrap: wrap;
    }
 
@@ -73,7 +73,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    // margin-top: 10px;
    }
 
    .each-song-result li:hover{ 
@@ -462,8 +462,8 @@
 .flex-box-featured-andsidebar{
     width: 100vw;
     max-width: 100vw;
-    height: 84%;
-    max-height: 84%;
+    height: 87%;
+    max-height: 87%;
     display: flex;
     flex-direction: row;
     overflow-y: scroll;
@@ -590,6 +590,7 @@
         width: 100%;
         justify-content: left;
         display: flex;
+        background-color: rgb(20, 20, 20);
     }
 
     .big-image-artist{
