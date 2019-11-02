@@ -660,8 +660,8 @@
 
     .all-songs{
         display: flex;
-        padding-left: 58px;
+        padding-left: 47px;
         padding-top: 0px;
         flex-direction: row;
-        // position: fixed;
+        flex-wrap: wrap;
     }

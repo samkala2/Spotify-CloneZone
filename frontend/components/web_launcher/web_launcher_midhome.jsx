@@ -106,20 +106,20 @@ class WebLauncherHome extends React.Component {
             {
               (this.props.songs.length > 0) && <div> 
 
-              <h3> Top Songs </h3>
+              <h3> Songs </h3>
               <ul className="all-songs">
                 {this.props.songs.slice(0).reverse().map(song =>
                   <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                     <img  className="image-song" src={song.songImageUrl} />
 
-                    <span className="song-info">
+                    <div className="song-info">
                       <span className="song-title">  {song.title}
                       </span>
 
                       <span className="song-artist">  {song.artist}
                       </span>
-                    </span>
+                    </div>
 
                   </li>)}
               </ul>

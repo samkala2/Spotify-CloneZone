@@ -116,6 +116,9 @@ body {
     align-items: center
   }
 
+  .song-info{
+    width: 203px;
+  }
   .all-album-results h3, .all-songs-cont h3{
     font-family: "Circular Bold";
     font-size: 36px;

@@ -271,7 +271,7 @@ class Artists extends React.Component {
                   {this.props.albums.map(album =>
                     <li> 
                     <div class="album-artist-cont"> 
-                    <img className="album-photo" src={album.songImageUrl} />
+                    <img className="album-photo" src={album.albumImageUrl} />
                     <p> {album.name} </p> 
                     </div>
                     </li>)}
