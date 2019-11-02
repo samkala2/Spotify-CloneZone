@@ -1,7 +1,10 @@
-json.name @artist.name
-json.albums @artist.albums do |album|
-  json.set! album.id do 
-    json.id album.id
-    json.name album.name
+@all_artists.each do |artist|
+  json.set! artist.id do
+    json.extract! artist, :id, :name
+    if artist.picture.attached?
+      json.photoUrl url_for(artist.picture)
+    else
+      json.photoUrl ""
+    end
   end
 end

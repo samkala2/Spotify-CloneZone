@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     get '/albums/all', to: 'albums#getall'
     get 'songs/album', to: 'songs#songs_for_album'
 
-    resources :artists, only: [:index, :show]
+    resources :artists, only: [:index]
+    get 'artists/all', to: 'artists#getall'
 
     resources :playlists, only: [:show, :index]
 

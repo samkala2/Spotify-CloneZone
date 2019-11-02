@@ -96,7 +96,7 @@ body {
     margin-top: 18px;
   }
 
-  .all-albums li, .all-songs li{
+  .all-albums li, .all-songs li, .all-artists-result li{
     margin-left: 15px;
   }
 
@@ -119,7 +119,7 @@ body {
   .song-info{
     width: 203px;
   }
-  .all-album-results h3, .all-songs-cont h3{
+  .all-album-results h3, .all-songs-cont h3, .all-artists-result h3{
     font-family: "Circular Bold";
     font-size: 36px;
     line-height: 44px;
@@ -251,6 +251,12 @@ img#sidebar-logo {
 }
 
 .all-album-results{
+  padding-left: 227px;
+  padding-top: 32px;
+}
+
+
+.all-artists-result{
   padding-left: 227px;
   padding-top: 32px;
 }

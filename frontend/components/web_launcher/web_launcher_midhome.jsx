@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class WebLauncherHome extends React.Component {
 
@@ -26,6 +27,7 @@ class WebLauncherHome extends React.Component {
   componentDidMount(){
     this.props.getAllAlbums(); 
     this.props.getAllSongs();
+    this.props.getAllArtists();
   }
 
   toggleResults(filter) {
@@ -81,6 +83,9 @@ class WebLauncherHome extends React.Component {
     albumsButton.classList.remove("opacity")
   }
 
+  goToArtistPage(artistId){
+    this.props.receiveArtistSong(artistId)
+  }
 
 
   render() {
@@ -97,7 +102,7 @@ class WebLauncherHome extends React.Component {
         <div className="upper-links">
           <span className="opacity songsb" onClick={this.toggleResults("AllSongs")} > SONGS </span>
           <span className="opacity albumsb" onClick={this.toggleResults("AllAlbums")}> ALBUMS </span>
-          <span className="opacity artistsb" > ARTISTS </span>
+          <span className="opacity artistsb" onClick={this.toggleResults("AllArtists")} > ARTISTS </span>
         </div>
 
 
@@ -155,6 +160,34 @@ class WebLauncherHome extends React.Component {
         </div>}
         </div> 
 
+
+        <div className="all-artists-cont">
+
+        {
+            AllArtists && <div className="all-artists-result artists-result">
+              
+
+           { (this.props.artists.length > 0) &&  <div>
+                <h3> Artists </h3>
+
+                <ul>
+                  {
+                    this.props.artists.map(artist =>
+                      <li>
+                      <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
+                        <img className="artist-photo" src={artist.photoUrl} />
+                      </Link>
+                        <span className="artist-name">  {artist.name}  </span>
+                      </li>
+                    )}
+
+                </ul>
+
+              </div> }
+
+            </div>
+        }
+        </div>
       </div>
 
 

@@ -8,7 +8,8 @@ import SongsForArtistReducer from './song_for_artist_reducer';
 import AllSongsReducer from './all_songs_reducer';
 import ArtistImageReducer from './artist_image';
 import AllAbumsReducer from './all_albums_reducer'
-// import benchesReducer from './benches_reducer';
+import AllArtistsReducer from './all_artists_reducer';
+
 
 export default combineReducers({
   users: usersReducer,
@@ -19,6 +20,7 @@ export default combineReducers({
   allsongs: AllSongsReducer,
   allAlbums: AllAbumsReducer,
   artistSongs: SongsForArtistReducer,
-  artistImage: ArtistImageReducer
+  artistImage: ArtistImageReducer,
+  allArtists: AllArtistsReducer,
 });
 

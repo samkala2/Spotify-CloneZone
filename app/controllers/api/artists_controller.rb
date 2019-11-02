@@ -8,7 +8,10 @@ class Api::ArtistsController < ApplicationController
 
 
   
-  
+  def getall
+    @all_artists = Artist.all
+    render :show
+  end
 
     # Artist.where("name LIKE '%E%'")
 
