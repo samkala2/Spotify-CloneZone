@@ -24,6 +24,35 @@
     //   overflow: scroll;
   }
 
+  .album-artist-cont {
+    color: white;
+    font-family: "Circular";
+    font-size: 16px;
+    // max-width: 220px;
+    // max-height: 515px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px 35px;
+  }
+
+  .album-artist-cont p{
+    font-family:'Rubik', sans-serif;
+
+  }
+
+  .album-photo{
+    width: 220px;
+    height: 220px; 
+  }
+
+  .album-ul{
+    color: white;
+    display: flex;
+    flex-direction: row;
+  }
+
   .artists-result ul{
       display: flex;
       flex-direction: row;
@@ -122,10 +151,6 @@
     //    font-size: 20px;
    }
 
-   .song-info{
-       display:flex;
-       flex-direction: column;
-   }
 
    .song-artist{
        color: gray;
@@ -582,10 +607,7 @@
         flex-wrap: wrap;
         height: 40%;
     }
-    .song-info{
-       margin-left: 14px;
-       margin-top: 10px; 
-    }
+   
 
     .artistPage{
         padding-left: 228px;
@@ -638,8 +660,8 @@
 
     .all-songs{
         display: flex;
-        padding-left: 250px;
-        padding-top: 30px;
-        flex-direction: column;
+        padding-left: 58px;
+        padding-top: 0px;
+        flex-direction: row;
         // position: fixed;
     }

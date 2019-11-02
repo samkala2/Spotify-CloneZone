@@ -6,6 +6,7 @@ class WebLauncherHome extends React.Component {
   constructor(props){
     super(props);
     this.handleSongs = this.handleSongs.bind(this);
+    this.handleAlbums = this.handleAlbums.bind(this);
     this.toggleResults = this.toggleResults.bind(this);
     this.state = {
       name: "",
@@ -14,7 +15,7 @@ class WebLauncherHome extends React.Component {
       songArtist: "Eminem",
 
       filters: {
-        AllSongs: true,
+        AllSongs: false,
         AllArtists: false,
         AllAlbums: false,
       }
@@ -22,23 +23,27 @@ class WebLauncherHome extends React.Component {
 
   }
 
+  componentDidMount(){
+    this.props.getAllAlbums(); 
+    this.props.getAllSongs();
+  }
+
   toggleResults(filter) {
     const resetedFilters = {
-      AllSongs: true,
+      AllSongs: false,
       AllArtists: false,
       AllAlbums: false,
     }
 
     return () => {
-      this.setState({ filters: resetedFilters }, () => {
-        this.setState({
-          filters: {
-            ...this.state.filters,
-            [filter]: true
-          }
-        })
+      this.setState({filters: resetedFilters}, () => {
+        this.setState({filters: {
+          ...this.state.filters,
+          [filter]: true
+        }})
       })
     }
+   
   }
 
 
@@ -63,33 +68,50 @@ class WebLauncherHome extends React.Component {
   }
 
 
-  handleSongs(e) {
-    e.preventDefault();
-    this.props.getAllSongs();  //This updates the outer state
+  handleSongs() {
     let songsbutton = document.getElementsByClassName("songsb")[0];
     songsbutton.classList.remove("opacity")
+    
+  }
 
+  handleAlbums() {
+    this.toggleResults("AllAlbums")
+    debugger
+    let albumsButton = document.getElementsByClassName("albumsb")[0];
+    albumsButton.classList.remove("opacity")
   }
 
 
+
   render() {
+    const {AllSongs, 
+      AllArtists, 
+      AllAlbums} = this.state.filters;
+
+
+    window.albumstate = this.state.filters;
     return(
-      <div className="mid-home-cont">  
+
+
+    <div className="mid-home-cont">  
         <div className="upper-links">
-          <span className="opacity songsb" onClick={this.handleSongs} > SONGS </span>
-          <span className="opacity albumsb" > ALBUMS </span>
+          <span className="opacity songsb" onClick={this.toggleResults("AllSongs")} > SONGS </span>
+          <span className="opacity albumsb" onClick={this.toggleResults("AllAlbums")}> ALBUMS </span>
           <span className="opacity artistsb" > ARTISTS </span>
         </div>
 
-         <div className="all-songs-results">
+
+      <div className="all-songs-cont"> 
+        {AllSongs && <div className="all-songs-results">
             {
               (this.props.songs.length > 0) && <div> 
 
+              <h3> Top Songs </h3>
               <ul className="all-songs">
-                {this.props.songs.map(song =>
+                {this.props.songs.slice(0).reverse().map(song =>
                   <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
-                    <img  className="small-image-song" src={song.songImageUrl} />
+                    <img  className="image-song" src={song.songImageUrl} />
 
                     <span className="song-info">
                       <span className="song-title">  {song.title}
@@ -104,8 +126,34 @@ class WebLauncherHome extends React.Component {
 
               </div>
             }
-         </div>
+        </div>}
+      </div>
 
+
+        <div className="all-albums-cont">
+
+         {
+           AllAlbums && <div className="all-album-results">
+            {
+              (this.props.albums.length > 0) && <div> 
+
+              <h3> Albums </h3>
+              <ul className="all-albums">
+                {this.props.albums.slice(0).reverse().map(album =>
+                <li>
+                  <img className="image-album" src={album.albumImageUrl} />
+                  <div className="album-info">
+                      <div className="album-title">  {album.name} </div>
+                      <div className="album-artist">  {album.artistName} </div>
+                  </div>
+
+                  </li>)}
+              </ul>
+
+              </div>
+            }
+        </div>}
+        </div> 
 
       </div>
 

@@ -7,8 +7,13 @@
     else 
       json.albumImageUrl ""
     end
+    
+    json.artistName album.artist.name
 
   end
 
 
 end
+
+
+

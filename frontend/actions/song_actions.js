@@ -9,23 +9,26 @@ export const receiveSongs = (songs) => ({
   songs
 });
 
+// Thunk
 export const fetchSongsThunk = (title) => dispatch => searchSongs(title)
 .then((songs) => dispatch(receiveSongs(songs)));
+
 
 
 export const receiveArtistSongs = (songs) => ({
   type: RECEIVE_ARTIST_SONGS,
   songs
 });
-
+// Thunk
 export const fetchArtistSongsThunk = (artistId) => dispatch => SongsForArtist(artistId)
 .then((songs) => dispatch(receiveArtistSongs(songs)));
+
+
 
 export const receiveArtistImage = (artistInfo) =>({
   type: RECEIVE_ARTIST_IMAGE,
   artistInfo
 })
-
 // Thunk
 export const fetchArtistImageThunk = (artistId) => dispatch => GetArtistImage(artistId)
 .then((artistInfo) => dispatch(receiveArtistImage(artistInfo)));

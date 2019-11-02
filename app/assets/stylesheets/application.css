@@ -83,7 +83,48 @@ body {
     width: 50px;
     height: 50px
   }
+
+  .image-album, .image-song{
+    width: 200px;
+    height: 200px
+  }
   
+  .all-albums{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+
+  .all-albums li, .all-songs li{
+    margin-left: 15px;
+  }
+
+  .all-albums .album-title{
+    padding-bottom: 10px; 
+    padding-top: 10px;
+  }
+  .album-title{
+    color: rgb(218, 218, 218);
+  }
+  .album-info, .song-info{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center
+  }
+
+  .all-album-results h3, .all-songs-cont h3{
+    font-family: "Circular Bold";
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.005em;
+    color: #fff;
+    margin: 24px 0;
+    padding-left: 56px;
+  }
 
   .buttons-player {
     padding-top: 7px;
@@ -193,6 +234,8 @@ img#sidebar-logo {
 .all-songs-results{
   font-family: 'Rubik', sans-serif;
   color: rgb(220, 217, 217);
+  padding-left: 227px;
+  padding-top: 32px;
 }
 
 .all-songs-results li{
@@ -204,3 +247,7 @@ img#sidebar-logo {
   cursor: pointer;
 }
 
+.all-album-results{
+  padding-left: 227px;
+  padding-top: 32px;
+}

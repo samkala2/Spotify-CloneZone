@@ -7,3 +7,13 @@ export const searchAlbums = (name) => (
     error: (err) => console.log(err)
   })
 );
+
+
+
+export const getAllAlbums = () => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/albums/all`,
+    error: (err) => console.log(err)
+  })
+);

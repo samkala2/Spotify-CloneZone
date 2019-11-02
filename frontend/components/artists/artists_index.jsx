@@ -191,6 +191,7 @@ class Artists extends React.Component {
             <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
             <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
             <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
+            <span className="result-links" onClick={this.toggleResults("AlbumsResults")}> Albums </span>
 
           </div>
         </div>
@@ -265,13 +266,18 @@ class Artists extends React.Component {
 
           {
             AlbumsResults && <div className="albums-result">
-              {/* <p> Albums Results: </p> */}
+             
+                <ul className="album-ul">
+                  {this.props.albums.map(album =>
+                    <li> 
+                    <div class="album-artist-cont"> 
+                    <img className="album-photo" src={album.songImageUrl} />
+                    <p> {album.name} </p> 
+                    </div>
+                    </li>)}
+                </ul>
 
-              <ul>
-                {this.props.albums.map(album =>
-                  <li> {album.name} </li>)}
-              </ul>
-
+              
             </div>
           }
         
