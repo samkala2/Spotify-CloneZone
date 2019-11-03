@@ -57,6 +57,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      width: 79%;
     //   align-items: center
   }
 
@@ -165,9 +166,13 @@
        color: gray;
    }
  .artists-result li img{
-     border-radius: 90px;
-     width: 200px;
-     height: 200px;
+    //  border-radius: 90px;
+    //  width: 200px;
+    //  height: 200px;
+
+     border-radius: 127px;
+    width: 240px;
+    height: 261px;
    }
 
    .artist-name{
@@ -711,4 +716,5 @@
         padding-top: 0px;
         flex-direction: row;
         flex-wrap: wrap;
+        width: 79%;
     }

@@ -95,6 +95,7 @@ body {
     list-style: none;
     flex-wrap: wrap;
     margin-top: 18px;
+    width: 79%;
   }
 
   .all-albums li, .all-songs li, .all-artists-result li{
@@ -248,7 +249,7 @@ img#sidebar-logo {
 .all-songs-results, .all-album-results, .all-artists-result{
   font-family: 'Rubik', sans-serif;
   color: rgb(220, 217, 217);
-  padding-left: 180px;
+  padding-left: 152px;
   padding-top: 32px;
 }
 
