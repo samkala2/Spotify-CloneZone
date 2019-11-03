@@ -76,13 +76,11 @@ class Artists extends React.Component {
 
   SetStateHoveredSong(song){
     let playButton = document.getElementById(song.id.toString())
-    // debugger;
     playButton.classList.remove("display-n")
   }
   
   HoverOutSong(song){
     let playButton = document.getElementById(song.id.toString())
-    // debugger;
     playButton.classList.add("display-n")
   }
 
@@ -271,7 +269,11 @@ class Artists extends React.Component {
                   {this.props.albums.map(album =>
                     <li> 
                     <div class="album-artist-cont"> 
+
+                    <Link onClick={() => this.goToAlbumPage(album.id)} className="" to={`/weblauncher/${album.id}/songs`}>  
                     <img className="album-photo" src={album.albumImageUrl} />
+                    </Link> 
+                    
                     <p> {album.name} </p> 
                     </div>
                     </li>)}

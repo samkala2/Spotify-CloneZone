@@ -136,24 +136,20 @@ class WebLauncherHome extends React.Component {
                       className={"each-song-res" } 
                   >
                    
-                    {/* <i  id={song.id} className="icon ion-md-play display-n"></i> */}
+                  <img id={song.id} onMouseEnter = {() => this.handlePlayHover(song.id)}
+                                    onMouseLeave = { () => this.handlePlayMouseOut(song.id)} 
+                                    onClick={() => { this.playSongios(song) }} 
+                                    className={"play-button-2" + " " +  "display-n" } 
+                                    src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"
+                  /> 
 
-                    {/* <div className="cover-song">  */}
-                    <img id={song.id} onMouseEnter = {() => this.handlePlayHover(song.id)}
-                                      onMouseLeave = { () => this.handlePlayMouseOut(song.id)} 
-                                      onClick={() => { this.playSongios(song) }} 
-                                      className={"play-button-2" + " " +  "display-n" } 
-                                      src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"
+                  <img  className={"image-song" + " " + song.id + " " + "overlay" + " " + "gray"} src={song.songImageUrl} />
 
-                                      /> 
+                  <div className="song-info-allsongs">
+                    <span className="song-title">  {song.title}      </span>
 
-                    <img  className={"image-song" + " " + song.id + " " + "overlay" + " " + "gray"} src={song.songImageUrl} />
-                  {/* </div> */}
-                    <div className="song-info-allsongs">
-                      <span className="song-title">  {song.title}      </span>
-
-                      <span className="song-artist">  {song.artist}    </span>
-                    </div>
+                    <span className="song-artist">  {song.artist}    </span>
+                  </div>
 
                   </li>)}
               </ul>

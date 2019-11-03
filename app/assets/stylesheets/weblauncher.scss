@@ -80,6 +80,13 @@
        color: rgb(220, 217, 217);
    }
 
+   .song-title-2{
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(220, 217, 217);
+    margin-top: 19px;
+   }
+
    .main-artist-song{
     margin-left: 120px;
     margin-top: 500px;
@@ -107,12 +114,17 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid rgb(122, 122, 122);
+    border-bottom: 0.5px solid rgb(122, 122, 122);
    }
 
    .each-song-result li:hover{ 
-       cursor: pointer;
-     }
+    //    cursor: pointer;
+       background-color: rgb(22, 22, 22);
+       -webkit-transition: background-color 200ms linear;
+       -ms-transition: background-color 200ms linear;
+       transition: background-color 200ms linear;
+    }
+
 
 
    .top-artist-song{
@@ -148,8 +160,19 @@
   
    .ion-md-play{
     z-index: 11;
-    // padding-left: 200px;
     position: absolute;
+  }
+
+  .ion-md-play:hover{
+      cursor: pointer;
+  }
+
+  .music-note{
+    z-index: 12;
+    position: absolute;
+    width: 33px;
+    margin-left: 1%;
+    margin-top: 1%;
   }
 
    .display-n{
@@ -166,13 +189,9 @@
        color: gray;
    }
  .artists-result li img{
-    //  border-radius: 90px;
-    //  width: 200px;
-    //  height: 200px;
-
-     border-radius: 127px;
-    width: 240px;
-    height: 261px;
+    border-radius: 127px;
+    width: 204px;
+    height: 226px;
    }
 
    .artist-name{
@@ -344,13 +363,12 @@
    .upper-links {
         display: flex;
         justify-content: center;
-        font-size: 14px;
+        font-size: 16px;
         width: 770px;
-        padding-left: 30%;
+        padding-left: 28%;
         padding-top: 40px;
-        font-weight: bold;
+        font-weight: 500;
         font-family: 'Rubik', sans-serif;
-        // arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
         color: rgb(251, 250, 250);
     }
 
@@ -521,8 +539,8 @@
         width: 111px;
         height: 111px;
         z-index: 22;
-        margin-left: 45px;
-        margin-top: 47px;
+        margin-left: 51px;
+        margin-top: 55px;
         position: absolute;
         background-color: transparent;
         border: none;
@@ -545,7 +563,7 @@
 
 
     .cover-background{
-        background-color: rgb(77, 77, 77);
+        background-color: rgb(61, 60, 60);
         opacity: 0.7;
     }
 
@@ -593,12 +611,12 @@
 
 
     .overlay:hover {
-        background-color: rgb(77, 77, 77);
+        background-color: rgb(61, 60, 60);
         opacity: 0.7;
     }
 
     .image-album:hover {
-        background-color: rgb(77, 77, 77);
+        background-color: rgb(61, 60, 60);
         opacity: 0.7;
         cursor: pointer;
     }
@@ -650,9 +668,10 @@
     //   }
 
     #each-song-result{
-        width: 100%;
+        width: 84%;
         height: 51px;
     }
+
 
     .each-song-result-cont{
         display: flex;
@@ -666,7 +685,7 @@
         width: 100%;
         justify-content: left;
         display: flex;
-        background-color: rgb(20, 20, 20);
+        background-color: rgb(44, 44, 44);
     }
 
     .big-image-artist{

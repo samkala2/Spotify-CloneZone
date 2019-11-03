@@ -1,7 +1,6 @@
 import { searchAlbums, getAllAlbums } from '../util/album_api_util';
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS'
-
 export const RECEIVE_ALL_ALBUMS = 'RECEIVE_ALL_ALBUMS'
 
 export const receiveAlbums = (albums) => ({

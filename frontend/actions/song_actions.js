@@ -1,8 +1,9 @@
-import {searchSongs, SongsForArtist, GetArtistImage} from '../util/song_api_util';
+import {searchSongs, SongsForArtist, GetArtistImage, SongsForAlbum} from '../util/song_api_util';
 
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_ARTIST_SONGS = 'RECEIVE_ARTIST_SONGS';
 export const RECEIVE_ARTIST_IMAGE = 'RECEIVE_ARTIST_IMAGE';
+export const RECEIVE_ALBUM_SONGS = 'RECEIVE_ALBUM_SONGS';
 
 export const receiveSongs = (songs) => ({
   type: RECEIVE_ALL_SONGS,
@@ -25,10 +26,22 @@ export const fetchArtistSongsThunk = (artistId) => dispatch => SongsForArtist(ar
 
 
 
+// ALBUM SONGS
+export const receiveAlbumSongs = (songs) => ({
+  type: RECEIVE_ALBUM_SONGS,
+  songs
+})
+
+// ALBUM SONGS Thunk
+export const fetchAlbumSongsThunk = (albumId) => dispatch => SongsForAlbum(albumId)
+.then((songs) => dispatch(receiveAlbumSongs(songs)));
+
+
+// Artist Image
 export const receiveArtistImage = (artistInfo) =>({
   type: RECEIVE_ARTIST_IMAGE,
   artistInfo
 })
-// Thunk
+//Artist Image Thunk
 export const fetchArtistImageThunk = (artistId) => dispatch => GetArtistImage(artistId)
 .then((artistInfo) => dispatch(receiveArtistImage(artistInfo)));

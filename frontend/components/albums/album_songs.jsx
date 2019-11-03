@@ -1,23 +1,24 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 
-class ArtistSongs extends React.Component{
+class AlbumSongs extends React.Component{
     constructor(props){
         super(props);
         this.handleHoverSong = this.handleHoverSong.bind(this);
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
-        this.state = {
-          songUrl: "",
-          songTitle: "",
-          songArtist: "",
-          songsInfo: this.props.artistSongs
-        }
+        // this.state = {
+        //   songUrl: "",
+        //   songTitle: "",
+        //   songArtist: "",
+        //   songsInfo: this.props.AlbumSongs
+        // }
     }
 
     componentWillMount(){
-        let artistId = this.props.match.params.artistId;
-        this.props.receiveArtistSong(artistId)
-        .then( () => this.props.getArtistImage(artistId));
+        let albumId = this.props.match.params.albumId;
+        this.props.receiveAlbumSongs(albumId)
+        debugger;
+        // .then( () => this.props.getArtistImage(albumId));
     }
     
     handleHoverSong(song){
@@ -66,14 +67,14 @@ class ArtistSongs extends React.Component{
             <div className="artistPage">
             
                 {
-                    (this.props.artistSongs.length > 0) && <div className="artist-image-cont" >
-                    <p className="main-artist-song"> {this.props.artistSongs[0].artist} </p>    
-                        <img className="big-image-artist" src={this.props.artistImage.photoUrl} />
+                    (this.props.AlbumSongs.length > 0) && <div className="artist-image-cont" >
+                    {/* <p className="main-artist-song"> {this.props.AlbumSongs[0].artist} </p>     */}
+                        {/* <img className="big-image-artist" src={this.props.artistImage.photoUrl} /> */}
                     </div> 
                 }
 
                 <ul className="each-song-result    ">
-                    {this.props.artistSongs.map(song =>
+                    {this.props.AlbumSongs.map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
                         onMouseLeave= {() => this.handleHoverOutSong(song)} 
                         id="each-song-result" 
@@ -83,7 +84,7 @@ class ArtistSongs extends React.Component{
 
                         <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
                         
-                        <img  className="small-image-song" src={song.songImageUrl} />
+                        {/* <img  className="small-image-song" src={song.songImageUrl} /> */}
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
@@ -97,4 +98,4 @@ class ArtistSongs extends React.Component{
     }
 }
 
-export default withRouter(ArtistSongs);
+export default withRouter(AlbumSongs);

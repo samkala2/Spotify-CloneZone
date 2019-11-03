@@ -5,7 +5,8 @@ import SearchContainer from '../artists/artists_container'
 import SideBar from '../sidebar_launcher/sidebar_launcher';
 import SongPlayer from '../song_player/song_player';
 import WebLauncherHomeContainer from './web_laucher_homecontainer';
-import ArtistSongsContainer from "../artists/artist_songs_container"
+import ArtistSongsContainer from "../artists/artist_songs_container";
+import AlbumSongsContainer from '../albums/album_songs_container';
 
 class WebLauncher extends React.Component {
 
@@ -35,6 +36,7 @@ class WebLauncher extends React.Component {
 
             <Route path ="/weblauncher/:artistId/songs" component={ArtistSongsContainer}/>
 
+            <Route path="/weblauncher/:albumId/albumsongs" component= {AlbumSongsContainer}/>
 
           </div>
 
