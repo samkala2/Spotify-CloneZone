@@ -16,7 +16,7 @@ class WebLauncherHome extends React.Component {
       songArtist: "Eminem",
 
       filters: {
-        AllSongs: false,
+        AllSongs: true,
         AllArtists: false,
         AllAlbums: false,
       }
@@ -49,9 +49,14 @@ class WebLauncherHome extends React.Component {
   }
 
 
-  SetStateHoveredSong(song){
+  displayPlayButton(song){
     let playButton = document.getElementById(song.id.toString())
     playButton.classList.remove("display-n")
+  }
+
+  hidePlayButton(song){
+    let playButton = document.getElementById(song.id.toString())
+    playButton.classList.add("display-n")
   }
 
   playSongios(song) {
@@ -78,7 +83,7 @@ class WebLauncherHome extends React.Component {
 
   handleAlbums() {
     this.toggleResults("AllAlbums")
-    debugger
+    // debugger
     let albumsButton = document.getElementsByClassName("albumsb")[0];
     albumsButton.classList.remove("opacity")
   }
@@ -87,6 +92,17 @@ class WebLauncherHome extends React.Component {
     this.props.receiveArtistSong(artistId)
   }
 
+
+  handlePlayHover(id) {
+    let imageSong = document.getElementsByClassName(id.toString())[0];
+    imageSong.classList.add("cover-background")
+  }
+
+
+  handlePlayMouseOut(id) {
+    let imageSong = document.getElementsByClassName(id.toString())[0];
+    imageSong.classList.remove("cover-background") 
+  }
 
   render() {
     const {AllSongs, 
@@ -114,16 +130,29 @@ class WebLauncherHome extends React.Component {
               <h3> Songs </h3>
               <ul className="all-songs">
                 {this.props.songs.slice(0).reverse().map(song =>
-                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
-                    <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
-                    <img  className="image-song" src={song.songImageUrl} />
+                  <li onMouseEnter={() => this.displayPlayButton(song)}  
+                      onMouseLeave ={ () => this.hidePlayButton(song)}
+                      id="each-song-opacity" 
+                      className={"each-song-res" } 
+                  >
+                   
+                    {/* <i  id={song.id} className="icon ion-md-play display-n"></i> */}
 
-                    <div className="song-info">
-                      <span className="song-title">  {song.title}
-                      </span>
+                    {/* <div className="cover-song">  */}
+                    <img id={song.id} onMouseEnter = {() => this.handlePlayHover(song.id)}
+                                      onMouseLeave = { () => this.handlePlayMouseOut(song.id)} 
+                                      onClick={() => { this.playSongios(song) }} 
+                                      className={"play-button-2" + " " +  "display-n" } 
+                                      src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"
 
-                      <span className="song-artist">  {song.artist}
-                      </span>
+                                      /> 
+
+                    <img  className={"image-song" + " " + song.id + " " + "overlay" + " " + "gray"} src={song.songImageUrl} />
+                  {/* </div> */}
+                    <div className="song-info-allsongs">
+                      <span className="song-title">  {song.title}      </span>
+
+                      <span className="song-artist">  {song.artist}    </span>
                     </div>
 
                   </li>)}

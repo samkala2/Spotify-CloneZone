@@ -85,9 +85,10 @@ body {
   }
 
   .image-album, .image-song{
-    width: 200px;
-    height: 200px
-  }
+    width: 220px;
+    height: 220px;
+    box-shadow: 0 0 10px rgba(11, 42, 37, 0.5);
+}  
   
   .all-albums{
     display: flex;
@@ -105,7 +106,7 @@ body {
     padding-top: 10px;
   }
   .album-title{
-    color: rgb(218, 218, 218);
+    color: rgb(155, 127, 127);
   }
   .album-info, .song-info{
     font-family: 'Rubik', sans-serif;
@@ -117,10 +118,20 @@ body {
   }
 
   .song-info{
+    width: 203px; 
+  }
+
+  .song-info-allsongs{
     width: 203px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center
   }
   .all-album-results h3, .all-songs-cont h3, .all-artists-result h3{
-    font-family: "Circular Bold";
+    font-family: 'Rubik', sans-serif;
+    color: rgb(220, 217, 217);
     font-size: 36px;
     line-height: 44px;
     letter-spacing: -0.005em;
@@ -234,10 +245,10 @@ img#sidebar-logo {
 
 }
 
-.all-songs-results{
+.all-songs-results, .all-album-results, .all-artists-result{
   font-family: 'Rubik', sans-serif;
   color: rgb(220, 217, 217);
-  padding-left: 227px;
+  padding-left: 180px;
   padding-top: 32px;
 }
 
@@ -246,17 +257,5 @@ img#sidebar-logo {
 }
 
 .all-songs-results i:hover{
-  /* font-size: 22px; */
   cursor: pointer;
-}
-
-.all-album-results{
-  padding-left: 227px;
-  padding-top: 32px;
-}
-
-
-.all-artists-result{
-  padding-left: 227px;
-  padding-top: 32px;
 }
