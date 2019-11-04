@@ -130,6 +130,7 @@ class Artists extends React.Component {
 
 
   render() {
+    // debugger;
     const {
       TopResults,
       ArtistsResults,
