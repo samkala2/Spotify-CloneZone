@@ -270,7 +270,7 @@ class Artists extends React.Component {
                     <li> 
                     <div class="album-artist-cont"> 
 
-                    <Link onClick={() => this.goToAlbumPage(album.id)} className="" to={`/weblauncher/${album.id}/songs`}>  
+                    <Link className="" to={`/weblauncher/${album.id}/albumsongs`}>  
                     <img className="album-photo" src={album.albumImageUrl} />
                     </Link> 
                     

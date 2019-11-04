@@ -171,7 +171,9 @@ class WebLauncherHome extends React.Component {
               <ul className="all-albums">
                 {this.props.albums.slice(0).reverse().map(album =>
                 <li>
+                <Link className="" to={`/weblauncher/${album.id}/albumsongs`}>  
                   <img className="image-album" src={album.albumImageUrl} />
+                </Link>
                   <div className="album-info">
                       <div className="album-title">  {album.name} </div>
                       <div className="album-artist">  {album.artistName} </div>
