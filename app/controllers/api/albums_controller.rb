@@ -7,7 +7,6 @@ class Api::AlbumsController < ApplicationController
   end
 
 
-
   def getall
     @albums = Album.all
     render :show
@@ -17,6 +16,12 @@ class Api::AlbumsController < ApplicationController
     query = params[:album_id]
     @songs = Song.joins(:album).where("albums.id = '#{query}'")
     render :specific
+  end
+
+  def get_album_info
+    query = params[:album_id]
+    @album = Album.find(query)
+    render :album_info
   end
 
   

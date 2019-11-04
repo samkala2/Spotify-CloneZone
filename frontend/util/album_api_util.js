@@ -19,3 +19,14 @@ export const getAllAlbums = () => (
 );
 
 
+export const getAlbumInfo = (albumId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/album/info?album_id=${albumId}`,
+    error: (err) => console.log(err)
+  })
+);
+
+
+
+

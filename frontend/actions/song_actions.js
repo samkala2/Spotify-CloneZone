@@ -37,6 +37,9 @@ export const fetchAlbumSongsThunk = (albumId) => dispatch => SongsForAlbum(album
 .then((songs) => dispatch(receiveAlbumSongs(songs)));
 
 
+
+
+// Artist IMAGE Actions
 // Artist Image
 export const receiveArtistImage = (artistInfo) =>({
   type: RECEIVE_ARTIST_IMAGE,
