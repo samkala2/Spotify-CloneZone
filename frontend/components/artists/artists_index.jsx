@@ -203,13 +203,13 @@ class Artists extends React.Component {
 
               {
                 (this.props.songs.length > 0) && <div>
-                  <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
-                  <p className="top-artist-song"> {this.props.songs[0].artist} </p>
+                  <img className="main-image-song" src={this.props.topsongs[0].songImageUrl} />
+                  <p className="top-artist-song"> {this.props.topsongs[0].artist} </p>
                 </div>
               }
 
               <ul className="each-song-result-cont">
-                {this.props.songs.map(song =>
+                {this.props.topsongs.map(song =>
 
                   <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
                   <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
