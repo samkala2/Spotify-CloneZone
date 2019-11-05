@@ -78,9 +78,9 @@ class AlbumSongs extends React.Component{
             {/* [0] -- album image url */}
             
                 {
-                    (this.props.albumInfo.length > 0) && <div className="artist-image-cont" >
+                    (this.props.albumInfo.length > 0) && <div className="album-image-cont" >
                         
-                        <div>
+                        <div className="album-info-cont">
                         <p className="main-album-info"> {this.props.albumInfo[1]} </p> 
                         
                         <Link onClick={() => this.goToArtistPage(artistId)} className=""  to={`/weblauncher/${artistId}/songs`} >  

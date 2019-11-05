@@ -110,7 +110,7 @@
    }
 
    .main-artist-song{
-    margin-left: 108px;
+    // margin-left: 108px;
     margin-top: 457px;
        font-family: 'Rubik', sans-serif;
        z-index: 15;
@@ -151,7 +151,7 @@
     margin-top: 411px;
     font-family: 'Rubik', sans-serif;
     z-index: 15;
-    position: absolute;
+    // position: absolute;
     color: rgb(153, 150, 150);
     font-size: 14px;
     font-weight: 500;
@@ -160,8 +160,9 @@
 
    
    .each-song-result {
-    padding-left: 514px;
+    // padding-left: 514px;
     padding-top: 80px;
+    padding-left: 0px;
     margin-top: 0;
     flex-wrap: wrap;
     width: 65%;
@@ -648,7 +649,12 @@
         cursor: pointer;
     }
 
-        
+    .album-info-cont{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    }
     .play-button{
         width: 50px;
         height: 50px;
@@ -796,13 +802,8 @@
     .big-image-artist{
     content: "";
     position: absolute;
-    /* top: 0px; */
-    /* right: 0; */
-    /* left: 0%; */
-    /* object-fit: cover; */
-    /* bottom: 0; */
     opacity: 0.8;
-    margin-left: 40px;
+    // margin-left: 40px;
     margin-top: 40px;
     height: 420px;
     width: 420px;
@@ -852,10 +853,23 @@
     }
 
     .artist-image-cont{
-        height: 54%;
-        position: relative;
+        margin-left: 30px;
+    height: 600px;
+    position: relative;
+    width: 600px;
+    display: flex;
+    justify-content: center;
     }
 
+
+    .album-image-cont{
+        height: 600px;
+        position: relative;
+        width: 600px;
+        // display: flex;
+        justify-content: center;
+        }
+    
     .all-songs{
         display: flex;
         padding-left: 47px;
