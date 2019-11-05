@@ -30,42 +30,53 @@ class WebLauncherHome extends React.Component {
     this.props.getAllArtists();
   }
 
+  highlightTitle(filter){
+    let songsButton = document.getElementsByClassName("songsb")[0];
+    let albumsButton = document.getElementsByClassName("albumsb")[0];
+    let artistsButton = document.getElementsByClassName("artistsb")[0];
+
+    if (songsButton && albumsButton && artistsButton) {
+
+      
+      if (filter=== 'AllArtists') {
+        albumsButton.classList.remove("white-on")
+        artistsButton.classList.add("white-on")
+        songsButton.classList.remove("white-on")
+      } 
+      else if (filter === 'AllSongs'){
+        albumsButton.classList.remove("white-on")
+        artistsButton.classList.remove("white-on")
+        songsButton.classList.add("white-on")
+        
+      } else if (filter === 'AllAlbums') {
+        albumsButton.classList.add("white-on")
+        artistsButton.classList.remove("white-on")
+        songsButton.classList.remove("white-on")
+      }
+    }
+
+  }
+
   toggleResults(filter) {
     const resetedFilters = {
       AllSongs: false,
       AllArtists: false,
       AllAlbums: false,
     }
+    // debugger;
 
-    let songsButton = document.getElementsByClassName("songsb")[0];
-    let albumsButton = document.getElementsByClassName("albumsb")[0];
-    let artistsButton = document.getElementsByClassName("artistsb")[0];
+    this.highlightTitle(filter)
 
-    // if (filter === 'AllSongs'){
-      // albumsButton.classList.remove("white-on")
-      // artistsButton.classList.remove("white-on")
-      // songsButton.classList.add("white-on")
-
-    // } 
-    // else if (filter=== 'AllArtists') {
-    //   albumsButton.classList.remove("white-on")
-    //   artistsButton.classList.add("white-on")
-    //   songsButton.classList.remove("white-on")
-
-    // } else if (fileter === 'AllAlbums') {
-    //   albumsButton.classList.add("white-on")
-    //   artistsButton.classList.remove("white-on")
-    //   songsButton.classList.remove("white-on")
-    // }
-
-    return () => {
-      this.setState({filters: resetedFilters}, () => {
-        this.setState({filters: {
-          ...this.state.filters,
-          [filter]: true
-        }})
-      })
-    }
+    setTimeout(() => {
+    this.setState({filters: resetedFilters}, () => {
+      this.setState({filters: {
+        ...this.state.filters,
+        [filter]: true
+      }})
+    })},100
+    )
+      // console.log(this.state.filters)
+    
    
   }
 
@@ -104,7 +115,6 @@ class WebLauncherHome extends React.Component {
 
   handleAlbums() {
     this.toggleResults("AllAlbums")
-    // debugger
     let albumsButton = document.getElementsByClassName("albumsb")[0];
     albumsButton.classList.remove("opacity")
   }
@@ -132,14 +142,15 @@ class WebLauncherHome extends React.Component {
 
 
     window.albumstate = this.state.filters;
+    // debugger;
     return(
 
 
     <div className="mid-home-cont">  
         <div className="upper-links">
-          <span className="opacity albumsb" onClick={this.toggleResults("AllAlbums")}> ALBUMS </span>
-          <span className="opacity artistsb" onClick={this.toggleResults("AllArtists")} > ARTISTS </span>
-          <span className="opacity songsb" onClick={this.toggleResults("AllSongs")} > SONGS </span>
+          <span className="opacity albumsb white-on" onClick={ () => this.toggleResults("AllAlbums") }> ALBUMS </span>
+          <span className="opacity artistsb" onClick= { () => this.toggleResults("AllArtists")} > ARTISTS </span>
+          <span className="opacity songsb" onClick={  () => this.toggleResults("AllSongs")} > SONGS </span>
         </div>
 
 

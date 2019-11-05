@@ -29,6 +29,47 @@ class Artists extends React.Component {
   }
 
 
+  highlightTitle(filter){
+    let songsButton = document.getElementsByClassName("songs-res")[0];
+    let albumsButton = document.getElementsByClassName("albums-res")[0];
+    let artistsButton = document.getElementsByClassName("artists-res")[0];
+    let topResButton = document.getElementsByClassName("top-res")[0];
+
+
+    if (songsButton && albumsButton && artistsButton && topResButton) {
+
+      
+      if (filter=== 'ArtistsResults') {
+        albumsButton.classList.remove("white-on")
+        artistsButton.classList.add("white-on")
+        songsButton.classList.remove("white-on")
+        topResButton.classList.remove("white-on")
+      } 
+      else if (filter === 'SongsResults'){
+        albumsButton.classList.remove("white-on")
+        artistsButton.classList.remove("white-on")
+        songsButton.classList.add("white-on")
+        topResButton.classList.remove("white-on")
+
+        
+      } else if (filter === 'AlbumsResults') {
+        albumsButton.classList.add("white-on")
+        artistsButton.classList.remove("white-on")
+        songsButton.classList.remove("white-on")
+        topResButton.classList.remove("white-on")
+
+      }
+      else if (filter === 'TopResults') {
+        albumsButton.classList.remove("white-on")
+        artistsButton.classList.remove("white-on")
+        songsButton.classList.remove("white-on")
+        topResButton.classList.add("white-on")
+
+      }
+    }
+
+  }
+
 
   toggleResults(filter) {
     const resetedFilters = {
@@ -38,14 +79,16 @@ class Artists extends React.Component {
       AlbumsResults: false,
       PlaylistsResults: false
     }
-    return () => {
+
+    this.highlightTitle(filter)
+
       this.setState({filters: resetedFilters}, () => {
         this.setState({filters: {
           ...this.state.filters,
           [filter]: true
         }})
       })
-    }
+    
   }
 
   update(field) {
@@ -217,12 +260,12 @@ hidePlayButton(song){
         <div id="results-container" class="display-results"> 
           <div className="result-links-container ">
 
-            <span className="result-links" onClick={this.toggleResults("TopResults")}> Top Results </span>
-            <span className="result-links" onClick={this.toggleResults("ArtistsResults")}> Artists </span>
-            <span className="result-links" onClick={this.toggleResults("SongsResults")}> Songs </span>
-            <span className="result-links" onClick={this.toggleResults("AlbumsResults")}> Albums </span>
+            <span className="result-links top-res white-on" onClick={() => this.toggleResults("TopResults")}> Top Results </span>
+            <span className="result-links artists-res" onClick={() => this.toggleResults("ArtistsResults")}> Artists </span>
+            <span className="result-links songs-res" onClick={() => this.toggleResults("SongsResults")}> Songs </span>
+            <span className="result-links albums-res" onClick={() => this.toggleResults("AlbumsResults")}> Albums </span>
 
-          </div>
+          </div>  
         </div>
 
         <div className="search-results">   
