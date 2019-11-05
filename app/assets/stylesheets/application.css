@@ -106,6 +106,10 @@ body {
     margin-left: 15px;
   }
 
+  .all-albums li{
+    margin-bottom: 34px;
+  }
+
   .all-albums .album-title{
     padding-bottom: 10px; 
     padding-top: 10px;
@@ -268,8 +272,13 @@ img#sidebar-logo {
   padding-top: 32px;
 }
 
+.all-artists-result li {
+  margin-bottom: 34px;
+}
+
 .all-songs-results li{
     list-style-type: none;
+    margin-bottom: 34px;
 }
 
 .all-songs-results i:hover{

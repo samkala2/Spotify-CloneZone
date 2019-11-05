@@ -12,6 +12,7 @@ const mapStateToProps = state => {
   
   return {
   artists: Object.values(state.entities.artists) ,
+  topAlbums: Object.values(state.entities.albums).slice(0,5),
   albums: Object.values(state.entities.albums),
   topsongs: Object.values(state.entities.songs).slice(0).reverse().slice(0,5),
   songs: Object.values(state.entities.songs).slice(0).reverse(),

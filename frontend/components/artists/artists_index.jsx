@@ -126,6 +126,13 @@ class Artists extends React.Component {
     // debugger;
     let searchResults = document.getElementById("results-container")
     searchResults.classList.remove("display-results")
+
+    let h3TopRes = document.getElementsByClassName("resultt-titles")
+    // debugger;
+    let i = 0;
+    for (let i = 0; i < h3TopRes.length; i++) {
+      h3TopRes[i].classList.remove("hidden-title")
+    }
   }
 
 
@@ -196,9 +203,11 @@ class Artists extends React.Component {
         </div>
 
         <div className="search-results">   
-          {/* TOP RESULTS */}
+                    {/* Top Results */}
           {
             TopResults && <div className="TopResultsCont">
+
+            <h4 className="hidden-title resultt-titles"> Songs </h4>
             <div className="songs-result">
 
               {
@@ -207,6 +216,7 @@ class Artists extends React.Component {
                   <p className="top-artist-song"> {this.props.topsongs[0].artist} </p>
                 </div>
               }
+
 
               <ul className="each-song-result-cont">
                 {this.props.topsongs.map(song =>
@@ -222,27 +232,52 @@ class Artists extends React.Component {
                   </li>)}
               </ul>
               
-              </div>
-
-              <div className="artists-result">
-                <ul>
-                {
-                  this.props.artists.map(artist =>
-                    <li>
-                    <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
-                    <img className="artist-photo" src={artist.photoUrl} />
-                    </Link> 
-                      
-                      <span className="artist-name">  {artist.name}  </span>
-                    </li>
-                )}
-
-                </ul>
-              </div>
-
             </div>
+
+
+            <h4 className="hidden-title resultt-titles"> Artists </h4> 
+            <div className="artists-result">
+              <ul>
+              {
+                this.props.artists.map(artist =>
+                  <li>
+                  <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
+                  <img className="artist-photo" src={artist.photoUrl} />
+                  </Link> 
+                    
+                    <span className="artist-name">  {artist.name}  </span>
+                  </li>
+              )}
+              </ul>
+            </div>
+
+
+
+
+            <h4 className="hidden-title resultt-titles"> Albums </h4> 
+            <ul className="album-ul">
+                {this.props.topAlbums.map(album =>
+                  <li> 
+                  <div class="album-artist-cont"> 
+
+                  <Link className="" to={`/weblauncher/${album.id}/albumsongs`}>  
+                  <img className="album-photo" src={album.albumImageUrl} />
+                  </Link> 
+                  
+                  <p> {album.name} </p> 
+                  </div>
+                  </li>)}
+            </ul>
+
+            
+          
+
+          </div>
             
           }
+
+
+
 
           {
             ArtistsResults && <div className="artists-result">
