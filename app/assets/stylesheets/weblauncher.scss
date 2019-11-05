@@ -51,6 +51,8 @@
     color: white;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 24px;
   }
 
   .artists-result ul{
@@ -195,7 +197,6 @@
    .top-artist-song{
     font-family: 'Rubik', sans-serif;
     color: white;
-    padding-left: 26%;
     font-size: 20px;
     font-weight: 300;
    }
@@ -220,6 +221,12 @@
 
    .each-song-result li i{
        color: white;
+   }
+
+   .flex-artist-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
    }
 
   
@@ -619,16 +626,29 @@
         border: none;
         outline: none;
         transition: opacity 0.2s linear;
-
     }
 
 
-    .play-button-2:hover {
+    .play-button-3 {
+        width: 122px;
+        height: 122px;
+        z-index: 22;
+        margin-left: 0px;
+        margin-top: 82px;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        transition: opacity 0.2s linear;
+    }
+
+
+    .play-button-2:hover, .play-button-3:hover {
         transform: scale(1.1);
         cursor: pointer;
     }
 
-
+        
     .play-button{
         width: 50px;
         height: 50px;

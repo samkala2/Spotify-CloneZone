@@ -151,7 +151,8 @@ class WebLauncherHome extends React.Component {
               <h3> Songs </h3>
               <ul className="all-songs">
                 {this.props.songs.slice(0).reverse().map(song =>
-                  <li onMouseEnter={() => this.displayPlayButton(song)}  
+                  <li 
+                  onMouseEnter={() => this.displayPlayButton(song)}  
                       onMouseLeave ={ () => this.hidePlayButton(song)}
                       id="each-song-opacity" 
                       className={"each-song-res" } 

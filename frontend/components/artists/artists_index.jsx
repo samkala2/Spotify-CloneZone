@@ -95,6 +95,18 @@ handleHoverOutSong(song){
 }
 
 
+
+displayPlayButton(song){
+  let playButton = document.getElementById("big-play")
+  playButton.classList.remove("display-n")
+}
+
+hidePlayButton(song){
+  let playButton = document.getElementById("big-play")
+  playButton.classList.add("display-n")
+}
+
+
   goToArtistPage(artistId){
     this.props.receiveArtistSong(artistId)
   }
@@ -222,8 +234,20 @@ handleHoverOutSong(song){
             <div className="songs-result">
 
               {
-                (this.props.songs.length > 0) && <div>
-                  <img className="main-image-song" src={this.props.topsongs[0].songImageUrl} />
+                (this.props.songs.length > 0) && <div className="flex-artist-image">
+
+                <img id="big-play" 
+                     
+                     onClick={() => { this.playSongios(this.props.topsongs[0]) }} 
+                     className={"play-button-3" + " "     } 
+                     src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"
+                  /> 
+
+                  <img className="main-image-song" 
+                      //  onMouseEnter={() => this.displayPlayButton("big-play")}  
+                      //  onMouseLeave ={ () => this.hidePlayButton("big-play")}
+                       src={this.props.topsongs[0].songImageUrl} />
+
                   <p className="top-artist-song"> {this.props.topsongs[0].artist} </p>
                 </div>
               }
@@ -338,8 +362,19 @@ handleHoverOutSong(song){
             <div className="songs-result">
               
               {
-                (this.props.songs.length > 0) && <div>    
-                    <img className="main-image-song" src={this.props.songs[0].songImageUrl} />
+                (this.props.songs.length > 0) && <div className="flex-artist-image">  
+
+                <img id="big-play" 
+                     
+                     onClick={() => { this.playSongios(this.props.songs[0]) }} 
+                     className={"play-button-3" + " "     } 
+                     src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"
+                  /> 
+
+
+
+                    <img className="main-image-song" 
+                    src={this.props.songs[0].songImageUrl} />
                   <p className="top-artist-song"> {this.props.songs[0].artist} </p>
                 </div> 
 
