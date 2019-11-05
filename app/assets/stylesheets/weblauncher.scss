@@ -81,11 +81,18 @@
     //   height: 60px;
   }
 
-    .song-title,  .song-artist, .song-artist-3, .songs-result li i{
+    .song-artist, .song-artist-3, .songs-result li i{
         margin-top: 10px;
-       font-size: 15px;
+       font-size: 14px;
        font-family: 'Rubik', sans-serif;
        color: rgb(138, 135, 135);
+   }
+
+   .song-title{
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    color: white;
    }
 
    .song-artist-3{
@@ -271,10 +278,9 @@
       font-size: 18px;
     line-height: 20px;
     letter-spacing: .015em;
-    // font-weight: var(--glue-font-weight-bold);
     font-family:'Rubik', sans-serif;
-    //  arial,sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
        color: rgb(220, 217, 217);
+       font-weight: 500;
    }
    
     
@@ -781,6 +787,12 @@
         width: 84%;
         height: 60px;
     }
+
+    #each-song-result-2{
+        width: 84%;
+        // height: 60px;
+    }
+
 
 
     .each-song-result-cont{
