@@ -121,7 +121,7 @@ body {
   .album-artist{
     color: gray;
   }
-  .album-info, .song-info{
+  .album-info, .song-info, .song-info-3{
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     display: flex;
@@ -131,6 +131,12 @@ body {
 
   .song-info{
     width: 203px; 
+  }
+
+  .song-info-3{
+    width: 215px;
+    margin-left: 82px;
+    font-weight: 500;
   }
 
   .song-info-2{
@@ -193,8 +199,8 @@ body {
   height: 89%;
   max-width: 100%;
   min-width: 100%;
-  background-color: black;
-  border: 2px solid black;
+  background-color: rgb(8, 8, 8);
+  border: 2px solid rgb(8, 8, 8);
   z-index: 2;
   position: fixed;
   padding-left: 228px;

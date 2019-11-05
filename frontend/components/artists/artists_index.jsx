@@ -22,7 +22,9 @@ class Artists extends React.Component {
     };
 
     this.toggleResults = this.toggleResults.bind(this)
-    this.SetStateHoveredSong = this.SetStateHoveredSong.bind(this);
+    this.handleHoverSong = this.handleHoverSong.bind(this);
+    this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
+
     this.goToArtistPage = this.goToArtistPage.bind(this);
   }
 
@@ -74,15 +76,24 @@ class Artists extends React.Component {
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
   }
 
-  SetStateHoveredSong(song){
+
+  handleHoverSong(song){
     let playButton = document.getElementById(song.id.toString())
     playButton.classList.remove("display-n")
-  }
-  
-  HoverOutSong(song){
+
+    let musicNote = document.getElementsByClassName(song.id.toString())[0];
+    musicNote.classList.add("display-n");
+}
+
+
+handleHoverOutSong(song){
     let playButton = document.getElementById(song.id.toString())
     playButton.classList.add("display-n")
-  }
+
+    let musicNote = document.getElementsByClassName(song.id.toString())[0];
+    musicNote.classList.remove("display-n");
+}
+
 
   goToArtistPage(artistId){
     this.props.receiveArtistSong(artistId)
@@ -96,7 +107,7 @@ class Artists extends React.Component {
   //   while (ind < 5){
   //     let song = this.props.songs[ind];
   //     returnedArr.push(
-  //       <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+  //       <li onMouseEnter={() => this.handleHoverSong(song)}  id="each-song-opacity" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
   //                 <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                   
   //                 <img  className="small-image-song" src={song.songImageUrl} />
@@ -221,13 +232,19 @@ class Artists extends React.Component {
               <ul className="each-song-result-cont">
                 {this.props.topsongs.map(song =>
 
-                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                  <li onMouseEnter={() => this.handleHoverSong(song)}
+                      onMouseLeave= {() => this.handleHoverOutSong(song)}  
+                      id="each-song-result" 
+                      className={"each-song-res" + song.id } 
+                  >
                   <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                   
-                  <img  className="small-image-song" src={song.songImageUrl} />
-                    <div className="song-info"> 
-                      <span className="song-title">  {song.title}   </span> 
-                      <span className="song-artist">  {song.artist} </span> 
+                  <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+
+                  {/* <img  className="small-image-song" src={song.songImageUrl} /> */}
+                    <div className="song-info-3"> 
+                      <span className="song-title-3">  {song.title}   </span> 
+                      <span className="song-artist-3">  {song.artist} </span> 
                     </div> 
                   </li>)}
               </ul>
@@ -268,10 +285,6 @@ class Artists extends React.Component {
                   </div>
                   </li>)}
             </ul>
-
-            
-          
-
           </div>
             
           }
@@ -334,13 +347,18 @@ class Artists extends React.Component {
 
               <ul className="each-song-result-cont">
                 {this.props.songs.map(song =>
-                  <li onMouseEnter={() => this.SetStateHoveredSong(song)}  id="each-song-result" className={"each-song-res" + song.id + " " + "overlay" + " " + "gray"} >
+                  <li onMouseEnter={() => this.handleHoverSong(song)} 
+                      onMouseLeave= {() => this.handleHoverOutSong(song)}  
+                      id="each-song-result" 
+                      className={"each-song-res" + song.id} >
                     <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
                     
-                    <img  className="small-image-song" src={song.songImageUrl} />
-                    <span className="song-info">
-                      <span className="song-title">  {song.title} </span>
-                      <span className="song-artist">  {song.artist} </span>
+                    <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+
+                    {/* <img  className="small-image-song" src={song.songImageUrl} /> */}
+                    <span className="song-info-3">
+                      <span className="song-title-3">  {song.title} </span>
+                      <span className="song-artist-3">  {song.artist} </span>
                     </span>
                   </li>)}
               </ul>
