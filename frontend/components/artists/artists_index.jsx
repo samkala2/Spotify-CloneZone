@@ -319,7 +319,7 @@ hidePlayButton(song){
             </div>
 
 
-            <h4 className="hidden-title resultt-titles"> Artists </h4> 
+            <h4 className="hidden-title resultt-titles">  Artists </h4> 
             <div className="artists-result">
               <ul>
               {
@@ -338,7 +338,7 @@ hidePlayButton(song){
 
 
 
-            <h4 className="hidden-title resultt-titles"> Albums </h4> 
+            <h4 className="hidden-title resultt-titles">  Albums </h4> 
             <ul className="album-ul">
                 {this.props.topAlbums.map(album =>
                   <li> 

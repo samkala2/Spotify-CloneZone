@@ -96,7 +96,7 @@ class AlbumSongs extends React.Component{
                     {this.props.albumSongs.map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
                         onMouseLeave= {() => this.handleHoverOutSong(song)} 
-                        id="each-song-result-2" 
+                        id="each-song-result-4" 
                         className={"each-song-res" + song.id} >
                         
                         <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
