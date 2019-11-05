@@ -115,7 +115,11 @@ body {
     padding-top: 10px;
   }
   .album-title{
-    color: rgb(155, 127, 127);
+    color: white;
+  }
+
+  .album-artist{
+    color: gray;
   }
   .album-info, .song-info{
     font-family: 'Rubik', sans-serif;
@@ -231,6 +235,7 @@ img#sidebar-logo {
 }
 
 
+
 .playlists-result ul, .albums-result ul, .artists-result ul{
   /* font-weight: bold; */
   font-family: 'Rubik', sans-serif;
@@ -268,8 +273,8 @@ img#sidebar-logo {
 .all-songs-results, .all-album-results, .all-artists-result{
   font-family: 'Rubik', sans-serif;
   color: rgb(220, 217, 217);
-  padding-left: 152px;
-  padding-top: 32px;
+  padding-left: 180px;
+  padding-top: 40px;
 }
 
 .all-artists-result li {

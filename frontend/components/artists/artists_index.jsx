@@ -239,7 +239,7 @@ class Artists extends React.Component {
             <div className="artists-result">
               <ul>
               {
-                this.props.artists.map(artist =>
+                this.props.topArtists.map(artist =>
                   <li>
                   <Link onClick={() => this.goToArtistPage(artist.id)} className="" to={`/weblauncher/${artist.id}/songs`}>  
                   <img className="artist-photo" src={artist.photoUrl} />
