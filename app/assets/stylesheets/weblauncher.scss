@@ -7,7 +7,7 @@
       display: flex;
       flex-direction: row;   
       background-color: rgb(8, 8, 8);
-      padding-left: 20%;
+      padding-left: 16%;
       width: 80%;
       height: 100%;
       max-width: 80%;
@@ -243,7 +243,7 @@
     font-weight: 500;
     margin-bottom: 6px;
     margin-top: 10px;
-    width: 252px;
+    // width: 252px;
    }
 
    .song-artist {
@@ -263,7 +263,7 @@
     font-size: 20px;
    }
 
-   .each-song-result li i{
+   .each-song-result li i, .each-song-result-4 li i{
     padding: 8px;
     padding-top: 11px;
     padding-left: 20px;
@@ -399,7 +399,7 @@
     }
 
     .result-links-container{
-        padding-left: 12%;
+        padding-left: 10%;
         width: 80%;
         height: 80%;
         max-width: 80%;
