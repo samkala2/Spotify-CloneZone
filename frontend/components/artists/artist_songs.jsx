@@ -150,7 +150,7 @@ class ArtistSongs extends React.Component{
                     
                     <div className="album-title-image-cont-2">
                         <p className="unique-album-title"> {this.props.uniqueAlbums[1]} </p>
-                        <img className="album-artist-image-2" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
+                        <img className="album-artist-image-2" src={this.props.uniqueImages[1]} />
                         
                     </div>
 
