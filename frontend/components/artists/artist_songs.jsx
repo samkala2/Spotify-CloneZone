@@ -89,7 +89,7 @@ class ArtistSongs extends React.Component{
     }
 
     render(){
-        
+        debugger;
         return(
             <div className="artistPage">
             
@@ -100,8 +100,10 @@ class ArtistSongs extends React.Component{
                     </div> 
                 }
 
-                <ul className="each-song-result    ">
-                    {this.props.artistSongs.map(song =>
+                <ul className="each-song-result">
+                
+                    
+                    {this.state.dividedSongs[0].length> 0 && <div>{this.state.dividedSongs[0].map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
                         onMouseLeave= {() => this.handleHoverOutSong(song)} 
                         id="each-song-result-2" 
@@ -117,7 +119,29 @@ class ArtistSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
                     </li>)}
+                    </div>}
+
+                    {/* { this.state.dividedSongs[1].length > 0 &&  <div> 
+                    {this.state.divideSongs[1].map(song =>
+                    <li onMouseEnter={() => this.handleHoverSong(song)} 
+                        onMouseLeave= {() => this.handleHoverOutSong(song)} 
+                        id="each-song-result-2" 
+                        className={"each-song-res" + song.id} >
+                        
+                        <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+
+                        <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+                        
+                        <img  className="small-image-song" src={song.songImageUrl} />
+                        <div className="song-info-2">
+
+                        <div className="song-title-2">  {song.title}      </div>
+                        </div>
+                    </li>)}
+                    </div>  } */}
                 </ul> 
+
+
             </div>
 
             

@@ -77,18 +77,19 @@ padding-left: 120px;
 padding-right: 120px;
 border-width: 0;
 letter-spacing: 2px;
-color: rgb(102, 102, 102);
+color: rgb(238, 237, 236);
 text-transform: uppercase;
 text-decoration: none;
-border: 1px solid gray;
+border: 1px solid rgb(238, 237, 236);
 font-weight: bold;
+font-family: sans-serif;
 transition: 0.7s;
 }
 
 .launch-button:hover{
   color: white;
   background-color: rgb(122, 122, 122);
-  border: rgb(83, 82, 82) 1px solid;
+  border: rgb(126, 126, 126) 1px solid;
 }
 .pickup-whereleft{
   padding-left: 0px;
@@ -166,12 +167,11 @@ position: fixed;
     }
 
     .footer-to-weblaunch{
-      padding-left: 50px;
-      padding-top: 400px;
       height: 250px;
       display: flex;
       align-items: center;
       flex-direction: column;
+      color: rgb(238, 237, 236);
       }
 
     img#background-img{
@@ -224,7 +224,8 @@ position: fixed;
         letter-spacing: -0.04em;
         line-height: 1.15;
         margin-top: 0;
-        color: white;
+        color: rgb(238, 237, 236);
+        font-family: sans-serif;
     }
 
     .welcome-content {
