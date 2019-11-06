@@ -126,10 +126,11 @@ class ArtistSongs extends React.Component{
 
 
 
+                    {/* To check if the last 6 chars are the same song image name (4song, 3song) */}
+                    { (this.props.uniqueImages[this.props.uniqueImages.length -1].slice(151) !== this.props.uniqueImages[0].slice(151))  && <div>
                     
-                    {  this.props.uniqueImages.reverse()[0]  && <div>
-                    
-                    <img className="album-artist-image" src={this.props.uniqueImages.reverse()[0]} />
+                    <img className="album-artist-image" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
+
                     {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
 
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
