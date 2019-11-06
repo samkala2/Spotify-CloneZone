@@ -133,7 +133,7 @@ class ArtistSongs extends React.Component{
 
                         <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
                         
-                        <img  className="small-image-song" src={song.songImageUrl} />
+                        {/* <img  className="small-image-song" src={song.songImageUrl} /> */}
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
@@ -148,8 +148,8 @@ class ArtistSongs extends React.Component{
                         
                         <div>
                     
-                    <div className="album-title-image-cont">
-                        <p className="unique-album-title"> {this.props.uniqueAlbums[0]} </p>
+                    <div className="album-title-image-cont-2">
+                        <p className="unique-album-title"> {this.props.uniqueAlbums[1]} </p>
                         <img className="album-artist-image-2" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
                         
                     </div>
@@ -166,7 +166,7 @@ class ArtistSongs extends React.Component{
 
                         <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
                         
-                        <img  className="small-image-song" src={song.songImageUrl} />
+                       
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
