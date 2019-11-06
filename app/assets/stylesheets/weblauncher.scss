@@ -203,14 +203,14 @@
 
 
 
-   .each-song-result li{ 
+   .each-song-result li, .each-song-result-4 li{ 
     position: relative;
     display: flex;
     flex-direction: row;
     border-bottom: 0.5px solid rgb(122, 122, 122);
    }
 
-   .each-song-result li:hover{ 
+   .each-song-result li:hover, .each-song-result-4 li:hover{ 
     //    cursor: pointer;
        background-color: rgb(22, 22, 22);
        -webkit-transition: background-color 200ms linear;
@@ -270,7 +270,7 @@
     font-size: 20px;
    }
 
-   .each-song-result li i{
+   .each-song-result li i, .each-song-result-4 li i{
        color: white;
    }
 

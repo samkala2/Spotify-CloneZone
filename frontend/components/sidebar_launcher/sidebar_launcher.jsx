@@ -11,7 +11,7 @@ class SideBar extends React.Component {
 
       <div className="side-bar">
         <div className="logo">
-          <Link className="link-home" to="/weblauncher/search">
+          <Link className="link-home" to="/">
             <img id='sidebar-logo' src="https://community.spotify.com/t5/image/serverpage/image-id/28936i76F1ECE491E76C35/image-size/small?v=mpbl-1&px=-1" />
             <div className="sidebar-logoword" href=""> Craftify </div>
           </Link>

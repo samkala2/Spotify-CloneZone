@@ -92,7 +92,7 @@ class AlbumSongs extends React.Component{
                     </div> 
                 }
 
-                <ul className="each-song-result-4    ">
+                <ul className="each-song-result-4">
                     {this.props.albumSongs.map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
                         onMouseLeave= {() => this.handleHoverOutSong(song)} 
