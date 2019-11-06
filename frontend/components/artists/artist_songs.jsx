@@ -103,7 +103,7 @@ class ArtistSongs extends React.Component{
     }
 
     render(){
-        // debugger;
+        debugger;
         return(
             <div className="artistPage">
             
@@ -144,7 +144,7 @@ class ArtistSongs extends React.Component{
 
                     { 
 
-                        (this.props.uniqueImages[1])   && 
+                        (this.props.uniqueImages[1]).length > 0   && 
                         
                         <div>
                     

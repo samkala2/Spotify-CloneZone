@@ -193,6 +193,14 @@
     width: 65%;
    }
 
+   .each-song-result-4{
+    padding-top: 179px;
+    padding-left: 0px;
+    margin-top: 0;
+    flex-wrap: wrap;
+    width: 65%;
+   }
+
 
 
    .each-song-result li{ 
@@ -679,6 +687,7 @@
     width: 500px;
     height: 500px;
     }
+
     .play-button{
         width: 50px;
         height: 50px;
@@ -921,8 +930,7 @@
     .album-image-cont{
         height: 600px;
         position: relative;
-        width: 600px;
-        // display: flex;
+        width: 487px;
         justify-content: center;
         }
     

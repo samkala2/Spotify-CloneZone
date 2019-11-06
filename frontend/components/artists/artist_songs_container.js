@@ -19,7 +19,14 @@ function getUniqueAlbumImages(state) {
     let newarr =[] 
     Object.values(arraySongs).forEach(song => newarr.push(song.songImageUrl))
     const distinctAlbumsArr = [...new Set(newarr)]
-    return [distinctAlbumsArr[0], distinctAlbumsArr[distinctAlbumsArr.length-1]]
+    if (distinctAlbumsArr[0].slice(151) !== distinctAlbumsArr[distinctAlbumsArr.length-1])
+    {
+        return [distinctAlbumsArr[0], distinctAlbumsArr[distinctAlbumsArr.length-1]] 
+    } else if (distinctAlbumsArr[0].slice(151) === distinctAlbumsArr[distinctAlbumsArr.length-1]) {
+        return [distinctAlbumsArr[0]] 
+
+    }
+
 }
 
 // function getSongsByAlbum(state) {
