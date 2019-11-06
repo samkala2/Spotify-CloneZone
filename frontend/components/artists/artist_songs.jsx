@@ -102,8 +102,10 @@ class ArtistSongs extends React.Component{
 
                 <ul className="each-song-result">
                 
+                <img className="album-artist-image" src={this.props.uniqueImages[0]} />
                     
-                    {this.state.dividedSongs[0].length> 0 && <div>{this.state.dividedSongs[0].map(song =>
+                    {this.props.artistSongs.length> 0 && <div>{this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[0]).map(song =>
+
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
                         onMouseLeave= {() => this.handleHoverOutSong(song)} 
                         id="each-song-result-2" 
@@ -121,6 +123,36 @@ class ArtistSongs extends React.Component{
                     </li>)}
                     </div>}
 
+
+
+
+                    
+                    {  this.props.uniqueImages[1]  && <div>
+                    
+                    <img className="album-artist-image" src={this.props.uniqueImages[1]} />
+                    {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
+
+                    <li onMouseEnter={() => this.handleHoverSong(song)} 
+                        onMouseLeave= {() => this.handleHoverOutSong(song)} 
+                        id="each-song-result-2" 
+                        className={"each-song-res" + song.id} >
+                        
+                        <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+
+                        <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+                        
+                        <img  className="small-image-song" src={song.songImageUrl} />
+                        <div className="song-info-2">
+
+                        <div className="song-title-2">  {song.title}      </div>
+                        </div>
+                    </li>)}
+                    </div>}
+
+
+
+                    
+                    
                     {/* { this.state.dividedSongs[1].length > 0 &&  <div> 
                     {this.state.divideSongs[1].map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
