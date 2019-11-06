@@ -127,9 +127,9 @@ class ArtistSongs extends React.Component{
 
 
                     
-                    {  this.props.uniqueImages[1]  && <div>
+                    {  this.props.uniqueImages[-1]  && <div>
                     
-                    <img className="album-artist-image" src={this.props.uniqueImages[1]} />
+                    <img className="album-artist-image" src={this.props.uniqueImages.reverse()[0]} />
                     {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
 
                     <li onMouseEnter={() => this.handleHoverSong(song)} 
@@ -150,8 +150,9 @@ class ArtistSongs extends React.Component{
                     </div>}
 
 
-
-                    
+                        <br/>
+                        <br/>
+                    <div> ------- </div>
                     
                     {/* { this.state.dividedSongs[1].length > 0 &&  <div> 
                     {this.state.divideSongs[1].map(song =>
