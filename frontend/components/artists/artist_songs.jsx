@@ -6,19 +6,27 @@ class ArtistSongs extends React.Component{
         super(props);
         this.handleHoverSong = this.handleHoverSong.bind(this);
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
+        this.getUniqueAlbums = this.getUniqueAlbums.bind(this);
+        this.getSongsByAlbum = this.getSongsByAlbum.bind(this);
         this.state = {
           songUrl: "",
           songTitle: "",
           songArtist: "",
-          songsInfo: this.props.artistSongs
+          songsInfo: this.props.artistSongs,
+          distinctAlbums: [],
+          dividedSongs: [] ,
         }
+        
     }
 
     componentWillMount(){
         let artistId = this.props.match.params.artistId;
         this.props.receiveArtistSong(artistId)
-        .then( () => this.props.getArtistImage(artistId));
+        .then( () => this.props.getArtistImage(artistId))
+        .then( () => this.getUniqueAlbums())
+        .then( () => this.getSongsByAlbum());
     }
+
     
     handleHoverSong(song){
         let playButton = document.getElementById(song.id.toString())
@@ -58,10 +66,30 @@ class ArtistSongs extends React.Component{
         }
         
         this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-      }
+    }
 
+    getUniqueAlbums() {
+        let arraySongs = this.props.artistSongs;
+        let newarr =[] 
+        Object.values(arraySongs).forEach(song => newarr.push(song.albumName))
+        const distinctAlbumsArr = [...new Set(newarr)]
+        this.setState( {distinctAlbums: distinctAlbumsArr})
+    }
+
+    getSongsByAlbum() {
+        let distinctAlbumArr = this.state.distinctAlbums;
+        let dividedAlbumSongs = [];
+        distinctAlbumArr.forEach( (albumName) => {
+            let subArraySongs = this.props.artistSongs.filter(song => 
+                song.albumName === albumName )
+            dividedAlbumSongs.push(subArraySongs)
+            // subArraySongs = [];
+        } )
+        this.setState( { dividedSongs: dividedAlbumSongs})
+    }
 
     render(){
+        
         return(
             <div className="artistPage">
             
