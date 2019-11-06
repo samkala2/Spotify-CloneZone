@@ -27,6 +27,11 @@ class ArtistSongs extends React.Component{
         .then( () => this.getSongsByAlbum());
     }
 
+    // componentDidMount() {
+    //     debugger;
+    //     this.hideAdditionalPhoto();
+    // }
+
     
     handleHoverSong(song){
         let playButton = document.getElementById(song.id.toString())
@@ -43,6 +48,15 @@ class ArtistSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
+    }
+
+
+    hideAdditionalPhoto() {
+        
+        if(this.props.uniqueImages[0].length > 0 &&  (this.props.uniqueImages[this.props.uniqueImages.length -1].slice(151) !== this.props.uniqueImages[0].slice(151)) ) {
+            let secondPhoto = document.getElementsByClassName("album-artist-image-2")[0]
+            secondPhoto.classList.add("hidden-title")
+        }
     }
 
 
@@ -124,12 +138,13 @@ class ArtistSongs extends React.Component{
                     </div>}
 
 
+                    { 
 
-
-                    {/* To check if the last 6 chars are the same song image name (4song, 3song) */}
-                    { (this.props.uniqueImages[this.props.uniqueImages.length -1].slice(151) !== this.props.uniqueImages[0].slice(151))  && <div>
+                        (this.props.uniqueImages[1])   && 
+                        
+                        <div>
                     
-                    <img className="album-artist-image" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
+                    <img className="album-artist-image-2" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
 
                     {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
 
@@ -148,12 +163,14 @@ class ArtistSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
                     </li>)}
-                    </div>}
+                    </div>  
+
+                    }
 
 
                         <br/>
                         <br/>
-                    <div> ------- </div>
+                    {/* <div> ------- </div> */}
                     
                     {/* { this.state.dividedSongs[1].length > 0 &&  <div> 
                     {this.state.divideSongs[1].map(song =>
