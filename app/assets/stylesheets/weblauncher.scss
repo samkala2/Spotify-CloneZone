@@ -172,11 +172,10 @@
     flex-direction: column;
 }
    .album-artist-name{
-    // margin-left: -26px;
     margin-top: 411px;
     font-family: 'Rubik', sans-serif;
     z-index: 15;
-    // position: absolute;
+    padding-top: 10px;
     color: rgb(153, 150, 150);
     font-size: 14px;
     font-weight: 500;
@@ -244,6 +243,7 @@
     font-weight: 500;
     margin-bottom: 6px;
     margin-top: 10px;
+    width: 252px;
    }
 
    .song-artist {
@@ -256,9 +256,16 @@
     padding: 0;
    }
 
-   .songs-result li i, .each-song-result li i{
+   .songs-result li i {
     padding: 8px;
     padding-top: 5px;
+    padding-left: 20px;
+    font-size: 20px;
+   }
+
+   .each-song-result li i{
+    padding: 8px;
+    padding-top: 11px;
     padding-left: 20px;
     font-size: 20px;
    }
@@ -684,7 +691,7 @@
         height: 122px;
         z-index: 22;
         margin-left: 0px;
-        margin-top: 82px;
+        margin-top: 99px;
         position: absolute;
         background-color: transparent;
         border: none;
