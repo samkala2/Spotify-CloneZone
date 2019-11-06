@@ -14,11 +14,8 @@ function getUniqueAlbums(state) {
     return distinctAlbumsArr
 }
 
-function getUniqueAlbumImages(state) {
-    let arraySongs = state.entities.artistSongs;
-    let newarr =[] 
-    Object.values(arraySongs).forEach(song => newarr.push(song.songImageUrl))
-    const distinctAlbumsArr = [...new Set(newarr)]
+function returnUniqueImages(distinctAlbumsArr) {
+
     if (distinctAlbumsArr[0].slice(151) !== distinctAlbumsArr[distinctAlbumsArr.length-1])
     {
         return [distinctAlbumsArr[0], distinctAlbumsArr[distinctAlbumsArr.length-1]] 
@@ -27,6 +24,26 @@ function getUniqueAlbumImages(state) {
 
     }
 
+}
+
+function getUniqueAlbumImages(state) {
+    let arraySongs = state.entities.artistSongs;
+    let newarr =[] 
+    Object.values(arraySongs).forEach(song => newarr.push(song.songImageUrl))
+    const distinctAlbumsArr = [...new Set(newarr)]
+    return [distinctAlbumsArr[0], distinctAlbumsArr[distinctAlbumsArr.length-1]] 
+
+    
+    // if (arraySongs.length > 0) {
+
+    // setTimeout( function() {if (distinctAlbumsArr[0].slice(151) !== distinctAlbumsArr[distinctAlbumsArr.length-1])
+    // {
+    //     return [distinctAlbumsArr[0], distinctAlbumsArr[distinctAlbumsArr.length-1]] 
+    // } else if (distinctAlbumsArr[0].slice(151) === distinctAlbumsArr[distinctAlbumsArr.length-1]) {
+    //     return [distinctAlbumsArr[0]] 
+
+    // }}, 10 )
+    // }
 }
 
 // function getSongsByAlbum(state) {

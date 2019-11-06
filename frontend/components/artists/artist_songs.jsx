@@ -141,12 +141,41 @@ class ArtistSongs extends React.Component{
                     </li>)}
                     </div>}
 
-
-                    { 
-
-                        (this.props.uniqueImages[1]).length > 0   && 
+                    <div>
+                    
+                    {/* <div className="album-title-image-cont-2">
+                        <p className="unique-album-title"> {this.props.uniqueAlbums[1]} </p>
+                        <img className="album-artist-image-2" src={this.props.uniqueImages[1]} />
                         
-                        <div>
+                    </div> */}
+
+
+                    {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
+
+                    <li onMouseEnter={() => this.handleHoverSong(song)} 
+                        onMouseLeave= {() => this.handleHoverOutSong(song)} 
+                        id="each-song-result-2" 
+                        className={"each-song-res" + song.id} >
+                        
+                        <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+
+                        <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+                        
+                       
+                        <div className="song-info-2">
+
+                        <div className="song-title-2">  {song.title}      </div>
+                        </div>
+                    </li>)}
+                    </div>  
+
+
+
+                    {/* {  */}
+
+                        {/* (this.props.uniqueImages[1] > 0)   &&  */}
+                        
+                        {/* <div>
                     
                     <div className="album-title-image-cont-2">
                         <p className="unique-album-title"> {this.props.uniqueAlbums[1]} </p>
@@ -172,9 +201,9 @@ class ArtistSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
                     </li>)}
-                    </div>  
+                    </div>   */}
 
-                    }
+                    {/* } */}
 
 
                         <br/>
@@ -198,7 +227,8 @@ class ArtistSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
                     </li>)}
-                    </div>  } */}
+                    </div>  } */
+                    }
                 </ul> 
 
 
