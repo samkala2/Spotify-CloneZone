@@ -8,6 +8,13 @@
           else
             json.songUrl ""
           end
+
+          if song.songimage.attached?
+            json.songImageUrl url_for(song.songimage)
+          else 
+            json.songImageUrl ""
+          end
+      
     
     end
 
