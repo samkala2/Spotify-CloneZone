@@ -117,7 +117,7 @@
    .main-artist-song{
        margin-top: 475px;
        font-family: 'Rubik', sans-serif;
-       z-index: 15;
+    //    z-index: 15;
        position: absolute;
        color: rgb(231, 230, 230);
        font-size: 34px;
@@ -148,6 +148,19 @@
     font-size: 20px;
     font-weight: 500;
     width: auto;
+   }
+
+   .unique-album-title{
+       font-family: 'Rubik', sans-serif;
+       font-size: 24px;
+       color: white;
+       margin-bottom: 15px;
+       margin-left: -2px;
+   }
+
+   .album-title-image-cont{
+    //    display: flex;
+    //    flex-direction: row;
    }
 
    .album-artist-name{
@@ -711,17 +724,18 @@
         margin-left: 27px
     }
 
-    .album-artist-image{
+    .album-artist-image, .album-artist-image-2{
         content: "";
     // position: absolute;
     opacity: 0.8;
-    margin-top: 40px;
+    // margin-top: 40px;
     height: 220px;
     width: 220px;
     background-size: cover;
     background-position: 100% 35%;
     background-repeat: no-repeat;
     box-shadow: black 2px 2px 4px;
+    margin-bottom: 40px;
     }
 
 
@@ -829,7 +843,7 @@
         justify-content: left;
         display: flex;
         background-color: rgb(44, 44, 44);
-        height: 122vh;
+        height: 260vh;
     }
 
     .big-image-artist{

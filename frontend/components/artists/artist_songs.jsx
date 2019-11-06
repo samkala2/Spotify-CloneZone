@@ -103,7 +103,7 @@ class ArtistSongs extends React.Component{
     }
 
     render(){
-        debugger;
+        // debugger;
         return(
             <div className="artistPage">
             
@@ -116,7 +116,11 @@ class ArtistSongs extends React.Component{
 
                 <ul className="each-song-result">
                 
-                <img className="album-artist-image" src={this.props.uniqueImages[0]} />
+                <div className="album-title-image-cont"> 
+                    <p className="unique-album-title"> {this.props.uniqueAlbums[0]} </p>
+                    <img className="album-artist-image" src={this.props.uniqueImages[0]} />
+
+                </div>
                     
                     {this.props.artistSongs.length> 0 && <div>{this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[0]).map(song =>
 
@@ -144,7 +148,12 @@ class ArtistSongs extends React.Component{
                         
                         <div>
                     
-                    <img className="album-artist-image-2" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
+                    <div className="album-title-image-cont">
+                        <p className="unique-album-title"> {this.props.uniqueAlbums[0]} </p>
+                        <img className="album-artist-image-2" src={this.props.uniqueImages[this.props.uniqueImages.length -1]} />
+                        
+                    </div>
+
 
                     {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
 
