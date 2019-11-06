@@ -291,7 +291,9 @@ hidePlayButton(song){
                       //  onMouseLeave ={ () => this.hidePlayButton("big-play")}
                        src={this.props.topsongs[0].songImageUrl} />
 
+                  <p className="top-artist-song2"> {this.props.topsongs[0].title} </p>
                   <p className="top-artist-song"> {this.props.topsongs[0].artist} </p>
+
                 </div>
               }
 

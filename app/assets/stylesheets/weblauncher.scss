@@ -230,18 +230,35 @@
 
    .top-artist-song{
     font-family: 'Rubik', sans-serif;
-    color: white;
-    font-size: 20px;
+    color: #8a8787;
+    font-size: 15px;
     font-weight: 500;
+    margin-top: 0;
    }
-   .song-artist, .song-artist-3{
+
+
+   .top-artist-song2{
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-top: 10px;
+   }
+
+   .song-artist {
     font-size: 15px;
     padding: 4px 0px;
    }
 
+   .song-artist-3{
+    font-size: 15px;
+    padding: 0;
+   }
+
    .songs-result li i, .each-song-result li i{
     padding: 8px;
-    padding-top: 11px;
+    padding-top: 5px;
     padding-left: 20px;
     font-size: 20px;
    }
@@ -831,7 +848,7 @@
 
     #each-song-result{
         width: 84%;
-        height: 60px;
+        height: 53px;
     }
 
     #each-song-result-2{
