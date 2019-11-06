@@ -127,7 +127,7 @@ class ArtistSongs extends React.Component{
 
 
                     
-                    {  this.props.uniqueImages[-1]  && <div>
+                    {  this.props.uniqueImages.reverse()[0]  && <div>
                     
                     <img className="album-artist-image" src={this.props.uniqueImages.reverse()[0]} />
                     {this.props.artistSongs.filter(song => song.albumName === this.props.uniqueAlbums[1]).map(song =>
