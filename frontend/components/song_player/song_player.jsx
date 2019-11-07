@@ -36,12 +36,15 @@ class SongPlayer extends React.Component {
     // });
 
     player.addEventListener("timeupdate", e => {
-      this.setState({
-        currentTime: (Math.floor(e.target.currentTime / 60) + ':' + ('0' + Math.floor(e.target.currentTime % 60)).slice(-2)),
-        songDuration: (Math.floor(e.target.duration / 60) + ':' + ('0' + Math.floor(e.target.duration % 60)).slice(-2))
+      if(!isNaN(e.target.duration)) {
+
+        this.setState({
+          currentTime: (Math.floor(e.target.currentTime / 60) + ':' + ('0' + Math.floor(e.target.currentTime % 60)).slice(-2)),
+          songDuration: (Math.floor(e.target.duration / 60) + ':' + ('0' + Math.floor(e.target.duration % 60)).slice(-2))
+        });
+      }
       });
-    });
-  }
+    }
 
   playSong(e) {
     e.preventDefault();
