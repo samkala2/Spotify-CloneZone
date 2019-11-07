@@ -148,12 +148,12 @@ class SongPlayer extends React.Component {
   
         <div className="song-player-controls">
           
-        <img className="song-image-foot" src={this.songImageUrl}/>
+        <img className="song-image-foot" src={this.props.currentlyPlaying.songImageUrl}/>
 
         <section className="artist-info">
-          <div id="song-title"> {this.songTitle} </div>
+          <div id="song-title"> {this.props.currentlyPlaying.title} </div>
           
-          <div> {this.songArtist} </div>
+          <div> {this.props.currentlyPlaying.artist} </div>
         </section>
 
 
@@ -172,7 +172,7 @@ class SongPlayer extends React.Component {
                   onEnded={this.playNext}
                   onTimeUpdate={this.initProgressBar} 
                   className="audio-footer" 
-                  src={this.songUrl} controls/> 
+                  src={this.props.currentlyPlaying.songUrl} controls/> 
                 
                 <img onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
 
