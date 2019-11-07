@@ -39,8 +39,8 @@ class SongPlayer extends React.Component {
     var progressbar = document.getElementById('progress-b');
     debugger;
     progressbar.value = 0;
-    document.getElementsByClassName('audio-footer')[0].pause();
-    document.getElementsByClassName('audio-footer')[0].play();
+    document.getElementsByClassName('play-button')[0].click();
+    document.getElementsByClassName('play-button')[0].click();
    
   }
 
