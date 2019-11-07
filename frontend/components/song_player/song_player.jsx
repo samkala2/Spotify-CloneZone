@@ -7,6 +7,7 @@ class SongPlayer extends React.Component {
     super(props);
     this.playSong = this.playSong.bind(this);
     this.playSongAuto = this.playSongAuto.bind(this);
+    this.swtichToPlay = this.swtichToPlay.bind(this);
     this.playNext = this.playNext.bind(this);
     this.songArtist = this.props.currentlyPlaying.artist;
     this.songTitle= this.props.currentlyPlaying.title;
@@ -35,13 +36,23 @@ class SongPlayer extends React.Component {
   // }
 
   playSongAuto() {
-    // e.preventDefault();
+    // this.zeroProgressBar();
+    // this.swtichToPlay();
+  }
+
+  zeroProgressBar(){
+
+    var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
-    debugger;
-    progressbar.value = 0;
+    // debugger;
+    progressbar.value = (1/100);
+
+    // progressbar.value = 0
+  }
+
+  swtichToPlay(){
     document.getElementsByClassName('play-button')[0].click();
     document.getElementsByClassName('play-button')[0].click();
-   
   }
 
   handleHoverInPlayButton(){
@@ -97,9 +108,9 @@ class SongPlayer extends React.Component {
   playNext(){
     // let song = this.queue.pop();
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    // debugger;
+    debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    this.playSongAuto()
+    // this.playSongAuto()
   }
 
   
@@ -116,8 +127,8 @@ class SongPlayer extends React.Component {
 
   initProgressBar() {
     var player = document.getElementById('audio-foot');
-
     var progressbar = document.getElementById('progress-b');
+    // debugger;
     progressbar.value = (player.currentTime / player.duration);
     progressbar.addEventListener("click", seek);
 
