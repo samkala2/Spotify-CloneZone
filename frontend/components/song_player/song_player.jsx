@@ -37,6 +37,7 @@ class SongPlayer extends React.Component {
   playSongAuto() {
     // e.preventDefault();
     var progressbar = document.getElementById('progress-b');
+    debugger;
     progressbar.value = 0;
     document.getElementsByClassName('audio-footer')[0].pause();
     document.getElementsByClassName('audio-footer')[0].play();
@@ -96,9 +97,9 @@ class SongPlayer extends React.Component {
   playNext(){
     // let song = this.queue.pop();
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    debugger;
+    // debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    .then( () => this.playSongAuto())
+    this.playSongAuto()
   }
 
   
