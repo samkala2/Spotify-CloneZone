@@ -6,7 +6,7 @@ class SongPlayer extends React.Component {
   constructor(props){
     super(props);
     this.playSong = this.playSong.bind(this);
-    this.pauseSong = this.pauseSong.bind(this);
+    this.playSongAuto = this.playSongAuto.bind(this);
     this.playNext = this.playNext.bind(this);
     this.songArtist = this.props.currentlyPlaying.artist;
     this.songTitle= this.props.currentlyPlaying.title;
@@ -92,7 +92,6 @@ class SongPlayer extends React.Component {
   playNext(){
     // let song = this.queue.pop();
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    
     debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     .then( () => this.playSongAuto())
