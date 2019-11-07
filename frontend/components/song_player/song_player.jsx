@@ -36,8 +36,11 @@ class SongPlayer extends React.Component {
 
   playSongAuto() {
     // e.preventDefault();
+    var progressbar = document.getElementById('progress-b');
+    progressbar.value = 0;
     document.getElementsByClassName('audio-footer')[0].pause();
     document.getElementsByClassName('audio-footer')[0].play();
+   
   }
 
   handleHoverInPlayButton(){
