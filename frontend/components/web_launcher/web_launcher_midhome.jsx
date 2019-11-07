@@ -180,7 +180,6 @@ class WebLauncherHome extends React.Component {
 
                   <div className="song-info-allsongs">
                     <span className="song-title">  {song.title}      </span>
-
                     <span className="song-artist">  {song.artist}    </span>
                   </div>
 

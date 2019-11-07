@@ -14,7 +14,8 @@
           else 
             json.songImageUrl ""
           end
-      
+          
+          json.artist song.artist.name
     
     end
 
