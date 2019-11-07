@@ -37,7 +37,7 @@ class SongPlayer extends React.Component {
 
   playSongAuto() {
     this.zeroProgressBar();
-    setTimeout (this.swtichToPlay(), 10);
+    setTimeout (this.swtichToPlay(), 1000);
   }
 
   zeroProgressBar(){
@@ -106,7 +106,6 @@ class SongPlayer extends React.Component {
   }
 
   playNext(){
-    // let song = this.queue.pop();
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
     debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
@@ -193,7 +192,7 @@ class SongPlayer extends React.Component {
                   className="audio-footer" 
                   src={this.props.currentlyPlaying.songUrl} controls/> 
                 
-                <img onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
+                <img onClick={this.playNext} onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
 
                 <img onMouseOut={this.handleHoverOutRepeatButton} onMouseEnter={this.handleHoverInRepeatButton} onClick={this.HandleRepeatButtonClick} className="repeat-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/repeat_white.png"/> 
               
