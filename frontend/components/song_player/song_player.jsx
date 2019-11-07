@@ -7,8 +7,12 @@ class SongPlayer extends React.Component {
     super(props);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
-    
-
+    this.playNext = this.playNext.bind(this);
+    this.songArtist = this.props.currentlyPlaying.artist;
+    this.songTitle= this.props.currentlyPlaying.title;
+    this.songUrl= this.props.currentlyPlaying.songUrl;
+    this.songImageUrl= this.props.currentlyPlaying.songImageUrl;
+    this.queue = this.props.allSongs.slice();
   }
 
 
@@ -85,6 +89,14 @@ class SongPlayer extends React.Component {
     repeatbutton.classList.add("opacity")
   }
 
+  playNext(){
+    // let song = this.queue.pop();
+    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+    debugger;
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+  }
+
+
   HandleRepeatButtonClick(){
     let repeatbutton = document.getElementsByClassName("repeat-button")[0];
     if (repeatbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/repeat_white.png") {   
@@ -136,18 +148,16 @@ class SongPlayer extends React.Component {
   
         <div className="song-player-controls">
           
-        <img className="song-image-foot" src={this.props.songImageUrl}/>
+        <img className="song-image-foot" src={this.songImageUrl}/>
 
         <section className="artist-info">
-          <div id="song-title"> {this.props.songTitle} </div>
+          <div id="song-title"> {this.songTitle} </div>
           
-          <div> {this.props.songArtist} </div>
+          <div> {this.songArtist} </div>
         </section>
 
 
           <div className="buttons-player"> 
-
-
 
 
               <div className="button-icons">  
@@ -159,9 +169,10 @@ class SongPlayer extends React.Component {
                 <img onMouseOut={this.handleHoverOutPlayButton} onMouseEnter={this.handleHoverInPlayButton} onClick={this.playSong} className="play-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"/> 
              
                   <audio id="audio-foot" 
+                  onEnded={this.playNext}
                   onTimeUpdate={this.initProgressBar} 
                   className="audio-footer" 
-                  src={this.props.songUrl} controls/> 
+                  src={this.songUrl} controls/> 
                 
                 <img onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
 

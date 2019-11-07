@@ -102,8 +102,13 @@ body {
     width: 79%;
   }
 
-  .all-albums li, .all-songs li, .all-artists-result li{
-    margin-left: 15px;
+  .all-albums li, .all-songs li{
+    margin-left: 18px;
+    margin-right: 7px;
+  }
+
+  .all-artists-result li{
+    margin-left: -7px;
     margin-right: 7px;
   }
 

@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import SearchContainer from '../artists/artists_container'
 import SideBar from '../sidebar_launcher/sidebar_launcher';
-import SongPlayer from '../song_player/song_player';
+import SongPlayerContainer from '../song_player/song_player_container';
 import WebLauncherHomeContainer from './web_laucher_homecontainer';
 import ArtistSongsContainer from "../artists/artist_songs_container";
 import AlbumSongsContainer from '../albums/album_songs_container';
@@ -43,7 +43,7 @@ class WebLauncher extends React.Component {
         </div> 
 
         <div className="song-player-foot">
-          <SongPlayer songArtist={this.props.currentlyPlaying.artist} songTitle={this.props.currentlyPlaying.title} songUrl={this.props.currentlyPlaying.songUrl} 
+          <SongPlayerContainer songArtist={this.props.currentlyPlaying.artist} songTitle={this.props.currentlyPlaying.title} songUrl={this.props.currentlyPlaying.songUrl} 
           songImageUrl={this.props.currentlyPlaying.songImageUrl} />
         </div>
 
