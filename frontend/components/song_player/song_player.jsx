@@ -9,6 +9,7 @@ class SongPlayer extends React.Component {
     this.playSongAuto = this.playSongAuto.bind(this);
     this.swtichToPlay = this.swtichToPlay.bind(this);
     this.playNext = this.playNext.bind(this);
+    this.playNextForward = this.playNextForward.bind(this);
     this.songArtist = this.props.currentlyPlaying.artist;
     this.songTitle= this.props.currentlyPlaying.title;
     this.songUrl= this.props.currentlyPlaying.songUrl;
@@ -37,7 +38,7 @@ class SongPlayer extends React.Component {
 
   playSongAuto() {
     this.zeroProgressBar();
-    setTimeout (this.swtichToPlay(), 1000);
+    setTimeout(this.swtichToPlay(), 1000);
   }
 
   zeroProgressBar(){
@@ -110,6 +111,20 @@ class SongPlayer extends React.Component {
     debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     this.playSongAuto()
+  }
+
+  playNextForward(){
+    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+    debugger;
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    this.zeroProgressBar();
+
+    let playbutton = document.getElementsByClassName("play-button")[0];
+
+     if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
+      // document.getElementsByClassName('audio-footer')[0].pause();
+      playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
+      }
   }
 
   
