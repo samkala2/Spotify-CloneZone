@@ -14,11 +14,34 @@ class SongPlayer extends React.Component {
     this.songTitle= this.props.currentlyPlaying.title;
     this.songUrl= this.props.currentlyPlaying.songUrl;
     this.songImageUrl= this.props.currentlyPlaying.songImageUrl;
-    this.queue = this.props.allSongs.slice();
+    this.nextSongLocation = 0;
     this.previousSongs = [];
+    // this.allSongsArr = this.props.allSongs;
     this.playPrevious = this.playPrevious.bind(this);
+    // this.displayPlayerDuration = this.displayPlayerDuration.bind(this);
+    this.playerDuration = 0;
+    // this.currentTime = 1;
+    this.state= ({
+      currentTime: '0:00',
+      songDuration: '6:44'
+    })
   }
+ 
 
+  componentDidMount() {
+    let player = document.getElementById('audio-foot');
+    // this.setState({
+    //   currentTime: (Math.floor(player.currentTime / 60) + ':' + ('0' + Math.floor(player.currentTime % 60)).slice(-2)),
+    //   songDuration: (Math.floor(player.duration / 60) + ':' + ('0' + Math.floor(player.duration % 60)).slice(-2))
+    // });
+
+    player.addEventListener("timeupdate", e => {
+      this.setState({
+        currentTime: (Math.floor(e.target.currentTime / 60) + ':' + ('0' + Math.floor(e.target.currentTime % 60)).slice(-2)),
+        songDuration: (Math.floor(e.target.duration / 60) + ':' + ('0' + Math.floor(e.target.duration % 60)).slice(-2))
+      });
+    });
+  }
 
   playSong(e) {
     e.preventDefault();
@@ -33,24 +56,15 @@ class SongPlayer extends React.Component {
     }
   }
 
-  // componentDidMount(){
-  //   this.displayPlayerCurrentTime();
-  //   this.displayPlayerDuration();
-  // }
-
   playSongAuto() {
     this.zeroProgressBar();
     this.swtichToPlay();
   }
 
   zeroProgressBar(){
-
-    var player = document.getElementById('audio-foot');
+    // var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
-    // debugger;
     progressbar.value = (1/10000);
-
-    // progressbar.value = 0
   }
 
   swtichToPlay(){
@@ -119,16 +133,18 @@ class SongPlayer extends React.Component {
       return
       }
 
-    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    debugger;
+    this.nextSongLocation += 1
+
+    if (this.nextSongLocation === this.props.allSongs.length){ 
+      this.nextSongLocation = 0; 
+    }
+    let song = this.props.allSongs[this.nextSongLocation];
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     this.playSongAuto()
   }
 
   playPrevious(){
-    // debugger;
     if (this.previousSongs.length > 0){
-      // debugger;
       let song = this.previousSongs.pop()
       this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
       this.zeroProgressBar();
@@ -144,25 +160,30 @@ class SongPlayer extends React.Component {
     }
   }
 
+
   playNextForward(){
     this.previousSongs.push(this.props.currentlyPlaying)
+  
+    this.nextSongLocation += 1
 
-    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    // debugger;
+    if (this.nextSongLocation === this.props.allSongs.length){ 
+      this.nextSongLocation = 0; 
+    }
+
+    let song = this.props.allSongs[this.nextSongLocation];
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    
+
     this.zeroProgressBar();
 
     let playbutton = document.getElementsByClassName("play-button")[0];
 
      if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
-      // document.getElementsByClassName('audio-footer')[0].pause();
       playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
       }
 
       setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 1)
   }
-
-  
 
 
   HandleRepeatButtonClick(){
@@ -174,13 +195,29 @@ class SongPlayer extends React.Component {
       }
   }
 
+  handleShuffleButtonClick(){
+    let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
+
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_white.png") {   
+      shufflebutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png"
+      } else if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
+      shufflebutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_white.png" 
+      }
+  }
+
   initProgressBar() {
+    // this.displayPlayerDuration();
     var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
-    
+    // this.displayPlayerCurrentTime();
+
     progressbar.value = (player.currentTime / player.duration);
+    // this.playerDuration = player.duration.toString();
     progressbar.addEventListener("click", seek);
 
+    // if (player !== null){  
+    //   this.playerDuration = player.duration.toString()
+    // }
 
     function seek(event) {
       var percent = event.offsetX / this.offsetWidth;
@@ -191,25 +228,37 @@ class SongPlayer extends React.Component {
 
   // displayPlayerCurrentTime(){
   //   let player = document.getElementById('audio-foot');
-  //   let currTime = Math.floor(player.currentTime).toString();
-  //   // debugger;
-  //   return( 
-  //     <div className="player-dur"> <p> {currTime} </p> </div>
-  //   )
+  //   if (player){
+  //     this.setState({currentTime: player.currentTime});
+  //   }
     
   // }
 
   // displayPlayerDuration(){
   //   let player = document.getElementById('audio-foot');
-
-  //   let duration = Math.floor(player.duration);
   //   debugger;
-    
-  //   let playerDuration = document.getElementsByClassName('player-duration')[0];
-
-  //   return (player.duration)
-    
+    // let playerDurationCont = document.getElementsByClassName('player-duration')[0];
+    // playerDurationCont.innerHTML = player.duration;
+    // if (player){
+    //   this.playerDuration = player.duration;
+    // }
+    //   return (
+    //     <div className="player-life"> {player.duration} </div>)
+    //   } else {
+    //     return 
+    // }  
   // }
+  
+  durationInSeconds(){
+    let time = Math.floor(this.currentTime)
+    if (time < 60){
+    return (
+      <div> 
+        <p> {time} </p>
+      </div>
+    )
+    }
+  }
 
   render () {
     window.previousSongs = this.previousSongs;
@@ -222,17 +271,23 @@ class SongPlayer extends React.Component {
 
         <section className="artist-info">
           <div id="song-title"> {this.props.currentlyPlaying.title} </div>
-          
           <div> {this.props.currentlyPlaying.artist} </div>
         </section>
 
 
+
+        <div className="player-current-time"> 
+                  {this.state.currentTime}    
+              </div>
+
+
           <div className="buttons-player"> 
-
-
               <div className="button-icons">  
 
-              <img onMouseOut={this.handleHoverOutShuffleButton} onMouseEnter={this.handleHoverInShuffleButton} className="shuffle-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_white.png"/> 
+
+              <img onClick={this.handleShuffleButtonClick}
+              onMouseOut={this.handleHoverOutShuffleButton} 
+              onMouseEnter={this.handleHoverInShuffleButton} className="shuffle-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_white.png"/> 
 
                 <img onClick={this.playPrevious}
                 onMouseOut={this.handleHoverOutPreviousButton} 
@@ -250,25 +305,30 @@ class SongPlayer extends React.Component {
 
                 <img onMouseOut={this.handleHoverOutRepeatButton} onMouseEnter={this.handleHoverInRepeatButton} onClick={this.HandleRepeatButtonClick} className="repeat-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/repeat_white.png"/> 
               
-                {this.displayPlayerCurrentTime}
-                
+                {/* {this.displayPlayerCurrentTime} */}
+
+              
               </div>
+
+            
 
 
           <br />
 
           <div className="progress-cont">
             <progress id="progress-b" className="progress-bar">  </progress>
-            <div className="player-duration"> 
-                    {this.displayPlayerDuration}
-            </div>
+
+            <span className="player-duration"> 
+                  {this.state.songDuration} 
+                </span>
           </div>
-          
+         
+
           </div>
 
-          
-        
-
+       
+                
+         
         </div>       
     )
   }

@@ -147,7 +147,19 @@ position: fixed;
 
 }
 
-    
+.player-current-time, .player-duration{
+  color: white;
+}
+
+.player-current-time{
+  margin-top: 68px;
+  margin-right: 10px;
+}
+
+.player-duration{
+  margin-left: 1%;
+  margin-top: -7px;
+}
     
 
     div.all-main-page-notloggedin {
