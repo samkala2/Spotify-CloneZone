@@ -52,7 +52,7 @@ class SongPlayer extends React.Component {
   }
 
   swtichToPlay(){
-    document.getElementsByClassName('play-button')[0].click();
+    // document.getElementsByClassName('play-button')[0].click();
     document.getElementsByClassName('play-button')[0].click();
   }
 
@@ -207,7 +207,7 @@ class SongPlayer extends React.Component {
                   className="audio-footer" 
                   src={this.props.currentlyPlaying.songUrl} controls/> 
                 
-                <img onClick={this.playNext} onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
+                <img onClick={this.playNextForward} onMouseOut={this.handleHoverOutNextButton} onMouseEnter={this.handleHoverInNextButton} className="next-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/next_white.png"/> 
 
                 <img onMouseOut={this.handleHoverOutRepeatButton} onMouseEnter={this.handleHoverInRepeatButton} onClick={this.HandleRepeatButtonClick} className="repeat-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/repeat_white.png"/> 
               
