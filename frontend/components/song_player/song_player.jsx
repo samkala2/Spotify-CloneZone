@@ -36,8 +36,8 @@ class SongPlayer extends React.Component {
   // }
 
   playSongAuto() {
-    // this.zeroProgressBar();
-    // this.swtichToPlay();
+    this.zeroProgressBar();
+    setTimeout (this.swtichToPlay(), 10);
   }
 
   zeroProgressBar(){
@@ -110,7 +110,7 @@ class SongPlayer extends React.Component {
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
     debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    // this.playSongAuto()
+    this.playSongAuto()
   }
 
   
