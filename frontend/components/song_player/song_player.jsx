@@ -34,9 +34,9 @@ class SongPlayer extends React.Component {
   //   this.displayPlayerDuration();
   // }
 
-  pauseSong(e) {
-    e.preventDefault();
-    document.getElementsByClassName('audio-footer')[0].pause();
+  playSongAuto() {
+    // e.preventDefault();
+    document.getElementsByClassName('audio-footer')[0].play();
   }
 
   handleHoverInPlayButton(){
@@ -92,9 +92,13 @@ class SongPlayer extends React.Component {
   playNext(){
     // let song = this.queue.pop();
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+    
     debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    .then( () => this.playSongAuto())
   }
+
+  
 
 
   HandleRepeatButtonClick(){
