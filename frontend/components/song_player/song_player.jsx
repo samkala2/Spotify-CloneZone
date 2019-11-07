@@ -38,7 +38,7 @@ class SongPlayer extends React.Component {
 
   playSongAuto() {
     this.zeroProgressBar();
-    setTimeout(this.swtichToPlay(), 1000);
+    this.swtichToPlay();
   }
 
   zeroProgressBar(){
@@ -52,8 +52,8 @@ class SongPlayer extends React.Component {
   }
 
   swtichToPlay(){
-    // document.getElementsByClassName('play-button')[0].click();
     document.getElementsByClassName('play-button')[0].click();
+    setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 10)
   }
 
   handleHoverInPlayButton(){
@@ -125,6 +125,8 @@ class SongPlayer extends React.Component {
       // document.getElementsByClassName('audio-footer')[0].pause();
       playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
       }
+
+      setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 10)
   }
 
   
