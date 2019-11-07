@@ -15,6 +15,8 @@ class SongPlayer extends React.Component {
     this.songUrl= this.props.currentlyPlaying.songUrl;
     this.songImageUrl= this.props.currentlyPlaying.songImageUrl;
     this.queue = this.props.allSongs.slice();
+    this.previousSongs = [];
+    this.playPrevious = this.playPrevious.bind(this);
   }
 
 
@@ -107,6 +109,8 @@ class SongPlayer extends React.Component {
   }
 
   playNext(){
+    this.previousSongs.push(this.props.currentlyPlaying)
+    
     let repeatbutton = document.getElementsByClassName("repeat-button")[0];
 
     if (repeatbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/repeat_green.png") {
@@ -121,9 +125,30 @@ class SongPlayer extends React.Component {
     this.playSongAuto()
   }
 
+  playPrevious(){
+    // debugger;
+    if (this.previousSongs.length > 0){
+      // debugger;
+      let song = this.previousSongs.pop()
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+      this.zeroProgressBar();
+
+      let playbutton = document.getElementsByClassName("play-button")[0];
+  
+       if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
+        // document.getElementsByClassName('audio-footer')[0].pause();
+        playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
+        }
+  
+        setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 1)
+    }
+  }
+
   playNextForward(){
+    this.previousSongs.push(this.props.currentlyPlaying)
+
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    debugger;
+    // debugger;
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     this.zeroProgressBar();
 
@@ -152,7 +177,7 @@ class SongPlayer extends React.Component {
   initProgressBar() {
     var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
-    // debugger;
+    
     progressbar.value = (player.currentTime / player.duration);
     progressbar.addEventListener("click", seek);
 
@@ -187,6 +212,8 @@ class SongPlayer extends React.Component {
   // }
 
   render () {
+    window.previousSongs = this.previousSongs;
+    window.currently = this.props.currentlyPlaying;
     return (
   
         <div className="song-player-controls">
@@ -207,7 +234,9 @@ class SongPlayer extends React.Component {
 
               <img onMouseOut={this.handleHoverOutShuffleButton} onMouseEnter={this.handleHoverInShuffleButton} className="shuffle-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_white.png"/> 
 
-                <img onMouseOut={this.handleHoverOutPreviousButton} onMouseEnter={this.handleHoverInPreviousButton} className="previous-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/previous_white.png"/> 
+                <img onClick={this.playPrevious}
+                onMouseOut={this.handleHoverOutPreviousButton} 
+                onMouseEnter={this.handleHoverInPreviousButton} className="previous-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/previous_white.png"/> 
 
                 <img onMouseOut={this.handleHoverOutPlayButton} onMouseEnter={this.handleHoverInPlayButton} onClick={this.playSong} className="play-button opacity" src="https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png"/> 
              
