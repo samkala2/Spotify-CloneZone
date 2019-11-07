@@ -209,12 +209,12 @@ class SongPlayer extends React.Component {
   }
 
   initProgressBar() {
-    let playbutton = document.getElementsByClassName("play-button")[0];
+    // let playbutton = document.getElementsByClassName("play-button")[0];
 
 
-    if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {
-    playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png" 
-    }
+    // if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {
+    // playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png" 
+    // }
 
     var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
