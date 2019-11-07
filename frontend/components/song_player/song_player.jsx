@@ -134,8 +134,20 @@ class SongPlayer extends React.Component {
       document.getElementById('audio-foot').currentTime = 0;
       document.getElementById('audio-foot').play();
       return
-      }
+    }
 
+    let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
+
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
+
+    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    this.playSongAuto()
+    return
+    }
+    
+    
     this.nextSongLocation += 1
 
     if (this.nextSongLocation === this.props.allSongs.length){ 
@@ -166,15 +178,27 @@ class SongPlayer extends React.Component {
 
   playNextForward(){
     this.previousSongs.push(this.props.currentlyPlaying)
-  
-    this.nextSongLocation += 1
 
-    if (this.nextSongLocation === this.props.allSongs.length){ 
-      this.nextSongLocation = 0; 
-    }
+    let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
 
-    let song = this.props.allSongs[this.nextSongLocation];
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
+
+    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    // this.playSongAuto()
+    // return
+    } else {
+
+      this.nextSongLocation += 1
+      
+      if (this.nextSongLocation === this.props.allSongs.length){ 
+        this.nextSongLocation = 0; 
+      }
+      
+      let song = this.props.allSongs[this.nextSongLocation];
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    }
     
 
     this.zeroProgressBar();
