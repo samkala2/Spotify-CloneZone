@@ -69,27 +69,27 @@ img#logo {
 
 
 .launch-button{
-font-size: 14px;
-line-height: 1;
-border-radius: 500px;
-padding: 16px 0px 18px;
-padding-left: 120px;
-padding-right: 120px;
-border-width: 0;
-letter-spacing: 2px;
-color: rgb(238, 237, 236);
-text-transform: uppercase;
-text-decoration: none;
-border: 1px solid rgb(238, 237, 236);
-font-weight: bold;
-font-family: sans-serif;
-transition: 0.7s;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 0px 18px;
+    padding-left: 120px;
+    padding-right: 120px;
+    border-width: 0;
+    letter-spacing: 2px;
+    color: lavender;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.7s;
+    background: linear-gradient(45deg, rgb(57, 219, 51), transparent);
+
 }
 
 .launch-button:hover{
   color: white;
-  background-color: rgb(122, 122, 122);
-  border: rgb(126, 126, 126) 1px solid;
+  background-color: rgb(57, 219, 51)
 }
 .pickup-whereleft{
   padding-left: 0px;
