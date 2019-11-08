@@ -153,24 +153,29 @@
    .unique-album-title{
        font-family: 'Rubik', sans-serif;
        font-size: 21px;
-       color: white;
+       color:oldlace;
        margin-bottom: 15px;
        margin-left: -2px;
        font-weight: 500;
-       justify-self: center;
+    //    justify-self: center;
+        width: auto;
    }
 
    .album-title-image-cont-2 {
         padding-top: 60px;
+        display: flex;
+        flex-direction: column;
    }
 
 
-   .album-title-image-cont-2, .album-title-image-cont {
-    display: flex;
-    // justify-content: center;
-    // justify-items: center;
-    flex-direction: column;
-}
+    .album-title-image-cont {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 224px;
+    }
+
+
    .album-artist-name{
     margin-top: 411px;
     font-family: 'Rubik', sans-serif;

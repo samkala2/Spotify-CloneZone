@@ -1,5 +1,6 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
+// import {Link}
 
 class ArtistSongs extends React.Component{
     constructor(props){
@@ -15,6 +16,7 @@ class ArtistSongs extends React.Component{
           songsInfo: this.props.artistSongs,
           distinctAlbums: [],
           dividedSongs: [] ,
+          albumId: 0
         }
         
     }
@@ -88,6 +90,7 @@ class ArtistSongs extends React.Component{
         Object.values(arraySongs).forEach(song => newarr.push(song.albumName))
         const distinctAlbumsArr = [...new Set(newarr)]
         this.setState( {distinctAlbums: distinctAlbumsArr})
+        this.setState( {albumId: arraySongs[0].albumId})
     }
 
     getSongsByAlbum() {
@@ -103,7 +106,7 @@ class ArtistSongs extends React.Component{
     }
 
     render(){
-        debugger;
+        // debugger;
         return(
             <div className="artistPage">
             
@@ -117,7 +120,10 @@ class ArtistSongs extends React.Component{
                 <ul className="each-song-result">
                 
                 <div className="album-title-image-cont"> 
+
+                {/* <Link className="" to={`/weblauncher/${this.state.albumId}/albumsongs`}>   */}
                     <p className="unique-album-title"> {this.props.uniqueAlbums[0]} </p>
+                {/* </Link> */}
                     <img className="album-artist-image" src={this.props.uniqueImages[0]} />
 
                 </div>

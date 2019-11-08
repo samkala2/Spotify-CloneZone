@@ -18,6 +18,7 @@
       json.artistId song.artist_id
 
       json.albumName song.album.name
+      json.albumId song.album.id
     end
   end
   
