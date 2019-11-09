@@ -7,7 +7,9 @@ import SongPlayer from './song_player';
 const mapStateToProps = state => {
   return{
     allSongs: Object.values(state.entities.allsongs),
-    currentlyPlaying: state.currentlyPlaying
+    currentlyPlaying: state.currentlyPlaying,
+    albumSongs: Object.values(state.entities.albumSongs),
+    artistSongs: Object.values(state.entities.artistSongs)
   }
 }
 

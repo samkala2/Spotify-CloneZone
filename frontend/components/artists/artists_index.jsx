@@ -29,6 +29,8 @@ class Artists extends React.Component {
   }
 
 
+ 
+
   highlightTitle(filter){
     let songsButton = document.getElementsByClassName("songs-res")[0];
     let albumsButton = document.getElementsByClassName("albums-res")[0];

@@ -178,27 +178,35 @@ class SongPlayer extends React.Component {
 
   playNextForward(){
     this.previousSongs.push(this.props.currentlyPlaying)
-
+    let songList = [];
     let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
 
     if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
 
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     // this.playSongAuto()
-    // return
-    } else {
+    return
+
+    } else if (this.props.albumSongs.length > 0) {
+      songList = this.props.albumSongs;
+
+    } else if (this.props.artistSongs.length > 0) {
+      songList = this.props.artistSongs;
+
+    } else if (this.props.albumSongs.length === 0 )  {
+      songList = this.props.allSongs;
+    }
 
       this.nextSongLocation += 1
       
-      if (this.nextSongLocation === this.props.allSongs.length){ 
+      if (this.nextSongLocation === songList.length){ 
         this.nextSongLocation = 0; 
       }
       
-      let song = this.props.allSongs[this.nextSongLocation];
+      let song = songList[this.nextSongLocation];
       this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    }
+    
     
 
     this.zeroProgressBar();

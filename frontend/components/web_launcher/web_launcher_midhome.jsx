@@ -28,6 +28,11 @@ class WebLauncherHome extends React.Component {
     this.props.getAllAlbums(); 
     this.props.getAllSongs();
     this.props.getAllArtists();
+
+    
+    this.props.zeroSongsAlbum();
+    this.props.zeroSongsArtist();
+    
   }
 
   highlightTitle(filter){
