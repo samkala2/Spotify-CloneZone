@@ -185,7 +185,7 @@ class SongPlayer extends React.Component {
 
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    // this.playSongAuto()
+    this.playSongAuto();
     return
 
     } else if (this.props.albumSongs.length > 0) {
