@@ -194,9 +194,10 @@ class SongPlayer extends React.Component {
     } else if (this.props.artistSongs.length > 0) {
       songList = this.props.artistSongs;
 
-    } else if (this.props.albumSongs.length === 0 )  {
+    } else if (this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 )  {
       songList = this.props.allSongs;
     }
+
 
       this.nextSongLocation += 1
       
