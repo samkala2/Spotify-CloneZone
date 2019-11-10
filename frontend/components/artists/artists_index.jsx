@@ -195,12 +195,12 @@ hidePlayButton(song){
     let searchResults = document.getElementById("results-container")
     searchResults.classList.remove("display-results")
 
-    let h3TopRes = document.getElementsByClassName("resultt-titles")
+    // let h3TopRes = document.getElementsByClassName("resultt-titles")
     // debugger;
-    let i = 0;
-    for (let i = 0; i < h3TopRes.length; i++) {
-      h3TopRes[i].classList.remove("hidden-title")
-    }
+    // let i = 0;
+    // for (let i = 0; i < h3TopRes.length; i++) {
+    //   h3TopRes[i].classList.remove("hidden-title")
+    // }
   }
 
 
@@ -275,7 +275,7 @@ hidePlayButton(song){
           {
             TopResults && <div className="TopResultsCont">
 
-            <h4 className="hidden-title resultt-titles"> Songs </h4>
+            {this.props.topsongs.length > 0 && <h4 className="resultt-titles"> Songs </h4> }
             <div className="songs-result">
 
               {
@@ -323,7 +323,7 @@ hidePlayButton(song){
             </div>
 
 
-            <h4 className="hidden-title resultt-titles">  Artists </h4> 
+           {this.props.topArtists.length > 0 && <h4 className="resultt-titles">  Artists </h4> }
             <div className="artists-result">
               <ul>
               {
@@ -342,7 +342,7 @@ hidePlayButton(song){
 
 
 
-            <h4 className="hidden-title resultt-titles">  Albums </h4> 
+            { this.props.topAlbums.length > 0 && <h4 className="resultt-titles">  Albums </h4> }
             <ul className="album-ul">
                 {this.props.topAlbums.map(album =>
                   <li> 

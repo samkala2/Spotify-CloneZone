@@ -136,28 +136,81 @@ class SongPlayer extends React.Component {
       return
     }
 
+
+    let songList = [];
     let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
 
     if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
-
     let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     this.playSongAuto()
     return
+    } else if (this.props.albumSongs.length > 0) {
+      songList = this.props.albumSongs;
+      
+    } else if (this.props.artistSongs.length > 0) {
+      songList = this.props.artistSongs;
+
+    } else if (this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 )  {
+      songList = this.props.allSongs;
     }
     
     
     this.nextSongLocation += 1
 
-    if (this.nextSongLocation === this.props.allSongs.length){ 
+    if (this.nextSongLocation === songList.length){ 
       this.nextSongLocation = 0; 
     }
-    let song = this.props.allSongs[this.nextSongLocation];
+    let song = songList[this.nextSongLocation];
     this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
     this.playSongAuto()
   }
 
+  
+  
+  playNextForward(){
+    this.previousSongs.push(this.props.currentlyPlaying)
+    let songList = [];
+    let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
+    
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
+      
+      let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+      this.playSongAuto();
+      return
+      
+    } else if (this.props.albumSongs.length > 0) {
+      songList = this.props.albumSongs;
+      
+    } else if (this.props.artistSongs.length > 0) {
+      songList = this.props.artistSongs;
+
+    } else if (this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 )  {
+      songList = this.props.allSongs;
+    }
+    
+    
+    this.nextSongLocation += 1
+    
+    if (this.nextSongLocation === songList.length){ 
+      this.nextSongLocation = 0; 
+    }
+    
+    let song = songList[this.nextSongLocation];
+    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+    
+    this.zeroProgressBar();
+    
+    let playbutton = document.getElementsByClassName("play-button")[0];
+    
+    if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
+      playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
+    }
+    
+    setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 1)
+  }
+  
   playPrevious(){
     if (this.previousSongs.length > 0){
       let song = this.previousSongs.pop()
@@ -174,53 +227,7 @@ class SongPlayer extends React.Component {
         setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 1)
     }
   }
-
-
-  playNextForward(){
-    this.previousSongs.push(this.props.currentlyPlaying)
-    let songList = [];
-    let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
-
-    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
-
-    let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
-    this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    this.playSongAuto();
-    return
-
-    } else if (this.props.albumSongs.length > 0) {
-      songList = this.props.albumSongs;
-
-    } else if (this.props.artistSongs.length > 0) {
-      songList = this.props.artistSongs;
-
-    } else if (this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 )  {
-      songList = this.props.allSongs;
-    }
-
-
-      this.nextSongLocation += 1
-      
-      if (this.nextSongLocation === songList.length){ 
-        this.nextSongLocation = 0; 
-      }
-      
-      let song = songList[this.nextSongLocation];
-      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
-    
-    
-
-    this.zeroProgressBar();
-
-    let playbutton = document.getElementsByClassName("play-button")[0];
-
-     if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png") {
-      playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png" 
-      }
-
-      setTimeout( () => document.getElementsByClassName('play-button')[0].click(), 1)
-  }
-
+  
 
   HandleRepeatButtonClick(){
     let repeatbutton = document.getElementsByClassName("repeat-button")[0];
@@ -242,13 +249,6 @@ class SongPlayer extends React.Component {
   }
 
   initProgressBar() {
-    // let playbutton = document.getElementsByClassName("play-button")[0];
-
-
-    // if (playbutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/play_white.png") {
-    // playbutton.src = "https://craftifybucket.s3.us-east-2.amazonaws.com/pause_white.png" 
-    // }
-
     var player = document.getElementById('audio-foot');
     var progressbar = document.getElementById('progress-b');
 
