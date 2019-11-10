@@ -41,6 +41,15 @@ class LoginSessionForm extends React.Component {
 
 
   renderErrors() {
+
+    if (this.props.errors.length > 0){
+      let errorCont = document.getElementsByClassName("ErrorLogin");
+      errorCont.classList.add("orange-back")
+    } else {
+      let errorCont = document.getElementsByClassName("ErrorLogin");
+      errorCont.classList.remove("orange-back")
+    }
+    
     return (
       <ul>
         {this.props.errors.map((error, i) => (
