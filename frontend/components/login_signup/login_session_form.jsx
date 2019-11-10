@@ -41,15 +41,14 @@ class LoginSessionForm extends React.Component {
 
 
   renderErrors() {
+    // let errorCont = document.getElementsByClassName("ErrorLogin");
 
-    if (this.props.errors.length > 0){
-      let errorCont = document.getElementsByClassName("ErrorLogin");
-      errorCont.classList.add("orange-back")
-    } else {
-      let errorCont = document.getElementsByClassName("ErrorLogin");
-      errorCont.classList.remove("orange-back")
-    }
-    
+    // if (this.props.errors.length > 0){
+    //   if (errorCont.length > 0) errorCont.classList.add("orange-back")
+    // } else {
+    //   if (errorCont.length > 0) errorCont.classList.remove("orange-back")
+    // }
+
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -90,9 +89,9 @@ class LoginSessionForm extends React.Component {
             <br />
           </div>
            
-          <div className="ErrorLogin">
+         {this.props.errors.length > 0 && <div className="ErrorLogin">
              {this.renderErrors()} 
-          </div> 
+          </div>  }
 
           <div className="form-inputnsubmit">  
            
