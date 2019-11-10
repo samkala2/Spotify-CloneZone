@@ -43,14 +43,6 @@ class SignupForm extends React.Component {
 
   renderErrors() {
 
-    // let errorCont = document.getElementsByClassName("ErrorLogin");
-
-    // if (this.props.errors.length > 0){
-    //   if (errorCont.length > 0) errorCont.classList.add("orange-back")
-    // } else {
-    //   if (errorCont.length > 0) errorCont.classList.remove("orange-back")
-    // }
-
     return (
       <ul>
         {this.props.errors.map((error, i) => (

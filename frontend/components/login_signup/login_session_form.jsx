@@ -32,7 +32,7 @@ class LoginSessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    window.dispatch(loginThunk(user))
       .then(() => this.props.history.push('/'));
     //() => this.props.history.push('/')
     //Why when logout, current user is still there in state??
