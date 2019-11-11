@@ -28,6 +28,7 @@ export const logout = () => {
     method: 'DELETE'
   };
 
-  fetch(`http://craftify.herokuapp.com/api/session`, options)
+  return (await (await fetch(`http://craftify.herokuapp.com/api/session`, options)).json().data
+          )
 
 }
