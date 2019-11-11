@@ -11,7 +11,8 @@ class SideBar extends React.Component {
 
   logout(){
     this.props.logout()
-    .then(() => this.props.history.push('/'))
+    debugger;
+    // .then(() => this.props.history.push('/'))
   }
 
   render () {

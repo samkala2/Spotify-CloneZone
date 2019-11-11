@@ -8,9 +8,9 @@ import WebLauncherContainer from './web_launcher/web_launcher_container';
 import ArtistSongsContainer from "./artists/artist_songs_container"
 
 
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-import WebLauncher from '../components/web_launcher/web_launcher';
+// import WebLauncher from '../components/web_launcher/web_launcher';
 const App = () => (
   <div className='app-div'>
     {/* <h1>Message from App Component that is placed in Root Component</h1> */}
@@ -18,12 +18,8 @@ const App = () => (
     <Route exact path="/" component={GreetingContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    <Route path="/weblauncher" component={WebLauncherContainer}/>
+    <ProtectedRoute path="/weblauncher" component={WebLauncherContainer}/>
     
-
-
-
-
     {/* <Route exact path="/" component={SearchContainer} /> */}
 
   </div>
