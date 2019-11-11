@@ -28,7 +28,5 @@ export async function logout() {
     method: 'DELETE'
   };
 
-  return (await (await fetch(`http://craftify.herokuapp.com/api/session`, options)).json().data
-          )
-
+  return await fetch(`http://craftify.herokuapp.com/api/session`, options)
 }
