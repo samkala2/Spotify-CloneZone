@@ -25,7 +25,7 @@ class WebLauncher extends React.Component {
           <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
 
 
-          <SideBar />
+          <SideBar logout={this.props.logout}/>
 
 
           <div className="middle-home">

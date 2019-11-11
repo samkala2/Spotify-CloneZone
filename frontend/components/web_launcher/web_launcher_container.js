@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import WebLauncher from './web_launcher';
 
 import { receiveCurrentSong } from '../../actions/currently_playing_actions';
+import { logoutThunk } from '../../actions/session_actions';
 
 
 const mapStateToProps = state => {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logoutThunk()),
   receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl))
 })
 
