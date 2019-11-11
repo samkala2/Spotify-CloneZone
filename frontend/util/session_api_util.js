@@ -23,7 +23,7 @@ export const login = user => (
 // );
 
 
-export const logout = () => {  
+export async function logout() {  
   const options = {
     method: 'DELETE'
   };
