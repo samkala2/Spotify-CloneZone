@@ -52,7 +52,7 @@ class SideBar extends React.Component {
         </div>
 
         <div>
-          <p className="logout-sidebar" onClick={this.logout}> Logout</p>
+          <p className="logout-sidebar" onClick={() => this.logout()}> Logout</p>
         </div>
 
         <div className="playlist">
