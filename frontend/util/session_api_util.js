@@ -15,9 +15,19 @@ export const login = user => (
   })
 );
 
-export const logout = () => (
-  $.ajax({
-    method: 'DELETE',
-    url: '/api/session'
-  })
-);
+// export const logout = () => (
+//   $.ajax({
+//     method: 'DELETE',
+//     url: '/api/session'
+//   })
+// );
+
+
+export const logout = () => {  
+  const options = {
+    method: 'DELETE'
+  };
+
+  fetch(`http://craftify.herokuapp.com/api/session`, options)
+
+}
