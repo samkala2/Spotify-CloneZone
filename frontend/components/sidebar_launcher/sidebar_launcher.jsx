@@ -36,7 +36,7 @@ class SideBar extends React.Component {
 
             <p className="library-link">
               <i id="iconhome" className="icon ion-md-list"></i>
-              <Link to="/weblauncher/home"  className="iconlink"> library </Link>
+              <Link to="/weblauncher/home"  className="iconlink"> Library </Link>
             </p>
 
           </ul>
