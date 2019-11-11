@@ -7,18 +7,18 @@ class SideBar extends React.Component {
 
   constructor(props) {
     super(props)
-    this.goToHome = this.goToHome.bind(this);
+    // this.goToHome = this.goToHome.bind(this);
   }
 
   logout(){
     this.props.logout()
-    .then(() => this.goToHome())
+    setTimeout( () => document.getElementsByClassName("link-home")[0].click(), 1)
   }
 
-  goToHome(){
-    let homeLink = document.getElementsByClassName("link-home");
-    homeLink.click();
-  }
+  // goToHome(){
+  //   let homeLink = document.getElementsByClassName("link-home")[0];
+  //   homeLink.click();
+  // }
 
   render () {
     return (
