@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import LoginSessionForm from './login_session_form';
 
-import { loginThunk } from '../../actions/session_actions';
+import { loginThunk, zeroErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.session,
@@ -14,7 +14,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  processForm: (user) => dispatch(loginThunk(user))
+  processForm: (user) => dispatch(loginThunk(user)),
+  zeroOutErrors: () => dispatch(zeroErrors())
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginSessionForm);

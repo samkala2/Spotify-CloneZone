@@ -15,6 +15,12 @@ class LoginSessionForm extends React.Component {
 
   }
 
+
+  componentWillMount(){
+    this.props.zeroOutErrors();
+  }
+
+  
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

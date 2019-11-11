@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { loginThunk } from '../../actions/session_actions'
+import { loginThunk,  zeroErrors } from '../../actions/session_actions'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -15,6 +15,10 @@ class SignupForm extends React.Component {
     this.handleDemo = this.handleDemo.bind(this);
     this.renderErrors
 
+  }
+
+  componentWillMount(){
+    this.props.zeroOutErrors();
   }
 
   update(field) {
