@@ -5,6 +5,15 @@ import {Link} from 'react-router-dom';
 
 class SideBar extends React.Component {
 
+  constructor(props) {
+    super(props)
+  }
+
+  logout(){
+    this.props.logout()
+    .then(() => this.props.history.push('/'))
+  }
+
   render () {
     return (
 
@@ -43,7 +52,7 @@ class SideBar extends React.Component {
         </div>
 
         <div>
-          <p className="logout-sidebar" onClick={this.props.logout}> Logout</p>
+          <p className="logout-sidebar" onClick={this.logout}> Logout</p>
         </div>
 
         <div className="playlist">

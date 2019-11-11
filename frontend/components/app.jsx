@@ -9,7 +9,6 @@ import ArtistSongsContainer from "./artists/artist_songs_container"
 
 
 import { AuthRoute } from '../util/route_util';
-// import SearchContainer from './bench/search_container'
 
 import WebLauncher from '../components/web_launcher/web_launcher';
 const App = () => (
