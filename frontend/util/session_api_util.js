@@ -7,13 +7,26 @@ export const signup = user => (
   })
 );
 
-export const login = user => (
-  $.ajax({
+// export const login = user => (
+//   $.ajax({
+//     method: 'POST',
+//     url: '/api/session',
+//     data: { user }
+//   })
+// );
+
+export const login = user => {
+  const options = {
     method: 'POST',
-    url: '/api/session',
-    data: { user }
-  })
-);
+    body: JSON.stringify(user),
+    headers: {
+      // 'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }
+  }
+
+  return fetch('api/session', options)
+}
 
 // export const logout = () => (
 //   $.ajax({
