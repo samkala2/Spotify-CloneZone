@@ -6,7 +6,7 @@ import SearchContainer from '../artists/artists_container'
 // import LazySearchResults from '../artists/search_results_lazy';
 import SideBar from '../sidebar_launcher/sidebar_launcher';
 import SongPlayerContainer from '../song_player/song_player_container';
-// import WebLauncherHomeContainer from './web_laucher_homecontainer';
+import WebLauncherHomeContainer from './web_laucher_homecontainer';
 import ArtistSongsContainer from "../artists/artist_songs_container";
 import AlbumSongsContainer from '../albums/album_songs_container';
 import LazyMidHome from './web_launcher_lazy_home';
@@ -37,7 +37,7 @@ class WebLauncher extends React.Component {
             
             <Route path="/weblauncher/search" component={SearchContainer} />
 
-            <Route path="/weblauncher/home" component={LazyMidHome}/>
+            <Route path="/weblauncher/home" component={WebLauncherHomeContainer }/>
 
             <Route path ="/weblauncher/:artistId/songs" component={ArtistSongsContainer}/>
 
