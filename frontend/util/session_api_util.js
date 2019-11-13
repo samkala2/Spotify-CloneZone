@@ -7,26 +7,27 @@ export const signup = user => (
   })
 );
 
-// export const login = user => (
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/session',
-//     data: { user }
-//   })
-// );
-
-export const login = user => {
-  const options = {
+export const login = user => (
+  $.ajax({
     method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-      // 'Content-Type': 'application/json'
-      'Content-Type': 'application/x-www-form-urlencoded',
-    }
-  }
+    url: '/api/session',
+    data: { user }
+  })
+);
 
-  return fetch('api/session', options)
-}
+// export const login = (user) => {
+//   const options = {
+//     method: 'POST',
+//     body: JSON.stringify(user),
+//     headers: {
+//       // 'Content-Type': 'application/json'
+//       'Content-Type': 'application/x-www-form-urlencoded',
+//     }
+//   }
+
+//   return fetch('api/session', options)
+
+// }
 
 // export const logout = () => (
 //   $.ajax({
