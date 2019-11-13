@@ -9,6 +9,7 @@ import {fetchArtistSongsThunk, zeroAlbumSongs, zeroArtistSongs} from '../../acti
 
 
 import WebLauncherHome from './web_launcher_midhome';
+// import LazyMidHome from './web_launcher_lazy_home';
 
 import { receiveCurrentSong } from '../../actions/currently_playing_actions';
 
