@@ -32,5 +32,5 @@ export const logout = () => {
     }
   };
 
-  return fetch(`http://craftify.herokuapp.com/api/session`, options)
+  return fetch(`api/session`, options)
 }
