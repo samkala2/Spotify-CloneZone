@@ -7,9 +7,9 @@ class LazySearchResults extends Component {
     render () {
       return (
      <Suspense fallback={<div> Loading... </div>}> 
-      <span className="midhome-span">
+      <div className="midhome-div">
           <LazyResults></LazyResults>
-      </span> 
+      </div> 
      </Suspense>)
     }
   }
