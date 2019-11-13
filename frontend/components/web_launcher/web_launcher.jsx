@@ -2,7 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 // import { Suspense, lazy } from 'react';
 // import {Link} from 'react-router-dom';
-import SearchContainer from '../artists/artists_container'
+// import SearchContainer from '../artists/artists_container'
+import LazySearchResults from '../artists/search_results_lazy';
 import SideBar from '../sidebar_launcher/sidebar_launcher';
 import SongPlayerContainer from '../song_player/song_player_container';
 // import WebLauncherHomeContainer from './web_laucher_homecontainer';
@@ -22,7 +23,7 @@ class WebLauncher extends React.Component {
 
   render(){
    
-    if (!this.props) return (<div> Loading </div>)
+    if (!this.props) return (<div> Loading.. </div>)
 
     return(
       <div className="main-weblauncher">
@@ -35,7 +36,7 @@ class WebLauncher extends React.Component {
 
           <div className="middle-home">
             
-            <Route path="/weblauncher/search" component={SearchContainer} />
+            <Route path="/weblauncher/search" component={LazySearchResults} />
 
             <Route path="/weblauncher/home" component={LazyMidHome}/>
 
