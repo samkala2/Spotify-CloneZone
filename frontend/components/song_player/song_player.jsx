@@ -173,9 +173,25 @@ class SongPlayer extends React.Component {
     let songList = [];
     let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
     
-    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png") {
-      
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png" && this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 ) {
+
       let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+      this.playSongAuto();
+      return
+      
+    } else if (this.props.albumSongs.length > 0 && shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png")  {
+
+      
+      let song = this.props.albumSongs[Math.floor(Math.random() * this.props.albumSongs.length)];
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+      this.playSongAuto();
+      return
+      
+    } else if (this.props.artistSongs.length > 0 && shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png")  {
+
+      
+      let song = this.props.artistSongs[Math.floor(Math.random() * this.props.artistSongs.length)];
       this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
       this.playSongAuto();
       return
@@ -193,7 +209,7 @@ class SongPlayer extends React.Component {
     
     this.nextSongLocation += 1
     
-    if (this.nextSongLocation === songList.length){ 
+    if (this.nextSongLocation >= songList.length){ 
       this.nextSongLocation = 0; 
     }
     
