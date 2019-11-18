@@ -222,7 +222,7 @@ hidePlayButton(song){
 
           <div className="searchform-container">
 
-            <form onSubmit={this.handleSearch} className="search-form">
+            <form onSubmit={this.handleSearch}  className="search-form">
 
               <label>
                 <input type="text"
@@ -246,7 +246,7 @@ hidePlayButton(song){
 
       <div className="searchform-container">
 
-        <form onSubmit={this.handleSearch} className="search-form">
+        <form  onKeyUp={this.handleSearch} className="search-form">
 
                 <label>  
                   <input type="text" 
