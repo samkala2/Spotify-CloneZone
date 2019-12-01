@@ -1,21 +1,34 @@
 class Api::PlaylistsController < ApplicationController
 
+  def user_playlists
+    query = params[:user_id]
+    @playlists = Playlist.joins(:user).where("users.id ='#{query}'")
+    render :playlists
+  end
 
-   def index
-    query = ('%' + params[:name].downcase + '%')
-    
-    @playlists = Playlist.where("lower(name) like '#{query}' ") 
-    render :index
+
+  def create_playlist
+    @playlist = Playlist.new(playlist_params)
+    if @playlist.save
+      render :new
+    else
+      render json: @playlist.errors.full_messages, status: 404
+    end
   end
 
   def show
-    @playlist = Playlist.find_by(name: params[:name]) || Playlist.find(params[:id])
-    render :show
-    # http://localhost:3000/api/playlists/*?title=Anita TO TEST need *?
+    query = params[:id]
+    @playlist = Playlist.find(query)
+    if @playlist
+      render :show
+    else
+      render json: @playlist.errors.full_messages, status: 404
+    end
   end
 
+
   def playlist_params
-    params.require(:playlist).permit(:name)
+    params.require(:playlist).permit(:name, :user_id, :playlist_id)
   end
 
 end

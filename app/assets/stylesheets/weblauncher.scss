@@ -130,19 +130,19 @@
    }
 
    .container-album{
-       display: flex;
-       justify-content: center;
-    z-index:15;
-    position: absolute;
-    height: 500px;
-    width: 493px; 
+        display: flex;
+        justify-content: center;
+        z-index:15;
+        position: absolute;
+        height: 500px   ;
+        width: 493px; 
    }
 
    .main-album-info{
     // margin-left: 136px;
     margin-top: 386px;
     font-family: 'Rubik', sans-serif;
-    z-index: 15;
+    // z-index: 15;
     position: absolute;
     color: white;
     font-size: 20px;
@@ -303,7 +303,7 @@
   }
 
   .music-note{
-    z-index: 12;
+    z-index: 1;
     position: absolute;
     width: 33px;
     margin-left: 1%;
@@ -342,16 +342,6 @@
     
 
    
-
-    #bar-link ul{
-    margin: 0;
-    padding: 10;
-    }
-
-    #bar-link{
-            height: 200px;
-            padding-top: 30px;
-        }
 
   .home-link:hover #iconhome, .library-link:hover, .search-link:hover, .home-link:hover a, .library-link:hover a, .search-link:hover a{
           color: white;
@@ -498,17 +488,17 @@
 }
 
 
-   .upper-links {
-        display: flex;
-        justify-content: center;
-        font-size: 16px;
-        width: 770px;
-        padding-left: 28%;
-        padding-top: 40px;
-        font-weight: 500;
-        font-family: 'Rubik', sans-serif;
-        color: rgb(251, 250, 250);
-    }
+.upper-links {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    width: 770px;
+    padding-left: 28%;
+    padding-top: 40px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(251, 250, 250);
+}
 
     .white-on{
         color: white;
@@ -618,30 +608,7 @@
 .home-word{
     padding-bottom: 5px;
 }
-.side-bar a {
-    font-size: 16px;
-}
 
-.side-bar{
-    background-color: black;
-    color: #b3b3b3;
-    // font-size: 30px;
-    line-height: 20px;
-    letter-spacing: .015em;
-    font-weight: var(--glue-font-weight-normal);
-    text-transform: none;
-    font-weight: 550;
-    font-family: 'Rubik', sans-serif;
-    //fantasy, Helvetica, Arial, sans-serif;  
-    max-width: 228px;
-    min-width: 228px;
-    max-height: 100%;
-    min-height: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 5;
-    height: 100%;
-}
 
 .mid-home-cont, .midhome-span{
     position: fixed;
@@ -984,6 +951,3 @@
         flex-wrap: wrap;
         width: 79%;
     }
-
-   
-      

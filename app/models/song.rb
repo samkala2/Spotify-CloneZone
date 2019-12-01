@@ -20,6 +20,7 @@ class Song < ApplicationRecord
   belongs_to :artist
 
   has_many :playlistsongs
+  
 
   has_one_attached :mp3song
 

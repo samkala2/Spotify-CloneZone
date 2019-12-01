@@ -7,7 +7,15 @@ class SideBar extends React.Component {
 
   constructor(props) {
     super(props)
-    // this.goToHome = this.goToHome.bind(this);
+    this.showPlaylistForm = this.showPlaylistForm.bind(this);
+    this.hidePlaylistForm = this.hidePlaylistForm.bind(this); 
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+ 
+    this.state = {
+      name: "",
+      user_id: this.props.userId[0].id || 0
+    }
   }
 
   logout(){
@@ -15,11 +23,33 @@ class SideBar extends React.Component {
     setTimeout( () => document.getElementsByClassName("link-home")[0].click(), 1)
   }
 
-  // goToHome(){
-  //   let homeLink = document.getElementsByClassName("link-home")[0];
-  //   homeLink.click();
-  // }
+  componentDidMount(){
+    // debugger;
+    this.props.getUserPlaylists(this.props.userId[0].id);
+  }
 
+  showPlaylistForm(){
+    let form = document.getElementsByClassName("create-playlist-form")[0];
+    form.classList.remove("hidden");
+  }
+
+  hidePlaylistForm(){
+    let form = document.getElementsByClassName("create-playlist-form")[0];
+    form.classList.add("hidden");
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    })
+  }
+
+  handleSubmit(){
+    const playlist = Object.assign({}, this.state);
+    this.props.createPlaylist(playlist)
+    .then(() => this.props.getUserPlaylists(this.props.userId[0].id))
+    .then(() => this.hidePlaylistForm())
+  }
   render () {
     return (
 
@@ -51,10 +81,40 @@ class SideBar extends React.Component {
 
             <p className="library-link">
               <i id="iconhome" className="icon ion-md-list"></i>
-              <Link to="/weblauncher/home"  className="iconlink"> Library </Link>
+              <Link to="/weblauncher/library"  className="iconlink"> Library </Link>
             </p>
 
           </ul>
+        </div>
+
+        <p className="playlist-title"> PLAYLISTS </p>
+
+        <div className="create-playlist-cont"   onClick={() => this.showPlaylistForm()}> 
+          <img className="plus-icon"
+          src="https://craftifybucket.s3.us-east-2.amazonaws.com/addplaylist.png"/> 
+          <p className="create-playlist"> Create Playlist  </p>
+        </div>
+        <ul className="playlist-list">
+         {this.props.playlists.map(playlist => {
+           return(
+             <li> 
+             <Link to={`/weblauncher/playlist/${playlist.id}`}> 
+             {playlist.name} </Link>
+             </li>
+           )
+         })}
+        </ul>
+
+       
+        <div className="create-playlist-form hidden" >
+          <h4 className="top-placeholder"> Playlist Name</h4>
+          <button onClick={() => this.handleSubmit()}
+          type="submit" className="submit-playlist" > Create </button>
+          <input type="text" className="input-playlist" 
+                  placeholder="New Playlist"
+                  onChange={this.update('name')}
+                  />
+          <button onClick={() => this.hidePlaylistForm()} className="cancel-playlist"> Cancel </button>
         </div>
 
         <div>

@@ -10,8 +10,9 @@ import WebLauncherHomeContainer from './web_laucher_homecontainer';
 import ArtistSongsContainer from "../artists/artist_songs_container";
 import AlbumSongsContainer from '../albums/album_songs_container';
 import LazyMidHome from './web_launcher_lazy_home';
-
-
+import SideBarContainer from '../sidebar_launcher/sidebar_container';
+import LibraryContainer from './library_container'
+import PlaylistSongsContainer from './playlist_songs_container';
 
 class WebLauncher extends React.Component {
 
@@ -30,11 +31,13 @@ class WebLauncher extends React.Component {
           <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
 
 
-          <SideBar logout={this.props.logout}/>
+          <SideBarContainer />
 
 
           <div className="middle-home">
             
+            <Route path="/weblauncher/library" component={LibraryContainer}/>
+            <Route path="/weblauncher/playlist/:playlistId"  component={PlaylistSongsContainer}/>
             <Route path="/weblauncher/search" component={SearchContainer} />
 
             <Route path="/weblauncher/home" component={WebLauncherHomeContainer }/>
@@ -43,7 +46,10 @@ class WebLauncher extends React.Component {
 
             <Route path="/weblauncher/:albumId/albumsongs" component= {AlbumSongsContainer}/>
 
+          
           </div>
+
+       
 
         </div> 
 

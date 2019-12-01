@@ -19,6 +19,12 @@ class Api::SongsController < ApplicationController
     render :specific
   end
 
+  def songs_for_playlist
+    query = params[:song_ids]
+    @songs = Song.where("id in '#{query}'")
+  end
+
+  
   def get_artist_image
     query = params[:artist_id]
     @artist1 = Artist.find(query)
@@ -28,7 +34,7 @@ class Api::SongsController < ApplicationController
   
 
   def song_params
-    params.require(:song).permit(:title, :artist_id)
+    params.require(:song).permit(:title, :artist_id, :song_ids)
   end
 
   

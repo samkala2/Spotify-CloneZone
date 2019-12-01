@@ -19,10 +19,14 @@ Rails.application.routes.draw do
 
     resources :artists, only: [:index]
     get 'artists/all', to: 'artists#getall'
+    
 
-    resources :playlists, only: [:show, :index]
+    resources :playlists, only: [:index, :show]
+    get '/playlists-for-user', to: 'playlists#user_playlists'
+    # get '/playlists/id', to: 'playlists#playlist_by_id'
+    post '/playlists/new', to: 'playlists#create_playlist'
 
-    resources :playlistsongs
+    resources :playlistsongs, only: [:create]
 
     resources :follows 
 

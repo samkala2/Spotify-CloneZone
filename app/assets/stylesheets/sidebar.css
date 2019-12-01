@@ -1,0 +1,224 @@
+.plus-icon{
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+    padding: 4px;
+}
+
+.create-playlist{
+    font-size: 14px;
+}
+
+.create-playlist-cont{
+    display: flex;
+    margin-left: 20px;
+}
+
+.playlist-title{
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: .015em;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    margin: 0 20px;
+    padding-bottom: 16px;
+}
+
+.playlist-list {
+    list-style-type: none;
+    margin-left: -20px;
+}
+
+.playlist-list2{
+    list-style-type: none;
+    position: absolute;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 19%;
+    margin-left: 17%;
+}
+
+.playlist-list2 li{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.playlist-list2 li img{ 
+    width:100px;
+    height: 100px;
+}
+.playlist2-li{
+    /* margin-left: 55%; */
+}
+
+.modal-pl {
+    /* display: none;  */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .close-playlist:hover,
+.close-playlist:focus {
+  color: rgb(224, 220, 220);
+  text-decoration: none;
+  cursor: pointer;
+}
+  .close-playlist{
+      /* width: 50px;
+      height: 50px; */
+      font-size: 50px;
+  }
+
+.plus-add-icon{
+    opacity: 0.5;
+    width: 20px;
+    margin-left: 90px;
+    margin-top: 9px;
+}
+
+.playlist-list li {
+    padding-bottom: 7px;
+}
+.playlist-list a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    line-height: 20px;
+    letter-spacing: .016em;
+    margin-bottom: 20px;
+}
+
+.playlist-ul a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    line-height: 20px;
+    letter-spacing: .016em;
+}
+
+.playlist-list a:hover{ 
+    opacity: 1;
+}
+
+
+#bar-link ul{
+    margin: 0;
+    padding: 10;
+    }
+
+#bar-link{
+        height: 166px;
+    padding-top: 30px;
+    }
+
+
+
+.side-bar a {
+    font-size: 16px;
+}
+
+.side-bar{
+    background-color: black;
+    color: #b3b3b3;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-normal);
+    text-transform: none;
+    font-weight: 550;
+    font-family: 'Rubik', sans-serif;
+    max-width: 228px;
+    min-width: 228px;
+    max-height: 100%;
+    min-height: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    height: 100%;
+    font-size: 11px;
+}
+
+.create-playlist-form{
+        position: fixed;
+        height: 100%;
+        width: 99vw;
+        z-index: 299;
+        position: fixed;
+        height: 160px;
+        margin-top: -149px;  
+        border: 1px black; 
+        font-size: 49px;
+        font-weight: bold;
+        background-color: rgb(92, 91, 91);
+}
+.hidden{
+    display: none;
+}
+
+.input-playlist{
+    background-color: rgb(39, 37, 37);
+    width: 99vw;
+    z-index: 290;
+    position: fixed;
+    height: 160px;
+    margin-top: 1px;
+    border: 1px black; 
+    font-size: 49px;
+    font-weight: bold;
+    color: white;
+    padding-left: 42px;
+}
+
+.top-placeholder{
+    z-index: 292;
+    position: fixed;
+    margin: 36px 0 0px 45px;
+    font-size: 13px;
+    color: white;
+}
+
+.submit-playlist {
+    z-index: 292;
+    position: absolute;
+    margin-top: 164px;
+    margin-left: 650px;
+    height: 48px;
+    width: 168px;
+    border-radius: 84px;
+    background-color: #1DB954;
+    border: #1DB954 1px;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.cancel-playlist {
+    z-index: 293;
+    position: absolute;
+    margin-top: 164px;
+    margin-left: 445px;
+    height: 48px;
+    width: 168px;
+    border-radius: 84px;
+    background-color: rgb(28, 29, 28);
+    border: white 1px solid;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
