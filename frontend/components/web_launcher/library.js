@@ -14,14 +14,14 @@ class Library extends React.Component {
     }
 
     playlistImage(playlistId){
-    //    this.props.fetchPlaylistSongs(playlistId)
-    //    .then(songs => {
+       this.props.fetchPlaylistSongs(playlistId)
+       .then(songs => {
         //    debugger
-    //        if (Object.values(songs).length > 0) {
-    //             return (Object.values(songs)[0].songImageUrl)       } else {
+           if (Object.values(songs).length > 0) {
+                return (Object.values(songs)[0].songImageUrl)       } else {
                 return "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"
-    //         }
-    //    })
+            }
+       })
     }
 
     render(){
