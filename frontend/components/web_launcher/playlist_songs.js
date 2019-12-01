@@ -9,7 +9,8 @@ class PlaylistSongs extends React.Component{
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
         this.getPlaylistImageUrl = this.getPlaylistImageUrl.bind(this);
         this.state = {
-            songs: []
+            songs: [],
+            imageUrl: ""
         }
     }
 
@@ -35,10 +36,10 @@ class PlaylistSongs extends React.Component{
 
     getPlaylistImageUrl(){
         if (this.state.songs.length > 0) {
-            debugger;
-            return this.state.songs[0].songImageUrl
+            // debugger;
+            this.setState({imageUrl: this.state.songs[0].songImageUrl})
         } else {
-            return "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"
+            this.setState({ imageUrl: "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png" }) 
         }
     }
 
@@ -65,6 +66,7 @@ class PlaylistSongs extends React.Component{
         //   songTitle: song.title,
         //   songArtist: song.artist
         // });
+
        let songGet= document.getElementsByClassName('audio-footer')[0];
         songGet.autoplay = true;
         songGet.play();
@@ -97,8 +99,9 @@ class PlaylistSongs extends React.Component{
                 </Link>
             </div>
 
+            {/* <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/loading.svg"/> */}
 
-            <img className="playlist-show-image" src={this.getPlaylistImageUrl()}/>
+            <img className="playlist-show-image" src={this.state.imageUrl}/>
             {/* {songs.map(song => (
                 <li> {song.title} </li>
             ))} */}
