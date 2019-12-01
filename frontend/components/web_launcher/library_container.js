@@ -1,4 +1,6 @@
 import {connect} from 'react-redux';
+import { getPlaylistSongsById} from '../../util/playlist_api_util';
+
 
 // import getfirstlaylist for component did mount
 
@@ -12,7 +14,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-
+    fetchPlaylistSongs: playlistId => getPlaylistSongsById(playlistId)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Library)

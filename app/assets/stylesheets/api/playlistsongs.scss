@@ -1,3 +1,22 @@
 // Place all the styles related to the api/playlistsongs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.playlist-show-image{ 
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0%;
+    object-fit: cover;
+    // bottom: 0;
+    opacity: 0.8;
+    height: 320px;
+    width: 320px;
+    margin-left: 295px;
+    margin-top: 90px;
+    background-size: cover;
+    background-position: 100% 35%;
+    background-repeat: no-repeat;
+    box-shadow: black 2px 2px 4px;
+}

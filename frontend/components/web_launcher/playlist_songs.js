@@ -7,10 +7,9 @@ class PlaylistSongs extends React.Component{
         super(props);
         this.handleHoverSong = this.handleHoverSong.bind(this);
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
+        this.getPlaylistImageUrl = this.getPlaylistImageUrl.bind(this);
         this.state = {
-            songs: [{
-                // title: 'ens'
-            }]
+            songs: []
         }
     }
 
@@ -34,6 +33,14 @@ class PlaylistSongs extends React.Component{
         }
     }
 
+    getPlaylistImageUrl(){
+        if (this.state.songs.length > 0) {
+            debugger;
+            return this.state.songs[0].songImageUrl
+        } else {
+            return "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"
+        }
+    }
 
     handleHoverSong(song){
         let playButton = document.getElementById(song.id.toString())
@@ -91,7 +98,7 @@ class PlaylistSongs extends React.Component{
             </div>
 
 
-
+            <img className="playlist-show-image" src={this.getPlaylistImageUrl()}/>
             {/* {songs.map(song => (
                 <li> {song.title} </li>
             ))} */}
