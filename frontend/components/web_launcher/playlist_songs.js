@@ -21,6 +21,7 @@ class PlaylistSongs extends React.Component{
         this.props.getPlaylistSongs(playlistId)
         .then(() => this.setState({songs: Object.values(this.props.songs)}))
         // this.props.getPlaylistsong(id)
+        .then(() => this.getPlaylistImageUrl())
     }
 
     componentDidUpdate(prevProps) {
@@ -31,6 +32,7 @@ class PlaylistSongs extends React.Component{
         this.setState({ songs: [{   }]  });
         this.props.getPlaylistSongs(playlistId)
         .then(() => this.setState({songs: Object.values(this.props.songs)}))
+        .then(() => this.getPlaylistImageUrl())
         }
     }
 

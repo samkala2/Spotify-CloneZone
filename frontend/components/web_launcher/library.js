@@ -13,13 +13,21 @@ class Library extends React.Component {
         this.playlistImage = this.playlistImage.bind(this);
     }
 
+    componentDidMount(){
+        this.props.playlists.forEach((playlist) => {
+            this.playlistImage(playlist.id);
+        })
+    }
+
     playlistImage(playlistId){
        this.props.fetchPlaylistSongs(playlistId)
        .then(songs => {
         //    debugger
            if (Object.values(songs).length > 0) {
-                return (Object.values(songs)[0].songImageUrl)       } else {
-                return "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"
+               let url = Object.values(songs)[0].songImageUrl;
+                this.setState({ [`${playlistId}`]: url })   } else {
+               let defaultUrl = "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"
+                this.setState({ [`${playlistId}`]: defaultUrl })
             }
        })
     }
@@ -43,8 +51,9 @@ class Library extends React.Component {
 
                         <li> 
                         <div className="playlist-info">
+                        {/* {this.playlistImage(playlist.id)} */}
                             <img className="playlist-image"
-                            src={this.playlistImage(playlist.id)}
+                            src={this.state[`${playlist.id}`]}
                             />
                             <div className="playlist-title"> 
                             <Link  className="playlist-show-link"
