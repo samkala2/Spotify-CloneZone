@@ -48,7 +48,7 @@ class Library extends React.Component {
                 <div className="library-links"> 
                     <p className="opacity albumsb white-on" 
                     // onClick={ () => this.toggleResults("AllAlbums") }
-                    > Playlists </p>
+                    > PLAYLISTS </p>
                 </div>
 
                 <div> 

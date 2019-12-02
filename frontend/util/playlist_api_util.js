@@ -7,9 +7,6 @@ export const searchPlaylists = (user_id) => (
 );
 
 
-
-
-
 export const createPlaylist = playlist => (
   $.ajax({
     method: 'POST',
@@ -19,9 +16,18 @@ export const createPlaylist = playlist => (
 );
 
 
+
 export const getPlaylistSongsById = id => (
   $.ajax({
     method: 'GET',
     url: `/api/playlists/${id}`
   })
 )
+
+
+export const deletePlaylist = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/playlists/${id}`
+  })
+);

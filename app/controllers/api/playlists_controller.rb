@@ -26,6 +26,14 @@ class Api::PlaylistsController < ApplicationController
     end
   end
 
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    if @playlist.destroy
+      render json: {message: "playlist deleted successfully"} 
+    else
+      render json: { error: "No user to logout!" }, status: 409
+    end
+  end
 
   def playlist_params
     params.require(:playlist).permit(:name, :user_id, :playlist_id)

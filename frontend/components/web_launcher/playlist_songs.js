@@ -8,6 +8,7 @@ class PlaylistSongs extends React.Component{
         this.handleHoverSong = this.handleHoverSong.bind(this);
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
         this.getPlaylistImageUrl = this.getPlaylistImageUrl.bind(this);
+        this.deletePlaylist = this.deletePlaylist.bind(this);
         this.state = {
             songs: [],
             imageUrl: ""
@@ -62,6 +63,14 @@ class PlaylistSongs extends React.Component{
         musicNote.classList.remove("display-n");
     }
 
+    deletePlaylist() {
+        let playlistId = this.props.match.params.playlistId
+
+        this.props.deletePlaylistById(playlistId)
+        .then(() => this.props.history.push('/weblauncher/library'))
+        // .then(() => this.props.getPlaylistSongs(playlistId))
+    }
+
     playSongios(song) {
         // this.setState({
         //   songUrl: song.songUrl,
@@ -101,13 +110,14 @@ class PlaylistSongs extends React.Component{
                 </Link>
             </div>
 
-            {/* <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/loading.svg"/> */}
-
             <img className="playlist-show-image" src={this.state.imageUrl}/>
-            {/* {songs.map(song => (
-                <li> {song.title} </li>
-            ))} */}
-
+            <br/>
+            <div className="delete-cont"> 
+            <img 
+                src="https://craftifybucket.s3.us-east-2.amazonaws.com/threedots.png"
+            />
+            <p onClick={this.deletePlaylist} > Delete </p>
+            </div>
             <ul className="each-song-result-4">
                     {songs.map(song =>
                     <li onMouseEnter={() => this.handleHoverSong(song)} 

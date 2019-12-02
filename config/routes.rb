@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'artists/all', to: 'artists#getall'
     
 
-    resources :playlists, only: [:index, :show]
+    resources :playlists, only: [:index, :show, :destroy]
     get '/playlists-for-user', to: 'playlists#user_playlists'
     # get '/playlists/id', to: 'playlists#playlist_by_id'
     post '/playlists/new', to: 'playlists#create_playlist'
