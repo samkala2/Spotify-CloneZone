@@ -14,10 +14,17 @@ class Library extends React.Component {
     }
 
     componentDidMount(){
-        this.props.playlists.forEach((playlist) => {
+        this.props.getUserPlaylists(this.props.userId[0].id)
+        .then( () => this.props.playlists.forEach((playlist) => {
             this.playlistImage(playlist.id);
-        })
+        }) )
     }
+
+    // componentWillMount(){
+    //     this.props.playlists.forEach((playlist) => {
+    //         this.playlistImage(playlist.id);
+    //     })
+    // }
 
     playlistImage(playlistId){
        this.props.fetchPlaylistSongs(playlistId)

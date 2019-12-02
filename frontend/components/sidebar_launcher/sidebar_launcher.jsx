@@ -46,6 +46,7 @@ class SideBar extends React.Component {
 
   handleSubmit(){
     const playlist = Object.assign({}, this.state);
+    // debugger;
     this.props.createPlaylist(playlist)
     .then(() => this.props.getUserPlaylists(this.props.userId[0].id))
     .then(() => this.hidePlaylistForm())
@@ -94,6 +95,19 @@ class SideBar extends React.Component {
           src="https://craftifybucket.s3.us-east-2.amazonaws.com/addplaylist.png"/> 
           <p className="create-playlist"> Create Playlist  </p>
         </div>
+
+        <div className="create-playlist-form hidden" >
+          <h4 className="top-placeholder"> Playlist Name</h4>
+          <button onClick={() => this.handleSubmit()}
+          type="submit" className="submit-playlist" > Create </button>
+          <input type="text" className="input-playlist" 
+                  placeholder="New Playlist"
+                  onChange={this.update('name')}
+                  />
+          <button onClick={() => this.hidePlaylistForm()} className="cancel-playlist"> Cancel </button>
+        </div>
+
+
         <ul className="playlist-list">
          {this.props.playlists.map(playlist => {
            return(
@@ -106,16 +120,7 @@ class SideBar extends React.Component {
         </ul>
 
        
-        <div className="create-playlist-form hidden" >
-          <h4 className="top-placeholder"> Playlist Name</h4>
-          <button onClick={() => this.handleSubmit()}
-          type="submit" className="submit-playlist" > Create </button>
-          <input type="text" className="input-playlist" 
-                  placeholder="New Playlist"
-                  onChange={this.update('name')}
-                  />
-          <button onClick={() => this.hidePlaylistForm()} className="cancel-playlist"> Cancel </button>
-        </div>
+        
 
         <div>
           <p className="logout-sidebar" onClick={() => this.logout()}> Logout</p>

@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     logout: () => dispatch(logoutThunk()),
     getUserPlaylists: (id) => dispatch(fetchPlaylistsThunk(id)),
-    createPlaylist: (playlist) => dispatch(createPlaylist(playlist))
+    createPlaylist: (playlist) => createPlaylist(playlist)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
