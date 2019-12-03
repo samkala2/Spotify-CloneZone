@@ -9,6 +9,9 @@ class ArtistSongs extends React.Component{
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
         this.getUniqueAlbums = this.getUniqueAlbums.bind(this);
         this.getSongsByAlbum = this.getSongsByAlbum.bind(this);
+        this.seStateSongId = this.seStateSongId.bind(this);
+        this.addNewPlaylistSong = this.addNewPlaylistSong.bind(this);
+        this.hidePlaylistModal = this.hidePlaylistModal.bind(this)
         this.state = {
           songUrl: "",
           songTitle: "",
@@ -16,11 +19,33 @@ class ArtistSongs extends React.Component{
           songsInfo: this.props.artistSongs,
           distinctAlbums: [],
           dividedSongs: [] ,
-          albumId: 0
+          albumId: 0,
+          playlistSongId: 0,
+          playlistModal: false
         }
         
     }
 
+    seStateSongId(id){
+        this.setState({playlistSongId: id, playlistModal: true})
+    }
+
+    hidePlaylistModal(){
+        this.setState({playlistModal: false})
+    }
+
+    addNewPlaylistSong(playlistId){
+        this.props.addNewPlaylistSong({
+            song_id: this.state.playlistSongId,
+            ord: 2,
+            playlist_id: playlistId
+        })
+        this.setState({playlistModal: false})
+    }
+
+
+
+    
     componentWillMount(){
         let artistId = this.props.match.params.artistId;
         this.props.receiveArtistSong(artistId)
@@ -107,6 +132,7 @@ class ArtistSongs extends React.Component{
 
     render(){
         // debugger;
+        window.artistState = this.state;
         return(
             <div className="artistPage">
             
@@ -143,6 +169,11 @@ class ArtistSongs extends React.Component{
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
+
+                        <img className="plus-add-icon"
+                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
+                        onClick={() => this.seStateSongId(song.id)}/> 
+                        
                         </div>
                     </li>)}
                     </div>}
@@ -169,8 +200,13 @@ class ArtistSongs extends React.Component{
                         
                        
                         <div className="song-info-2">
-
+                        
                         <div className="song-title-2">  {song.title}      </div>
+
+                        <img className="plus-add-icon"
+                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
+                        onClick={() => this.seStateSongId(song.id)}/> 
+
                         </div>
                     </li>)}
                     </div>  
@@ -216,27 +252,22 @@ class ArtistSongs extends React.Component{
                         <br/>
                     {/* <div> ------- </div> */}
                     
-                    {/* { this.state.dividedSongs[1].length > 0 &&  <div> 
-                    {this.state.divideSongs[1].map(song =>
-                    <li onMouseEnter={() => this.handleHoverSong(song)} 
-                        onMouseLeave= {() => this.handleHoverOutSong(song)} 
-                        id="each-song-result-2" 
-                        className={"each-song-res" + song.id} >
-                        
-                        <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
-
-                        <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
-                        
-                        <img  className="small-image-song" src={song.songImageUrl} />
-                        <div className="song-info-2">
-
-                        <div className="song-title-2">  {song.title}      </div>
-                        </div>
-                    </li>)}
-                    </div>  } */
-                    }
+                    
                 </ul> 
+                
+               { this.state.playlistModal &&
 
+                <ul className="playlist-list2">
+                <div onClick={() => this.hidePlaylistModal()} className="close-playlist">&times;</div>
+                {this.props.playlists.map(playlist => {
+                return(
+                    <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 
+                    <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"/>
+                    {playlist.name} 
+                    </li>
+                )
+                })}
+                </ul> }
 
             </div>
 

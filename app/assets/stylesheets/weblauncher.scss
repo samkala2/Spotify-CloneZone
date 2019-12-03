@@ -197,24 +197,25 @@
     width: 65%;
    }
 
-   .each-song-result-4{
-    // padding-top: 367px;
-    padding-left: 0px;
-    margin-top: 0;
+   .each-song-result-4 {
     flex-wrap: wrap;
     width: 65%;
    }
 
+   .each-song-result-5 {
+    padding-left: 85px;
+    flex-wrap: wrap;
+    width: 65%;
+   }
 
-
-   .each-song-result li, .each-song-result-4 li{ 
+   .each-song-result li, .each-song-result-4 li, .each-song-result-5 li{ 
     position: relative;
     display: flex;
     flex-direction: row;
     border-bottom: 0.5px solid rgb(122, 122, 122);
    }
 
-   .each-song-result li:hover, .each-song-result-4 li:hover{ 
+   .each-song-result li:hover, .each-song-result-4 li:hover, .each-song-result-5 li:hover{ 
     //    cursor: pointer;
        background-color: rgb(22, 22, 22);
        -webkit-transition: background-color 200ms linear;
@@ -268,12 +269,6 @@
     font-size: 20px;
    }
 
-   .each-song-result li i, .each-song-result-4 li i{
-    padding: 8px;
-    padding-top: 11px;
-    padding-left: 20px;
-    font-size: 20px;
-   }
 
    .all-songs-results li i {
     padding: 8px;
@@ -282,9 +277,14 @@
     font-size: 20px;
    }
 
-   .each-song-result li i, .each-song-result-4 li i{
-       color: white;
+   .each-song-result li i, .each-song-result-4 li i, .each-song-result-5 li i{
+    padding: 8px;
+    padding-top: 11px;
+    padding-left: 20px;
+    font-size: 20px;
+    color: white;
    }
+
 
    .flex-artist-image{
         display: flex;

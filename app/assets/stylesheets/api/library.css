@@ -33,7 +33,7 @@
 }
 
 .delete-cont{
-    margin-left: 295px;
+    margin-left: 83px;
     display: flex;
 }
 
@@ -42,16 +42,42 @@
     height: 53px;
 }
 
-.delete-cont p {
-    background-color: rgb(46, 44, 44);
+.delete-cont img:hover, .delete-cont:hover{
+    cursor: pointer;
+}
+
+/* .delete-cont p, */
+.delete-button {
+    background-color: rgb(36, 34, 34);
     width: 68px;
     height: 70px;
     margin: 0;
     color: white;
     font-family: 'Rubik', sans-serif;
-    margin-top: 22px
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
 }
+
+
 
 .delete-cont p:hover { 
     cursor: pointer;
+    font-weight: 450;
+}
+
+.playlist-show-cont{
+    margin-left: 220px
+}
+
+.image-title-playlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 503px;
+}
+
+.image-title-playlist h2{
+    margin: 0;
+    width: 100px;
 }

@@ -9,9 +9,11 @@ class PlaylistSongs extends React.Component{
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
         this.getPlaylistImageUrl = this.getPlaylistImageUrl.bind(this);
         this.deletePlaylist = this.deletePlaylist.bind(this);
+        this.displayDeleteButton = this.displayDeleteButton.bind(this)
         this.state = {
             songs: [],
-            imageUrl: ""
+            imageUrl: "",
+            displayDeleteButton: false
         }
     }
 
@@ -19,6 +21,7 @@ class PlaylistSongs extends React.Component{
     componentDidMount(){
         let playlistId = this.props.match.params.playlistId
         // debugger;
+        this.props.getCurrentPlaylist(playlistId);
         this.props.getPlaylistSongs(playlistId)
         .then(() => this.setState({songs: Object.values(this.props.songs)}))
         // this.props.getPlaylistsong(id)
@@ -31,14 +34,25 @@ class PlaylistSongs extends React.Component{
         ) {
         let playlistId = this.props.match.params.playlistId
         this.setState({ songs: [{   }]  });
+        this.props.getCurrentPlaylist(playlistId);
         this.props.getPlaylistSongs(playlistId)
         .then(() => this.setState({songs: Object.values(this.props.songs)}))
         .then(() => this.getPlaylistImageUrl())
         }
     }
 
+    displayDeleteButton(){
+        if (this.state.displayDeleteButton === false){
+
+            this.setState({ displayDeleteButton: true})
+        } else {
+            this.setState({ displayDeleteButton: false})
+
+        }
+    }
+
     getPlaylistImageUrl(){
-        if (this.state.songs.length > 0) {
+        if (this.state.songs.length > 1) {
             // debugger;
             this.setState({imageUrl: this.state.songs[0].songImageUrl})
         } else {
@@ -71,6 +85,33 @@ class PlaylistSongs extends React.Component{
         // .then(() => this.props.getPlaylistSongs(playlistId))
     }
 
+    displaySongs(){
+            if (this.state.songs.length === 1) {
+                return null
+            } else if (this.state.songs.length > 1 ) {
+                let songs = this.state.songs.slice(0,this.state.songs.length - 1)
+        return (
+            <ul className="each-song-result-5">
+            {songs.map(song =>
+            <li onMouseEnter={() => this.handleHoverSong(song)} 
+                onMouseLeave= {() => this.handleHoverOutSong(song)} 
+                id="each-song-result-4" 
+                className={"each-song-res" + song.id} >
+                
+                <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
+
+                <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
+                
+                <div className="song-info-2">
+
+                <div className="song-title-2">  {song.title}      </div>
+                </div>
+            </li>)}
+        </ul> 
+        ) }
+    }
+
+
     playSongios(song) {
         // this.setState({
         //   songUrl: song.songUrl,
@@ -100,41 +141,33 @@ class PlaylistSongs extends React.Component{
         window.showstate = this.state;
         
         return(
-        <div>
+        <div className="playlist-show-cont">
             
             <div className="library-links-playlistsongs"> 
-                <Link to="/weblauncher/library"> 
+                {/* <Link to="/weblauncher/library"> 
                 <p className="opacity albumsb white-on" 
                 // onClick={ () => this.toggleResults("AllAlbums") }
                 > Playlists </p>
-                </Link>
+                </Link> */}
             </div>
 
+            <div className="image-title-playlist"> 
             <img className="playlist-show-image" src={this.state.imageUrl}/>
             <br/>
-            <div className="delete-cont"> 
-            <img 
-                src="https://craftifybucket.s3.us-east-2.amazonaws.com/threedots.png"
-            />
-            <p onClick={this.deletePlaylist} > Delete </p>
+            <h2> {this.props.currentPlaylist.name} </h2>
+            
+            
             </div>
-            <ul className="each-song-result-4">
-                    {songs.map(song =>
-                    <li onMouseEnter={() => this.handleHoverSong(song)} 
-                        onMouseLeave= {() => this.handleHoverOutSong(song)} 
-                        id="each-song-result-4" 
-                        className={"each-song-res" + song.id} >
-                        
-                        <i onClick={() => { this.playSongios(song) }} id={song.id} className="icon ion-md-play display-n"></i>
 
-                        <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
-                        
-                        <div className="song-info-2">
 
-                        <div className="song-title-2">  {song.title}      </div>
-                        </div>
-                    </li>)}
-                </ul> 
+            <div className="delete-cont"> 
+                <img onClick={this.displayDeleteButton}
+                src="https://craftifybucket.s3.us-east-2.amazonaws.com/threedots.png"/>
+             {this.state.displayDeleteButton &&  <div className="delete-button"> 
+                <p onClick={this.deletePlaylist} > Delete </p>
+                </div> }
+            </div>
+            {this.displaySongs()}
         </div>
             )
     }

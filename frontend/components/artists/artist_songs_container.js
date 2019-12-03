@@ -4,6 +4,7 @@ import ArtistSongs from './artist_songs';
 
 import {fetchArtistSongsThunk, fetchArtistImageThunk} from '../../actions/song_actions'
 import {receiveCurrentSong} from '../../actions/currently_playing_actions';
+import {addPlaylistSong} from '../../util/playlist_song_api_util';
 
 
 function getUniqueAlbums(state) {
@@ -68,14 +69,18 @@ const mapStateToProps = state => {
         artistSongs: Object.values(state.entities.artistSongs),
         artistImage: state.entities.artistImage,
         uniqueAlbums: getUniqueAlbums(state),
-        uniqueImages: getUniqueAlbumImages(state)
+        uniqueImages: getUniqueAlbumImages(state),
+        playlists: Object.values(state.entities.playlists)
+
     }
 }
 
 const mapDispatchToProps = dispatch => ({
     receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId)),
     getArtistImage: (artistId) => dispatch(fetchArtistImageThunk(artistId)),
-    receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl))
+    receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl)),
+    addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong)
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistSongs)

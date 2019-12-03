@@ -22,8 +22,6 @@ class AlbumSongs extends React.Component{
         let albumId = this.props.match.params.albumId;
         this.props.receiveAlbumSongs(albumId);
         this.props.getAlbumInfo(albumId);
-        // debugger;
-        // .then( () => this.props.getArtistImage(albumId));
     }
     
     seStateSongId(id){
@@ -43,13 +41,13 @@ class AlbumSongs extends React.Component{
         this.setState({playlistModal: false})
     }
 
-    addToPlaylist(playlistId, songId) {
-        this.props.addNewPlaylistSong({
-                    playlist_id: playlistId,
-                    ord: 2,
-                    song_id: songId
-                })
-    }
+    // addToPlaylist(playlistId, songId) {
+    //     this.props.addNewPlaylistSong({
+    //                 playlist_id: playlistId,
+    //                 ord: 2,
+    //                 song_id: songId
+    //             })
+    // }
 
 
     handleHoverSong(song){
@@ -134,7 +132,7 @@ class AlbumSongs extends React.Component{
                         </div>
 
                         <img className="plus-add-icon"
-                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus3.svg" 
+                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
                     </li>)}
                 </ul> 

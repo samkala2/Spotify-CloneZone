@@ -12,7 +12,7 @@ import AllAbumsReducer from './all_albums_reducer'
 import AllArtistsReducer from './all_artists_reducer';
 import AlbumInfoReducer from './album_info_reducer';
 import CurrentPlaylistSongs from './current_playlist_songs_reducer';
-
+import currentPlaylistReducer from './current_playlist_reducer'
 
 export default combineReducers({
   users: usersReducer,
@@ -27,6 +27,7 @@ export default combineReducers({
   allArtists: AllArtistsReducer,
   albumSongs: SongsForAlbumReducer,
   singleAlbumInfo: AlbumInfoReducer,
-  playlistSongs: CurrentPlaylistSongs
+  playlistSongs: CurrentPlaylistSongs,
+  currentPlaylist: currentPlaylistReducer
 });
 

@@ -50,6 +50,7 @@ class SideBar extends React.Component {
     this.props.createPlaylist(playlist)
     .then(() => this.props.getUserPlaylists(this.props.userId[0].id))
     .then(() => this.hidePlaylistForm())
+    .then(() => this.props.history.push('/weblauncher/home'))
   }
   render () {
     return (

@@ -13,9 +13,9 @@
     else 
       json.songImageUrl ""
     end
-    
-    
-    json.playlistName @playlist.name
-    json.artist song.artist.name
   end
+  
 end
+
+json.name @playlist.name
+# json.artist song.artist.name

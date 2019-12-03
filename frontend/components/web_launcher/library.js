@@ -20,7 +20,7 @@ class Library extends React.Component {
         }) )
     }
 
-    // componentWillMount(){
+    // componentWillReceiveProps(){
     //     this.props.playlists.forEach((playlist) => {
     //         this.playlistImage(playlist.id);
     //     })
@@ -30,7 +30,7 @@ class Library extends React.Component {
        this.props.fetchPlaylistSongs(playlistId)
        .then(songs => {
         //    debugger
-           if (Object.values(songs).length > 0) {
+           if (Object.values(songs).length > 1) {
                let url = Object.values(songs)[0].songImageUrl;
                 this.setState({ [`${playlistId}`]: url })   } else {
                let defaultUrl = "https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"

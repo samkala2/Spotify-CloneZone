@@ -23,8 +23,8 @@ Rails.application.routes.draw do
 
     resources :playlists, only: [:index, :show, :destroy]
     get '/playlists-for-user', to: 'playlists#user_playlists'
-    # get '/playlists/id', to: 'playlists#playlist_by_id'
     post '/playlists/new', to: 'playlists#create_playlist'
+    # get '/playlists/name', to: 'playlists#get_playlist_name'
 
     resources :playlistsongs, only: [:create]
 
