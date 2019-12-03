@@ -47,6 +47,9 @@ class ArtistSongs extends React.Component{
 
     
     componentWillMount(){
+        this.props.zeroSongsPlaylist();
+        this.props.zeroSongsAlbum();
+
         let artistId = this.props.match.params.artistId;
         this.props.receiveArtistSong(artistId)
         .then( () => this.props.getArtistImage(artistId))

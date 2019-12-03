@@ -5,7 +5,7 @@ import {fetchAllSongsThunk} from '../../actions/all_songs_actions';
 import {fetchAllAlbumsThunk} from '../../actions/album_actions';
 
 import {fetchAllArtistsThunk} from '../../actions/artist_actions';
-import {fetchArtistSongsThunk, zeroAlbumSongs, zeroArtistSongs} from '../../actions/song_actions'
+import {fetchArtistSongsThunk, zeroAlbumSongs, zeroArtistSongs, zeroPlaylistSongs} from '../../actions/song_actions'
 
 
 import WebLauncherHome from './web_launcher_midhome';
@@ -28,6 +28,7 @@ const mapDispatchToProps = dispatch => ({
   getAllArtists: () => dispatch(fetchAllArtistsThunk()),
   zeroSongsAlbum: () => dispatch(zeroAlbumSongs()),
   zeroSongsArtist: () => dispatch(zeroArtistSongs()),
+  zeroPlaylistSongs: () => dispatch(zeroPlaylistSongs()),
   receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId)),
   receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl))
 })

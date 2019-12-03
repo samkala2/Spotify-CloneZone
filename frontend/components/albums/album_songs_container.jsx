@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
     getAlbumInfo: (albumId) => dispatch(fetchAlbumInfoThunk(albumId)),
     receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl)),
     receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId)),
-    addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong)
+    addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumSongs)

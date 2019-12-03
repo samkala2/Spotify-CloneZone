@@ -6,6 +6,8 @@ export const RECEIVE_ARTIST_IMAGE = 'RECEIVE_ARTIST_IMAGE';
 export const RECEIVE_ALBUM_SONGS = 'RECEIVE_ALBUM_SONGS';
 export const ZERO_OUT_ALBUMSONGS = 'ZERO_OUT_ALBUMSONGS';
 export const ZERO_OUT_ARTIST_SONGS = 'ZERO_OUT_ARTIST_SONGS';
+export const ZERO_OUT_PLAYLIST_SONGS = 'ZERO_OUT_PLAYLIST_SONGS';
+
 
 
 export const zeroAlbumSongs = () => ({
@@ -17,7 +19,9 @@ export const zeroArtistSongs = () => ({
   type: ZERO_OUT_ARTIST_SONGS
 });
 
-
+export const zeroPlaylistSongs = () => ({
+  type: ZERO_OUT_PLAYLIST_SONGS
+});
 
 export const receiveSongs = (songs) => ({
   type: RECEIVE_ALL_SONGS,

@@ -5,7 +5,7 @@ import ArtistSongs from './artist_songs';
 import {fetchArtistSongsThunk, fetchArtistImageThunk} from '../../actions/song_actions'
 import {receiveCurrentSong} from '../../actions/currently_playing_actions';
 import {addPlaylistSong} from '../../util/playlist_song_api_util';
-
+import {zeroAlbumSongs, zeroPlaylistSongs} from '../../actions/song_actions'
 
 function getUniqueAlbums(state) {
     let arraySongs = state.entities.artistSongs;
@@ -47,22 +47,6 @@ function getUniqueAlbumImages(state) {
     // }
 }
 
-// function getSongsByAlbum(state) {
-
-//     let distinctAlbumsArr = getUniqueAlbums(state);
-
-//     let dividedAlbumSongs = [];
-
-//     distinctAlbumsArr.forEach( (albumName) => {
-//         let subArraySongs = this.props.artistSongs.filter(song => 
-//             song.albumName === albumName )
-//         dividedAlbumSongs.push(subArraySongs)
-//         subArraySongs = [];
-        
-//     } )
-//     return dividedAlbumSongs
-// }
-
 
 const mapStateToProps = state => {
     return{
@@ -79,7 +63,9 @@ const mapDispatchToProps = dispatch => ({
     receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId)),
     getArtistImage: (artistId) => dispatch(fetchArtistImageThunk(artistId)),
     receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl)),
-    addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong)
+    addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong),
+    zeroSongsAlbum: () => dispatch(zeroAlbumSongs()),
+    zeroSongsPlaylist: () => dispatch(zeroPlaylistSongs()),
 
 })
 

@@ -32,6 +32,7 @@ class WebLauncherHome extends React.Component {
     
     this.props.zeroSongsAlbum();
     this.props.zeroSongsArtist();
+    this.props.zeroPlaylistSongs();
     
   }
 

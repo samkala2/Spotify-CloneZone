@@ -19,6 +19,8 @@ class PlaylistSongs extends React.Component{
 
     
     componentDidMount(){
+        this.props.zeroSongsAlbum();
+        this.props.zeroSongsArtist();
         let playlistId = this.props.match.params.playlistId
         // debugger;
         this.props.getCurrentPlaylist(playlistId);
@@ -168,7 +170,7 @@ class PlaylistSongs extends React.Component{
                     </div> }
                 </div>
             </div>
-            
+
             {this.displaySongs()}
         </div>
             )

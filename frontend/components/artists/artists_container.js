@@ -28,7 +28,8 @@ const mapDispatchToProps = dispatch => ({
   searchPlaylists: (name) => dispatch(fetchPlaylistsThunk(name)),
   receiveCurrentSong: (songId, songUrl, artist, title, songImageUrl) => dispatch(receiveCurrentSong(songId, songUrl, artist, title, songImageUrl)),
   receiveArtistSong: (artistId) => dispatch(fetchArtistSongsThunk(artistId)),
-  addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong)
+  addNewPlaylistSong: (playlistSong) => addPlaylistSong(playlistSong),
+  
 
 })
 
