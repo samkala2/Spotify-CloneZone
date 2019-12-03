@@ -138,7 +138,7 @@ class AlbumSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
 
-                        { <img className="plus-add-icon display-n"  id={"plus" + song.id}
+                        { <img className="plus-add-icon-2 display-n"  id={"plus" + song.id}
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> }
                     </li>)}
@@ -146,8 +146,9 @@ class AlbumSongs extends React.Component{
 
                 { this.state.playlistModal && <div id="myModal" className="modal-pl">
 
-                <ul className="playlist-list2">
+                <ul className="playlist-list3">
                 <div onClick={() => this.hidePlaylistModal()} className="close-playlist">&times;</div>
+                <p class="select-playlist"> Select a Playlist </p>
                 {this.props.playlists.map(playlist => {
                 return(
                     <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 

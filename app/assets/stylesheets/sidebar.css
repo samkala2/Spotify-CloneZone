@@ -76,6 +76,7 @@
     color: white;
     margin: 0;
     margin-top: 5px;
+    font-family: 'Rubik', sans-serif
 }
 
 
@@ -132,6 +133,14 @@
     height: 23px;
     margin-left: 90px;
     margin-top: 18px; 
+}
+
+.plus-add-icon-2{
+    
+    width: 17px;
+    height: 23px;
+    margin-left: 30%;
+    margin-top: 11px; 
 }
 
 .playlist-list li {
@@ -283,4 +292,11 @@
 .playlist-ul a:hover{
     opacity: 1;
     transition: 0.7s;
+}
+
+.select-playlist{
+    color: white;
+    font-size: 19px;
+    font-family: 'Rubik';
+    margin-left: 8px;
 }

@@ -23,7 +23,8 @@ class SongPlayer extends React.Component {
     // this.currentTime = 1;
     this.state= ({
       currentTime: '0:00',
-      songDuration: '6:44'
+      songDuration: '6:44',
+      // playlistSongs: this.props.playlistSongs
     })
   }
  
@@ -173,7 +174,7 @@ class SongPlayer extends React.Component {
     let songList = [];
     let shufflebutton = document.getElementsByClassName("shuffle-button")[0];
     
-    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png" && this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 ) {
+    if (shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png" && this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0  && this.props.playlistSongs.length === 0) {
 
       let song = this.props.allSongs[Math.floor(Math.random() * this.props.allSongs.length)];
       this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
@@ -196,12 +197,23 @@ class SongPlayer extends React.Component {
       this.playSongAuto();
       return
       
+    } else if (this.props.playlistSongs.length > 0 && shufflebutton.src === "https://craftifybucket.s3.us-east-2.amazonaws.com/shuffle_neon.png")  {
+
+      
+      let song = this.props.playlistSongs.slice(0, this.props.playlistSongs.length - 1)[Math.floor(Math.random() * (this.props.playlistSongs.length - 1 ))];
+      this.props.receiveCurrentSong(song.id, song.songUrl, song.artist, song.title, song.songImageUrl)
+      this.playSongAuto();
+      return
+      
     } else if (this.props.albumSongs.length > 0) {
       songList = this.props.albumSongs;
       
     } else if (this.props.artistSongs.length > 0) {
       songList = this.props.artistSongs;
 
+    } else if (this.props.playlistSongs.length > 0) {
+      songList = this.props.playlistSongs.slice(0, this.props.playlistSongs.length - 1)
+      
     } else if (this.props.albumSongs.length === 0  && this.props.artistSongs.length === 0 )  {
       songList = this.props.allSongs;
     }
@@ -324,6 +336,7 @@ class SongPlayer extends React.Component {
   render () {
     window.previousSongs = this.previousSongs;
     window.currently = this.props.currentlyPlaying;
+    window.songState = this.state;
     return (
   
         <div className="song-player-controls">

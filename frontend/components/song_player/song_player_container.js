@@ -9,9 +9,12 @@ const mapStateToProps = state => {
     allSongs: Object.values(state.entities.allsongs),
     currentlyPlaying: state.currentlyPlaying,
     albumSongs: Object.values(state.entities.albumSongs),
-    artistSongs: Object.values(state.entities.artistSongs)
+    artistSongs: Object.values(state.entities.artistSongs),
+    playlistSongs: Object.values(state.entities.playlistSongs)
   }
 }
+
+// .slice(0, Object.values(state.entities.length) -1 
 
 
 const mapDispatchToProps = dispatch => ({

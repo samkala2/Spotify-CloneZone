@@ -500,6 +500,7 @@ hidePlayButton(song){
 
                 <ul className="playlist-list3">
                 <div onClick={() => this.hidePlaylistModal()} className="close-playlist">&times;</div>
+                <p class="select-playlist"> Select a Playlist </p>
                 {this.props.playlists.map(playlist => {
                 return(
                     <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 
