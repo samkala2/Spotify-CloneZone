@@ -6,6 +6,9 @@ class Artists extends React.Component {
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
+    this.seStateSongId = this.seStateSongId.bind(this);
+    this.addNewPlaylistSong = this.addNewPlaylistSong.bind(this);
+    this.hidePlaylistModal = this.hidePlaylistModal.bind(this);
     this.state = { 
       name: "",
       songUrl: "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3",
@@ -17,7 +20,9 @@ class Artists extends React.Component {
       ArtistsResults: false,
       SongsResults: false,
       AlbumsResults: false,
-      PlaylistsResults: false
+      PlaylistsResults: false, 
+      playlistSongId: 0,
+      playlistModal: false,
       }
     };
 
@@ -29,7 +34,24 @@ class Artists extends React.Component {
   }
 
 
- 
+  
+seStateSongId(id){
+    this.setState({playlistSongId: id, playlistModal: true})
+}
+
+hidePlaylistModal(){
+    this.setState({playlistModal: false})
+}
+
+addNewPlaylistSong(playlistId){
+    this.props.addNewPlaylistSong({
+        song_id: this.state.playlistSongId,
+        ord: 2,
+        playlist_id: playlistId
+    })
+    this.setState({playlistModal: false})
+}
+
 
   highlightTitle(filter){
     let songsButton = document.getElementsByClassName("songs-res")[0];
@@ -128,6 +150,9 @@ class Artists extends React.Component {
 
     let musicNote = document.getElementsByClassName(song.id.toString())[0];
     musicNote.classList.add("display-n");
+
+    let addButton = document.getElementById("plus"+song.id.toString())
+    addButton.classList.remove("display-n")
 }
 
 
@@ -137,6 +162,9 @@ handleHoverOutSong(song){
 
     let musicNote = document.getElementsByClassName(song.id.toString())[0];
     musicNote.classList.remove("display-n");
+
+    let addButton = document.getElementById("plus"+song.id.toString())
+    addButton.classList.add("display-n")
 }
 
 
@@ -317,6 +345,10 @@ hidePlayButton(song){
                       <span className="song-title-3">  {song.title}   </span> 
                       <span className="song-artist-3">  {song.artist} </span> 
                     </div> 
+
+                    <img className="plus-add-icon display-n"  id={"plus" + song.id}
+                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
+                        onClick={() => this.seStateSongId(song.id)}/> 
                   </li>)}
               </ul>
               
@@ -442,6 +474,10 @@ hidePlayButton(song){
                       <span className="song-title-3">  {song.title} </span>
                       <span className="song-artist-3">  {song.artist} </span>
                     </span>
+
+                    <img className="plus-add-icon display-n"  id={"plus" + song.id}
+                        src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
+                        onClick={() => this.seStateSongId(song.id)}/> 
                   </li>)}
               </ul>
             </div>
@@ -458,6 +494,24 @@ hidePlayButton(song){
               </ul>
             </div>
           }
+
+
+          { this.state.playlistModal && <div id="myModal" className="modal-pl">
+
+                <ul className="playlist-list3">
+                <div onClick={() => this.hidePlaylistModal()} className="close-playlist">&times;</div>
+                {this.props.playlists.map(playlist => {
+                return(
+                    <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 
+                    {/* <Link to={`/weblauncher/playlist/${playlist.id}`}>  */}
+                    <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"/>
+                    <p> {playlist.name} </p> 
+                    {/* </Link> */}
+                    </li>
+                )
+                })}
+                </ul>
+                </div> }
         </div>
 
       </div>

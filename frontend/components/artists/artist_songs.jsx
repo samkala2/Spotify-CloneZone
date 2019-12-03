@@ -66,6 +66,11 @@ class ArtistSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.add("display-n");
+
+        let addButton = document.getElementById("plus"+song.id.toString())
+        addButton.classList.remove("display-n")
+
+
     }
 
 
@@ -75,6 +80,9 @@ class ArtistSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
+
+        let addButton = document.getElementById("plus"+song.id.toString())
+        addButton.classList.add("display-n")
     }
 
 
@@ -170,7 +178,7 @@ class ArtistSongs extends React.Component{
 
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
-                        <img className="plus-add-icon"
+                        <img className="plus-add-icon display-n" id={"plus" + song.id}
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
                     </li>)}
@@ -202,7 +210,7 @@ class ArtistSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
 
                         </div>
-                        <img className="plus-add-icon"
+                        <img className="plus-add-icon display-n"  id={"plus" + song.id}
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
                     </li>)}
@@ -260,7 +268,7 @@ class ArtistSongs extends React.Component{
                 return(
                     <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 
                     <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"/>
-                    {playlist.name} 
+                    <p> {playlist.name} </p> 
                     </li>
                 )
                 })}

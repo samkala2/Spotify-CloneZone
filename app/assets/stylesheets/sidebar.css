@@ -31,7 +31,7 @@
     margin-left: -20px;
 }
 
-.playlist-list2{
+.playlist-list2, .playlist-list3{
     list-style-type: none;
     position: absolute;
     background-color: rgb(15, 15, 15);
@@ -39,7 +39,6 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 200px;
-    margin-left: 70px;
     height: auto;
     width: 68%;
     padding-top: 70px;
@@ -48,20 +47,40 @@
     z-index: 300;
 }
 
-.playlist-list2 li{
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-    color: white;
-    font-size: 21px;
+.playlist-list2{
+    margin-left: 70px;
 }
 
-.playlist-list2 li img{ 
+.playlist-list3{
+    margin-left: 220px;
+
+}
+
+.playlist-list2 li, .playlist-list3 li {
+    display: flex;
+    flex-direction: column;
+    margin-left: 28px;
+    color: white;
+    font-size: 21px;
+    margin-top: 23px;
+    align-items: center;
+}
+
+.playlist-list2 li img, .playlist-list3 li img{ 
     width:100px;
     height: 100px;
 }
 
-.playlist-list2 li img:hover{
+
+.playlist-list2 li p, .playlist-list3 li p{ 
+    color: white;
+    margin: 0;
+    margin-top: 5px;
+}
+
+
+
+.playlist-list2 li img:hover, .playlist-list3 li img:hover{
     cursor: pointer; 
 }
 .playlist2-li{
@@ -108,8 +127,9 @@
   }
 
 .plus-add-icon{
-    opacity: 0.9;
-    width: 20px;
+    
+    width: 17px;
+    height: 23px;
     margin-left: 90px;
     margin-top: 18px; 
 }

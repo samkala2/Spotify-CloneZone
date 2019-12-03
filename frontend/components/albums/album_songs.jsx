@@ -58,7 +58,8 @@ class AlbumSongs extends React.Component{
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.add("display-n");
 
-        // this.setState({ showPlus: true})
+        let addButton = document.getElementById("plus"+song.id.toString())
+        addButton.classList.remove("display-n")
     }
 
 
@@ -69,8 +70,8 @@ class AlbumSongs extends React.Component{
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
 
-        // this.setState({ showPlus: false})
-
+        let addButton = document.getElementById("plus"+song.id.toString())
+        addButton.classList.add("display-n")
     }
 
     goToArtistPage(artistId){
@@ -137,7 +138,7 @@ class AlbumSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
 
-                        { <img className="plus-add-icon"
+                        { <img className="plus-add-icon display-n"  id={"plus" + song.id}
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> }
                     </li>)}
@@ -152,7 +153,7 @@ class AlbumSongs extends React.Component{
                     <li className="playlist2-li" onClick={() => this.addNewPlaylistSong(playlist.id)}> 
                     {/* <Link to={`/weblauncher/playlist/${playlist.id}`}>  */}
                     <img src="https://craftifybucket.s3.us-east-2.amazonaws.com/default-playlist.png"/>
-                    {playlist.name} 
+                    <p> {playlist.name} </p> 
                     {/* </Link> */}
                     </li>
                 )
