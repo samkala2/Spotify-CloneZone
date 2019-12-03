@@ -38,26 +38,37 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 19%;
-    margin-left: 17%;
+    margin-top: 200px;
+    margin-left: 70px;
+    height: auto;
+    width: 68%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-right: 63px;
+    z-index: 300;
 }
 
 .playlist-list2 li{
     display: flex;
     flex-direction: column;
     margin-left: 15px;
+    color: white;
+    font-size: 21px;
 }
 
 .playlist-list2 li img{ 
     width:100px;
     height: 100px;
 }
+
+.playlist-list2 li img:hover{
+    cursor: pointer; 
+}
 .playlist2-li{
     /* margin-left: 55%; */
 }
 
 .modal-pl {
-    /* display: none;  */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -68,8 +79,22 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
+}
+
+
+.modal-form {
+    position: fixed; /* Stay in place */
+    z-index: 300; /* Sit on top */
+    padding-top: 434px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
   .close-playlist:hover,
 .close-playlist:focus {
   color: rgb(224, 220, 220);
@@ -83,10 +108,10 @@
   }
 
 .plus-add-icon{
-    opacity: 0.5;
+    opacity: 0.9;
     width: 20px;
     margin-left: 90px;
-    margin-top: 9px;
+    margin-top: 18px; 
 }
 
 .playlist-list li {
@@ -198,7 +223,7 @@
     z-index: 292;
     position: absolute;
     margin-top: 164px;
-    margin-left: 650px;
+    margin-left: 50%;
     height: 48px;
     width: 168px;
     border-radius: 84px;
@@ -209,12 +234,22 @@
     font-weight: 500;
 }
 
+.submit-playlist:hover, .cancel-playlist:hover {
+    cursor: pointer;
+}
+
+.submit-playlist:hover{
+    background-color: rgb(37, 238, 107);
+    border:rgb(37, 238, 107) 1px;
+}
+
+
 
 .cancel-playlist {
     z-index: 293;
     position: absolute;
     margin-top: 164px;
-    margin-left: 445px;
+    margin-left: 36%;
     height: 48px;
     width: 168px;
     border-radius: 84px;

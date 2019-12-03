@@ -29,12 +29,12 @@ class SideBar extends React.Component {
   }
 
   showPlaylistForm(){
-    let form = document.getElementsByClassName("create-playlist-form")[0];
+    let form = document.getElementsByClassName("modal-form")[0];
     form.classList.remove("hidden");
   }
 
   hidePlaylistForm(){
-    let form = document.getElementsByClassName("create-playlist-form")[0];
+    let form = document.getElementsByClassName("modal-form")[0];
     form.classList.add("hidden");
   }
 
@@ -97,7 +97,8 @@ class SideBar extends React.Component {
           <p className="create-playlist"> Create Playlist  </p>
         </div>
 
-        <div className="create-playlist-form hidden" >
+      <div className="modal-form hidden"> 
+        <div className="create-playlist-form" >
           <h4 className="top-placeholder"> Playlist Name</h4>
           <button onClick={() => this.handleSubmit()}
           type="submit" className="submit-playlist" > Create </button>
@@ -107,6 +108,7 @@ class SideBar extends React.Component {
                   />
           <button onClick={() => this.hidePlaylistForm()} className="cancel-playlist"> Cancel </button>
         </div>
+      </div>
 
 
         <ul className="playlist-list">

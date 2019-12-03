@@ -14,7 +14,8 @@ class AlbumSongs extends React.Component{
         this.hidePlaylistModal = this.hidePlaylistModal.bind(this);
         this.state = {
           playlistSongId: 0,
-          playlistModal: false
+          playlistModal: false,
+        //   showPlus: false
         }
     }
 
@@ -56,6 +57,8 @@ class AlbumSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.add("display-n");
+
+        // this.setState({ showPlus: true})
     }
 
 
@@ -65,6 +68,9 @@ class AlbumSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
+
+        // this.setState({ showPlus: false})
+
     }
 
     goToArtistPage(artistId){
@@ -131,9 +137,9 @@ class AlbumSongs extends React.Component{
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
 
-                        <img className="plus-add-icon"
+                        { <img className="plus-add-icon"
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
-                        onClick={() => this.seStateSongId(song.id)}/> 
+                        onClick={() => this.seStateSongId(song.id)}/> }
                     </li>)}
                 </ul> 
 

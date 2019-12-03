@@ -169,12 +169,10 @@ class ArtistSongs extends React.Component{
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
-
+                        </div>
                         <img className="plus-add-icon"
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
-                        
-                        </div>
                     </li>)}
                     </div>}
 
@@ -203,11 +201,10 @@ class ArtistSongs extends React.Component{
                         
                         <div className="song-title-2">  {song.title}      </div>
 
+                        </div>
                         <img className="plus-add-icon"
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
-
-                        </div>
                     </li>)}
                     </div>  
 

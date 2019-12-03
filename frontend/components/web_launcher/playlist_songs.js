@@ -143,30 +143,32 @@ class PlaylistSongs extends React.Component{
         return(
         <div className="playlist-show-cont">
             
-            <div className="library-links-playlistsongs"> 
+            {/* <div className="library-links-playlistsongs">  */}
                 {/* <Link to="/weblauncher/library"> 
                 <p className="opacity albumsb white-on" 
                 // onClick={ () => this.toggleResults("AllAlbums") }
                 > Playlists </p>
                 </Link> */}
-            </div>
+            {/* </div> */}
+            <div> 
+                <div className="image-title-playlist"> 
+                <img className="playlist-show-image" src={this.state.imageUrl}/>
+                <br/>
+                <h2> {this.props.currentPlaylist.name} </h2>
+                
+                
+                </div>
 
-            <div className="image-title-playlist"> 
-            <img className="playlist-show-image" src={this.state.imageUrl}/>
-            <br/>
-            <h2> {this.props.currentPlaylist.name} </h2>
+
+                <div className="delete-cont"> 
+                    <img onClick={this.displayDeleteButton}
+                    src="https://craftifybucket.s3.us-east-2.amazonaws.com/threedots.png"/>
+                {this.state.displayDeleteButton &&  <div className="delete-button"> 
+                    <p onClick={this.deletePlaylist} > Delete </p>
+                    </div> }
+                </div>
+            </div>
             
-            
-            </div>
-
-
-            <div className="delete-cont"> 
-                <img onClick={this.displayDeleteButton}
-                src="https://craftifybucket.s3.us-east-2.amazonaws.com/threedots.png"/>
-             {this.state.displayDeleteButton &&  <div className="delete-button"> 
-                <p onClick={this.deletePlaylist} > Delete </p>
-                </div> }
-            </div>
             {this.displaySongs()}
         </div>
             )
