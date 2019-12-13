@@ -5,6 +5,8 @@ import {receiveCurrentSong} from '../../actions/currently_playing_actions';
 
 import { deletePlaylist } from '../../util/playlist_api_util'
 
+import { deletePlaylistSong} from '../../util/playlist_song_api_util'
+
 import {zeroArtistSongs, zeroAlbumSongs} from '../../actions/song_actions'
 
 const mapStateToProps = state => ({
@@ -19,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
    deletePlaylistById: (id) => deletePlaylist(id),
    zeroSongsArtist: () => dispatch(zeroArtistSongs()),
    zeroSongsAlbum: () => dispatch(zeroAlbumSongs()),
-
+   deletePlaylistSong: (id) => deletePlaylistSong(id)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistSongs)

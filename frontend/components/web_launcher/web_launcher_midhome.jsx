@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 class WebLauncherHome extends React.Component {
 
-
   constructor(props){
     super(props);
     this.handleSongs = this.handleSongs.bind(this);
@@ -14,7 +13,6 @@ class WebLauncherHome extends React.Component {
       songUrl: "https://craftifybucket.s3.us-east-2.amazonaws.com/1.mp3",
       songTitle: "Stan",
       songArtist: "Eminem",
-
       filters: {
         AllSongs: false,
         AllArtists: false,
@@ -28,12 +26,9 @@ class WebLauncherHome extends React.Component {
     this.props.getAllAlbums(); 
     this.props.getAllSongs();
     this.props.getAllArtists();
-
-    
     this.props.zeroSongsAlbum();
     this.props.zeroSongsArtist();
     this.props.zeroPlaylistSongs();
-    
   }
 
   highlightTitle(filter){
@@ -186,7 +181,10 @@ class WebLauncherHome extends React.Component {
 
                   <div className="song-info-allsongs">
                     <span className="song-title">  {song.title}      </span>
-                    <span className="song-artist">  {song.artist}    </span>
+
+                    <Link className=""  to={`/weblauncher/${song.artistId}/songs`} >  
+                      <span className="song-artist">  {song.artist}    </span>
+                    </Link>
                   </div>
 
                   </li>)}
@@ -214,7 +212,10 @@ class WebLauncherHome extends React.Component {
                 </Link>
                   <div className="album-info">
                       <div className="album-title">  {album.name} </div>
+                    
+                  <Link className=""  to={`/weblauncher/${album.artistId}/songs`} >  
                       <div className="album-artist">  {album.artistName} </div>
+                  </Link>
                   </div>
 
                   </li>)}

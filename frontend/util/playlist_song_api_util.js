@@ -4,4 +4,12 @@ export const addPlaylistSong = playlistsong => (
       url: '/api/playlistsongs',
       data: { playlistsong }
     })
-  );
+);
+
+
+export const deletePlaylistSong = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/playlistsongs/${id}`,
+  })
+);

@@ -244,3 +244,64 @@ position: fixed;
         text-align: center;
         padding-top: 250px;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // -----------
+
+    .editResumeRoot img{
+      width: 34px;
+      height: 37px;
+    }
+    
+    .editResumeRoot h1 {
+      width: auto;
+      margin-top: 0;
+      margin-left: 70px;
+    }
+    
+    .editResumeRoot form{
+      padding: 10px 37px 10px;
+      font-size: 24px;
+    }
+    
+    
+    .editResumeRoot input
+    {
+        font-size:20px;
+        line-height: 36px;
+        width: 280px;
+        border-radius: 6px;
+        padding-left: 7px;
+    }
+    
+    .editResumeRoot label{
+        display: block;
+        position: static;
+        margin: 0;
+        padding: 0;
+        color:rgb(131, 95, 95);
+        font-family: 'Rubik', sans-serif;
+        font-size: 24px;
+    }
+    
+    .editResumeRoot textarea
+    {
+        font-size:18px;
+        line-height: 36px;
+        height: 250px;
+        width: 300px;
+        border-radius: 6px;
+        padding-left: 7px;
+    }

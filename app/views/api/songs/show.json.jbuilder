@@ -13,7 +13,7 @@
       json.songImageUrl ""
     end
 
-
     json.artist song.artist.name
+    json.artistId song.artist.id
   end
 end

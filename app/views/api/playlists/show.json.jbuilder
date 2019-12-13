@@ -1,4 +1,3 @@
-# json.playlistName @playlist.name
 @playlist.songs.each do |song|
   json.set! song.id do
     json.extract! song, :id, :title, :length
@@ -13,6 +12,8 @@
     else 
       json.songImageUrl ""
     end
+
+    json.playlistSongId song.playlistsongs.select {|song| song.playlist_id == @playlist.id}
   end
   
 end

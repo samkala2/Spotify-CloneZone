@@ -9,11 +9,13 @@ class PlaylistSongs extends React.Component{
         this.handleHoverOutSong = this.handleHoverOutSong.bind(this);
         this.getPlaylistImageUrl = this.getPlaylistImageUrl.bind(this);
         this.deletePlaylist = this.deletePlaylist.bind(this);
-        this.displayDeleteButton = this.displayDeleteButton.bind(this)
+        this.displayDeleteButton = this.displayDeleteButton.bind(this);
+        this.deleteSong = this.deleteSong.bind(this);
         this.state = {
             songs: [],
             imageUrl: "",
-            displayDeleteButton: false
+            displayDeleteButton: false,
+            deleteSongButton: false
         }
     }
 
@@ -22,17 +24,15 @@ class PlaylistSongs extends React.Component{
         this.props.zeroSongsAlbum();
         this.props.zeroSongsArtist();
         let playlistId = this.props.match.params.playlistId
-        // debugger;
         this.props.getCurrentPlaylist(playlistId);
         this.props.getPlaylistSongs(playlistId)
         .then(() => this.setState({songs: Object.values(this.props.songs)}))
-        // this.props.getPlaylistsong(id)
         .then(() => this.getPlaylistImageUrl())
     }
 
     componentDidUpdate(prevProps) {
         if (
-        prevProps.match.params.playlistId != this.props.match.params.playlistId
+        (prevProps.match.params.playlistId != this.props.match.params.playlistId)
         ) {
         let playlistId = this.props.match.params.playlistId
         this.setState({ songs: [{   }]  });
@@ -43,13 +43,12 @@ class PlaylistSongs extends React.Component{
         }
     }
 
+
     displayDeleteButton(){
         if (this.state.displayDeleteButton === false){
-
             this.setState({ displayDeleteButton: true})
         } else {
             this.setState({ displayDeleteButton: false})
-
         }
     }
 
@@ -68,6 +67,8 @@ class PlaylistSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.add("display-n");
+
+        this.setState({deleteSongButton: true})
     }
 
 
@@ -77,14 +78,33 @@ class PlaylistSongs extends React.Component{
 
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
+
+        this.setState({deleteSongButton: false})
+
     }
 
     deletePlaylist() {
         let playlistId = this.props.match.params.playlistId
 
-        this.props.deletePlaylistById(playlistId)
-        .then(() => this.props.history.push('/weblauncher/library'))
-        // .then(() => this.props.getPlaylistSongs(playlistId))
+        let confirmation = confirm('Are you sure you want to delete this playlist?')
+
+        if (confirmation) {
+            this.props.deletePlaylistById(playlistId)
+            .then(() => this.props.history.push('/weblauncher/library'))
+        }
+    }
+
+    deleteSong(id) {
+        let playlistId = this.props.match.params.playlistId
+        let confirmation = confirm('Are you sure you want to delete this song?')
+
+        if (confirmation) {
+
+        this.props.deletePlaylistSong(id)
+        .then(() => this.props.getPlaylistSongs(playlistId))
+        .then(() => this.setState({songs: Object.values(this.props.songs)}))
+        .then(() => this.getPlaylistImageUrl())
+        }   
     }
 
     displaySongs(){
@@ -107,7 +127,13 @@ class PlaylistSongs extends React.Component{
                 <div className="song-info-2">
 
                 <div className="song-title-2">  {song.title}      </div>
+
+                
                 </div>
+
+                { this.state.deleteSongButton &&  <span onClick={() => this.deleteSong(song.playlistSongId[0].id)} 
+                className="remove-from-playlist"> x </span> }
+
             </li>)}
         </ul> 
         ) }
@@ -115,12 +141,7 @@ class PlaylistSongs extends React.Component{
 
 
     playSongios(song) {
-        // this.setState({
-        //   songUrl: song.songUrl,
-        //   songTitle: song.title,
-        //   songArtist: song.artist
-        // });
-
+    
        let songGet= document.getElementsByClassName('audio-footer')[0];
         songGet.autoplay = true;
         songGet.play();
@@ -144,23 +165,12 @@ class PlaylistSongs extends React.Component{
         
         return(
         <div className="playlist-show-cont">
-            
-            {/* <div className="library-links-playlistsongs">  */}
-                {/* <Link to="/weblauncher/library"> 
-                <p className="opacity albumsb white-on" 
-                // onClick={ () => this.toggleResults("AllAlbums") }
-                > Playlists </p>
-                </Link> */}
-            {/* </div> */}
             <div> 
                 <div className="image-title-playlist"> 
                 <img className="playlist-show-image" src={this.state.imageUrl}/>
                 <br/>
                 <h2> {this.props.currentPlaylist.name} </h2>
-                
-                
                 </div>
-
 
                 <div className="delete-cont"> 
                     <img onClick={this.displayDeleteButton}

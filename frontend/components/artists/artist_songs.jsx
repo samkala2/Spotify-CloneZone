@@ -26,6 +26,7 @@ class ArtistSongs extends React.Component{
         
     }
 
+    // Save state with the clicked song Id, and show playlist modal
     seStateSongId(id){
         this.setState({playlistSongId: id, playlistModal: true})
     }
@@ -44,8 +45,6 @@ class ArtistSongs extends React.Component{
     }
 
 
-
-    
     componentWillMount(){
         this.props.zeroSongsPlaylist();
         this.props.zeroSongsAlbum();
@@ -56,11 +55,6 @@ class ArtistSongs extends React.Component{
         .then( () => this.getUniqueAlbums())
         .then( () => this.getSongsByAlbum());
     }
-
-    // componentDidMount() {
-    //     debugger;
-    //     this.hideAdditionalPhoto();
-    // }
 
     
     handleHoverSong(song){
@@ -176,11 +170,11 @@ class ArtistSongs extends React.Component{
 
                         <img className= {"music-note" + " " +  song.id} src="https://craftifybucket.s3.us-east-2.amazonaws.com/music_note.png"/>
                         
-                        {/* <img  className="small-image-song" src={song.songImageUrl} /> */}
                         <div className="song-info-2">
 
                         <div className="song-title-2">  {song.title}      </div>
                         </div>
+
                         <img className="plus-add-icon-2 display-n" id={"plus" + song.id}
                         src="https://craftifybucket.s3.us-east-2.amazonaws.com/iconplus4.png" 
                         onClick={() => this.seStateSongId(song.id)}/> 
@@ -257,10 +251,7 @@ class ArtistSongs extends React.Component{
 
 
                         <br/>
-                        <br/>
-                    {/* <div> ------- </div> */}
-                    
-                    
+                        <br/>                    
                 </ul> 
                 
                { this.state.playlistModal &&

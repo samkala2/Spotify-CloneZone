@@ -15,7 +15,6 @@ class AlbumSongs extends React.Component{
         this.state = {
           playlistSongId: 0,
           playlistModal: false,
-        //   showPlus: false
         }
     }
 
@@ -41,15 +40,6 @@ class AlbumSongs extends React.Component{
         })
         this.setState({playlistModal: false})
     }
-
-    // addToPlaylist(playlistId, songId) {
-    //     this.props.addNewPlaylistSong({
-    //                 playlist_id: playlistId,
-    //                 ord: 2,
-    //                 song_id: songId
-    //             })
-    // }
-
 
     handleHoverSong(song){
         let playButton = document.getElementById(song.id.toString())
@@ -114,7 +104,7 @@ class AlbumSongs extends React.Component{
                     <p className="main-album-info"> {this.props.albumInfo[1]} </p> 
                     
                     <Link onClick={() => this.goToArtistPage(artistId)} className=""  to={`/weblauncher/${artistId}/songs`} >  
-                    <p className="album-artist-name">  {this.props.albumInfo[3]} </p> 
+                    <p className="album-artist-name"> {this.props.albumInfo[3]} </p> 
                     </Link>
 
                     </div>  

@@ -1,10 +1,5 @@
 class Api::PlaylistsongsController < ApplicationController
 
-    def playlist_songs
-        query = params[:playlist_id]
-        @playlistSongs = Playlistsong.where("playlist_id = '#{query}'")
-        render :playlist_songs
-    end
 
     def create
         @playlist_song = Playlistsong.new(playlist_song_params)
@@ -12,6 +7,15 @@ class Api::PlaylistsongsController < ApplicationController
             render :show
         else
             render json: @playlistSong.errors.full_messages, status: 404
+        end
+    end
+
+    def destroy
+        @playlist_song = Playlistsong.find(params[:id])
+        if @playlist_song.destroy
+        render json: {message: "Song removed from playlist successfully"} 
+        else
+        render json: { error: "Unable to delete songs" }, status: 409
         end
     end
     

@@ -11,7 +11,6 @@ class SideBar extends React.Component {
     this.hidePlaylistForm = this.hidePlaylistForm.bind(this); 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
- 
     this.state = {
       name: "",
       user_id: this.props.userId[0].id || 0

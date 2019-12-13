@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     post '/playlists/new', to: 'playlists#create_playlist'
     # get '/playlists/name', to: 'playlists#get_playlist_name'
 
-    resources :playlistsongs, only: [:create]
+    resources :playlistsongs, only: [:create, :destroy]
 
     resources :follows 
 

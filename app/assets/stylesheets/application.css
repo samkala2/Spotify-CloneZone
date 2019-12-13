@@ -321,3 +321,16 @@ img#sidebar-logo {
 .all-songs-results i:hover{
   cursor: pointer;
 }
+
+
+.remove-from-playlist{
+  margin-top: 12px;
+  color: white;
+  font-size: 20px;
+  margin-left: 28%;
+  font-family: sans-serif;
+}
+
+.remove-from-playlist:hover{
+  cursor: pointer;
+}
