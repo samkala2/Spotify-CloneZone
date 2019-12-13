@@ -135,6 +135,10 @@ body {
     align-items: center
   }
 
+  .album-info a, .song-info-allsongs a, .album-info-cont a{
+    text-decoration: none;
+  }
+
 
   .playlist-info{
     font-family: 'Rubik', sans-serif;
@@ -325,10 +329,11 @@ img#sidebar-logo {
 
 .remove-from-playlist{
   margin-top: 12px;
-  color: white;
+  color: rgb(241, 241, 241);
   font-size: 20px;
   margin-left: 28%;
   font-family: sans-serif;
+  font-weight: 500;
 }
 
 .remove-from-playlist:hover{

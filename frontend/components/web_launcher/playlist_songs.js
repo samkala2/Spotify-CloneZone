@@ -15,7 +15,6 @@ class PlaylistSongs extends React.Component{
             songs: [],
             imageUrl: "",
             displayDeleteButton: false,
-            deleteSongButton: false
         }
     }
 
@@ -43,7 +42,6 @@ class PlaylistSongs extends React.Component{
         }
     }
 
-
     displayDeleteButton(){
         if (this.state.displayDeleteButton === false){
             this.setState({ displayDeleteButton: true})
@@ -68,7 +66,9 @@ class PlaylistSongs extends React.Component{
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.add("display-n");
 
-        this.setState({deleteSongButton: true})
+        let deleteButton = document.getElementById(`delete${song.id}`)
+        deleteButton.classList.remove("display-n")
+        // this.setState({deleteSongButton: true})
     }
 
 
@@ -79,7 +79,9 @@ class PlaylistSongs extends React.Component{
         let musicNote = document.getElementsByClassName(song.id.toString())[0];
         musicNote.classList.remove("display-n");
 
-        this.setState({deleteSongButton: false})
+        let deleteButton = document.getElementById(`delete${song.id}`)
+        deleteButton.classList.add("display-n")
+        // this.setState({deleteSongButton: false})
 
     }
 
@@ -131,8 +133,8 @@ class PlaylistSongs extends React.Component{
                 
                 </div>
 
-                { this.state.deleteSongButton &&  <span onClick={() => this.deleteSong(song.playlistSongId[0].id)} 
-                className="remove-from-playlist"> x </span> }
+                {  <span id={"delete"+song.id} onClick={() => this.deleteSong(song.playlistSongId[0].id)} 
+                className="remove-from-playlist display-n"> x </span> }
 
             </li>)}
         </ul> 

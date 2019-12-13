@@ -183,7 +183,7 @@ class WebLauncherHome extends React.Component {
                     <span className="song-title">  {song.title}      </span>
 
                     <Link className=""  to={`/weblauncher/${song.artistId}/songs`} >  
-                      <span className="song-artist">  {song.artist}    </span>
+                      <div className="song-artist">  {song.artist}    </div>
                     </Link>
                   </div>
 
